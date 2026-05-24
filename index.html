@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="RYBIX delivers next-gen digital asset infrastructure, secure tokenization, DeFi solutions, blockchain security audits, and institutional-grade asset management. Powering the future of digital finance.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title -->
+    <title>RYBIX - The Future of Digital Assets | Home</title>
+    <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome (Optional) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Tailwind CSS (Optional) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#8b5cf6',
+                        'brand-yellow': '#facc15',
+                        'brand-deep': '#6d28d9',
+                        'brand-dark': '#0f172a',
+                        'text-main': '#1a1a2e',
+                        'text-muted': '#64748b',
+                        'text-dim': '#475569',
+                        'bg': '#fafbfc',
+                        'surface': '#ffffff',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                        body: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 20s linear infinite',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        spinSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+
+    <!-- Your Content Here -->
+       <nav id="main-nav"
+        class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
+
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
+            <img src="./images//logo.png" alt="Hiderox" class="h-9 w-10 rounded-lg">
+            <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-1">
+            <!-- Home -->
+
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase transition-colors rounded-full no-underline">Home</a>
+
+            <!-- Services Dropdown -->
+
+            <div class="dropdown-parent relative">
+                <a href="#"
+                    class="nav-link-text flex items-center gap-1 px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase transition-colors rounded-full no-underline">
+                    Services
+                    <i class="fa-solid fa-chevron-down text-[0.6rem] ml-0.5 opacity-60"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <span class="dropdown-label">Secure & Reliable</span>
+                    <a href="#" class="dropdown-item"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                        Automations</a>
+                    <a href="#" class="dropdown-item"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
+                    <a href="#" class="dropdown-item"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="#" class="dropdown-item"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+
+                </div>
+            </div>
+
+            <!-- About US -->
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase transition-colors rounded-full no-underline">About
+                Us</a>
+
+            <!-- Invest -->
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase transition-colors rounded-full no-underline">
+                Invest</a>
+
+            <!-- Blog -->
+
+        </div>
+
+        <!-- Desktop CTA -->
+        <a href="#"
+            class="nav-cta-btn hidden lg:inline-flex items-center gap-2 px-5 py-2 text-xs font-bold rounded-xl transition-all shrink-0 no-underline"
+            style="font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.03em;">
+            <i class="fa-solid fa-lock text-[0.65rem]"></i> Contact us
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-toggle"
+            class="nav-toggle-btn lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl border transition-all cursor-pointer"
+            aria-label="Toggle menu" aria-expanded="false">
+            <span class="block w-5 h-0.5 bg-current transition-all duration-300"></span>
+            <span class="block w-5 h-0.5 bg-current mt-1.5 transition-all duration-300"></span>
+            <span class="block w-3.5 h-0.5 bg-current mt-1.5 ml-[3px] transition-all duration-300"></span>
+        </button>
+    </nav>
+        <!-- ═══ MOBILE OVERLAY MENU ═══ -->
+    <div id="mobile-menu" class="mobile-overlay">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 text-white/70 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+            aria-label="Close menu">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <div class="flex flex-col mt-16">
+            <!-- Home -->
+            <a href="#" class="mobile-nav-link">Home</a>
+            <div class="mobile-accordion">
+                <button class="mobile-nav-link w-full flex items-center justify-between" data-target="mobile-services">
+                    Services <i
+                        class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i>
+                </button>
+                <div id="mobile-services" class="mobile-dropdown-content">
+                    <span class="mobile-dropdown-label">RYBIX</span>
+                    <a href="#" class="mobile-sub-link"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                        & Automations</a>
+                    <a href="#" class="mobile-sub-link"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
+                    <a href="#" class="mobile-sub-link"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="#" class="mobile-sub-link"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+
+                </div>
+            </div>
+
+            <a href="#" class="mobile-nav-link">About Us</a>
+            <a href="#" class="mobile-nav-link">Invest</a>
+
+
+            <a href="#" class="mobile-nav-link">Contact</a>
+        </div>
+
+
+
+
+    </div>
+
+    
+    <main class="relative z-10">
+
+        <!-- ═══════════════════════════════════════════════════════════
+         1. HERO — Full viewport, massive type, dark gradient (Purple)
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="relative min-h-screen flex items-center overflow-hidden"
+            style="background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 25%, #2e1065 50%, #0a1628 75%, #0f172a 100%);">
+
+            <!-- Grid overlay -->
+            <div class="absolute inset-0 opacity-[0.06]"
+                style="background-size: 50px 50px; background-image: linear-gradient(to right, #8b5cf6 1px, transparent 1px), linear-gradient(to bottom, #8b5cf6 1px, transparent 1px);">
+            </div>
+
+            <!-- Decorative orbs (Purple) -->
+            <div class="absolute top-1/4 -left-32 w-[800px] h-[800px] rounded-full blur-[160px] pointer-events-none"
+                style="background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);"></div>
+            <div class="absolute bottom-0 -right-32 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
+                style="background: radial-gradient(circle, rgba(109,40,217,0.2) 0%, transparent 70%);"></div>
+            <div class="absolute top-1/2 left-1/3 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none"
+                style="background: radial-gradient(circle, rgba(250,204,21,0.08) 0%, transparent 70%);"></div>
+
+            <div class="container-site relative z-10" style="padding-top: 120px; padding-bottom: 80px;">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">
+
+                    <!-- LEFT: Typography -->
+                    <div class="lg:col-span-7">
+
+                        <!-- Status badge (Purple) -->
+                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1"
+                            style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-purple"></span>
+                            </span>
+                            <span
+                                class="font-heading text-[0.65rem] font-bold tracking-[0.25em] text-brand-purple uppercase">
+                                Secure / Reliable</span>
+                        </div>
+
+                        <!-- H1 — MASSIVE, aggressive typography -->
+                        <h1 class="font-heading leading-[0.85] mb-8 text-white"
+                            style="font-size: clamp(4rem, 8vw, 8rem); font-weight: 900; letter-spacing: -0.04em;">
+                            <span class="block hero-reveal hero-reveal-1">The Future</span>
+                            <span class="block brand-gradient-text hero-reveal hero-reveal-2"
+                                style="margin-left: 0.15em;">of Digital</span>
+                            <span class="block brand-gradient-text hero-reveal hero-reveal-3"
+                                style="margin-left: 0.4em;">Assets</span>
+                        </h1>
+
+                        <!-- Subtitle -->
+                        <p class="font-body text-slate-300 text-sm sm:text-xl lg:text-xl leading-relaxed mb-6 max-w-2xl hero-reveal hero-reveal-5"
+                            style="letter-spacing: 1px;">
+                            RYBIX is an innovative real estate technology ecosystem that integrates
+                            <span class="text-white font-bold">PROPERTY TOKENIZATION</span>,
+                            <span class="text-white font-bold">AUTOMATION SYSTEMS</span>
+                            and <span class="text-white font-bold">ADVANCED DIGITAL MARKETING</span>
+                        </p>
+
+                        <!-- Value props -->
+
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 mb-12 hero-reveal hero-reveal-7">
+                            <a href="#" class="btn-primary text-center text-lg px-10 py-5"
+                                style="box-shadow: 0 0 30px rgba(139,92,246,0.3);">
+                                <i class="fa-solid fa-globe"></i> Explore Ecosystem
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"
+                                class="btn-secondary text-center text-lg px-10 py-5"
+                                style="border-color: rgba(255,255,255,0.3); color: #ffffff;">
+                                <i class="fa-solid fa-shield-halved"></i> Invest with Security
+                            </a>
+                        </div>
+
+                        <!-- Trust badges -->
+                        <div class="flex flex-wrap items-center gap-5 sm:gap-8 hero-reveal hero-reveal-8">
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-coins text-xl text-brand-purple"></i>
+                                <span
+                                    class="font-body text-sm font-bold text-slate-400 tracking-wider uppercase">Tokenization</span>
+                            </div>
+                            <div class="h-5 w-px bg-slate-700"></div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-gears text-xl text-brand-yellow"></i>
+                                <span
+                                    class="font-body text-sm font-bold text-slate-400 tracking-wider uppercase">Products
+                                    & automation</span>
+                            </div>
+                            <div class="h-5 w-px bg-slate-700"></div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-house text-xl text-brand-deep"></i>
+                                <span class="font-body text-sm font-bold text-slate-400 tracking-wider uppercase">Real
+                                    Estate</span>
+                            </div>
+                            <div class="h-5 w-px bg-slate-700"></div>
+                            <div class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-bullhorn text-xl text-green-500"></i>
+                                <span
+                                    class="font-body text-sm font-bold text-slate-400 tracking-wider uppercase">Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Abstract geometric design (Purple) -->
+                    <div
+                        class="lg:col-span-5 relative flex items-center justify-center min-h-[300px] lg:min-h-[600px] mt-12 lg:mt-0">
+                        <div class="relative w-80 h-80 lg:w-[480px] lg:h-[480px]">
+                            <div
+                                class="absolute inset-0 border-2 border-dashed border-brand-purple/30 rounded-full animate-spin-slow">
+                            </div>
+                            <div class="absolute inset-8 border border-dashed border-brand-deep/25 rounded-full animate-spin-slow"
+                                style="animation-direction: reverse; animation-duration: 15s;"></div>
+                            <div class="absolute inset-16 border border-brand-yellow/20 rounded-full animate-spin-slow"
+                                style="animation-duration: 25s;"></div>
+                            <div class="absolute inset-20 bg-gradient-to-br from-brand-purple/20 via-brand-deep/15 to-brand-purple/8 backdrop-blur-sm rounded-full border border-brand-purple/30 shadow-2xl flex items-center justify-center animate-float"
+                                style="box-shadow: 0 0 60px rgba(139,92,246,0.2);">
+                                <i class="fa-solid fa-globe text-7xl lg:text-9xl brand-gradient-text"></i>
+                            </div>
+                            <div class="absolute -top-4 right-4 lg:-top-8 lg:right-0 w-16 h-16 lg:w-20 lg:h-20 rounded-xl shadow-xl border border-brand-purple/20 flex items-center justify-center animate-float"
+                                style="background: rgba(139,92,246,0.1); backdrop-filter: blur(10px); animation-delay: 1s;">
+                                <i class="fa-solid fa-cogs text-2xl lg:text-3xl text-brand-purple"></i>
+                            </div>
+                            <div class="absolute -bottom-2 left-0 lg:-bottom-6 lg:-left-8 w-14 h-14 lg:w-16 lg:h-16 rounded-xl shadow-xl border border-brand-deep/20 flex items-center justify-center animate-float"
+                                style="background: rgba(109,40,217,0.15); backdrop-filter: blur(10px); animation-delay: 2s;">
+                                <i class="fa-solid fa-bullhorn text-xl lg:text-2xl text-brand-deep"></i>
+                            </div>
+                            <div class="absolute top-4 -left-4 lg:top-8 lg:-left-8 w-12 h-12 lg:w-14 lg:h-14 rounded-xl shadow-xl border border-brand-yellow/20 flex items-center justify-center animate-float"
+                                style="background: rgba(250,204,21,0.1); backdrop-filter: blur(10px); animation-delay: 3s;">
+                                <i class="fa-solid fa-house text-lg lg:text-xl text-brand-yellow"></i>
+                            </div>
+                            <div class="absolute bottom-8 -right-2 lg:-bottom-4 lg:-right-6 w-12 h-12 lg:w-14 lg:h-14 rounded-xl shadow-xl border border-red-500/20 flex items-center justify-center animate-float"
+                                style="background: rgba(239,68,68,0.1); backdrop-filter: blur(10px); animation-delay: 1.5s;">
+                                <i class="fa-solid fa-shield-halved text-lg lg:text-xl text-red-400"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator hidden lg:flex" style="color: rgba(255,255,255,0.5);">
+                <i class="fa-solid fa-chevron-down text-lg mb-1"></i>
+                <span class="font-heading text-[0.6rem] tracking-[0.2em] uppercase">Scroll</span>
+            </div>
+        </section>
+        <!-- ═══════════════════════════════════════════════════════════
+         3. SERVICES — All services visible in one grid (Purple accents)
+         ═══════════════════════════════════════════════════════════ -->
+        <section id="services" class="section-padding bg-white">
+            <div class="container-site">
+
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <div
+                        class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl md:text-4xl font-bold text-brand-dark mb-4">Advanced
+                        Digital Services</h2>
+                    <p class="text-slate-600 md:text-[13px] max-w-2xl mx-auto leading-relaxed text-sm"
+                        style="letter-spacing: 1px;">
+                        Cutting-edge technology solutions designed to help businesses scale securely, optimize digital
+                        operations, and build future-ready infrastructure
+                    </p>
+                </div>
+
+                <!-- All Services Grid -->
+                <div id="carousel"
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory"
+                    style="display: flex; flex-wrap: nowrap; gap: 1.25rem; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; padding-bottom: 0.5rem; scrollbar-width: none; -ms-overflow-style: none;">
+                    <style>
+                        .grid::-webkit-scrollbar {
+                            display: none;
+                        }
+                    </style>
+                    <a href="#"
+                        class="card-item group block card p-6 no-underline snap-start shrink-0 w-[280px] sm:w-[300px] lg:w-[320px]"
+                        style="scroll-snap-align: start;">
+                        <div class="flex items-start gap-4 mb-3">
+                            <div class="shrink-0"
+                                style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:rgba(139,92,246,0.08);color:#8b5cf6;">
+                                <i class="fa-solid fa-cogs"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h4
+                                    class="font-heading text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-purple transition-colors leading-snug">
+                                    Products & Automation</h4>
+                                <span
+                                    class="text-[10px] font-heading font-semibold tracking-wider uppercase text-slate-400">Smart
+                                    Automation Suite</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Leverage AI-driven automation and
+                            intelligent bots to streamline operations, minimize errors, reduce processing time, and gain
+                            real-time control over key performance metrics through custom dashboards for data-driven
+                            strategic decision-making.</p>
+                        <span
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-purple group-hover:gap-2.5 transition-all duration-300">
+                            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+                    <a href="#"
+                        class="card-item group block card p-6 no-underline snap-start shrink-0 w-[280px] sm:w-[300px] lg:w-[320px]"
+                        style="scroll-snap-align: start;">
+                        <div class="flex items-start gap-4 mb-3">
+                            <div class="shrink-0"
+                                style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:rgba(109,40,217,0.08);color:#6d28d9;">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h4
+                                    class="font-heading text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-purple transition-colors leading-snug">
+                                    Tokenization</h4>
+                                <span
+                                    class="text-[10px] font-heading font-semibold tracking-wider uppercase text-slate-400">Real
+                                    Estate Tokenization</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">A real estate tokenization platform
+                            enabling fractional ownership of global properties through secure digital assets, with full
+                            transparency and scalable investment opportunities for global investors.</p>
+                        <span
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-purple group-hover:gap-2.5 transition-all duration-300">
+                            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+                    <a href="#"
+                        class="card-item group block card p-6 no-underline snap-start shrink-0 w-[280px] sm:w-[300px] lg:w-[320px]"
+                        style="scroll-snap-align: start;">
+                        <div class="flex items-start gap-4 mb-3">
+                            <div class="shrink-0"
+                                style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:rgba(109,40,217,0.08);color:#6d28d9;">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h4
+                                    class="font-heading text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-purple transition-colors leading-snug">
+                                    Real Estate</h4>
+                                <span
+                                    class="text-[10px] font-heading font-semibold tracking-wider uppercase text-slate-400">US
+                                    Market Opportunities</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Gain access to high-potential real estate
+                            opportunities across the United States with advanced market analysis, full legal compliance,
+                            and structured investment frameworks designed for long-term appreciation and sustainable
+                            portfolio growth.</p>
+                        <span
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-purple group-hover:gap-2.5 transition-all duration-300">
+                            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+                    <a href="#"
+                        class="card-item group block card p-6 no-underline snap-start shrink-0 w-[280px] sm:w-[300px] lg:w-[320px]"
+                        style="scroll-snap-align: start;">
+                        <div class="flex items-start gap-4 mb-3">
+                            <div class="shrink-0"
+                                style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:rgba(139,92,246,0.08);color:#8b5cf6;">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <h4
+                                    class="font-heading text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-purple transition-colors leading-snug">
+                                    Marketing</h4>
+                                <span
+                                    class="text-[10px] font-heading font-semibold tracking-wider uppercase text-slate-400">Investment
+                                    Insights</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Boost your brand with digital marketing,
+                            Use AI-powered automation and targeted placement across TV, radio, print, and digital media
+                            to boost brand visibility, attract the right audience, and generate high-quality leads
+                            efficiently.</p>
+                        <span
+                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-purple group-hover:gap-2.5 transition-all duration-300">
+                            Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div id="dots"
+                    style="display:flex;justify-content:center;align-items:center;gap:0.65rem;margin-top:1.5rem;"></div>
+            </div>
+
+
+
+            <section id="services" class="section-padding bg-white">
+                <div class="container-site">
+
+                    <!-- Section Header -->
+                    <div class="text-center">
+                        <div
+                            class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                        </div>
+                        <h2 class="font-heading text-3xl sm:text-4xl md:text-4xl font-bold text-brand-dark mb-4">
+                            Institutional-Grade Protection</h2>
+                        <p class="text-slate-600 md:text-[13px] max-w-2xl mx-auto leading-relaxed text-sm"
+                            style="letter-spacing: 1px;">
+                            Enterprise-level security architecture designed to safeguard investor assets, sensitive
+                            information and operational systems at every stage.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" style="margin-top: 50px;">
+
+                            <article
+                                class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                style="border-left: 4px solid #8b5cf6;">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-shield-halved text-xl text-brand-purple"></i>
+                                    </div>
+                                    <h3 class="font-heading text-xl font-bold text-brand-dark pt-1">RiskGuard
+                                    </h3>
+                                </div>
+                                <p class="text-slate-500 text-base leading-relaxed">Compliance-focused cybersecurity
+                                    frameworks ensuring secure digital operations, data privacy and trusted platform
+                                    performance.</p>
+                            </article>
+
+                            <article
+                                class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                style="border-left: 4px solid #6d28d9;">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-brand-deep/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-lock text-xl text-brand-deep"></i>
+                                    </div>
+                                    <h3 class="font-heading text-xl font-bold text-brand-dark pt-1">Integrity
+                                    </h3>
+                                </div>
+                                <p class="text-slate-500 text-base leading-relaxed">Multi-layer security systems built
+                                    to protect transactions, minimize risk exposure and strengthen investor confidence.
+                                </p>
+                            </article>
+
+                            <article
+                                class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                style="border-left: 4px solid #facc15;">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-server text-xl text-brand-yellow"></i>
+                                    </div>
+                                    <h3 class="font-heading text-xl font-bold text-brand-dark pt-1">Reliability
+                                    </h3>
+                                </div>
+                                <p class="text-slate-500 text-base leading-relaxed">Encrypted infrastructure with
+                                    continuous monitoring and institutional-level access controls for maximum platform
+                                    reliability and protection.</p>
+                            </article>
+
+                            <article
+                                class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                                style="border-left: 4px solid #22c55e;">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-chart-line text-xl text-green-500"></i>
+                                    </div>
+                                    <h3 class="font-heading text-xl font-bold text-brand-dark pt-1">Investor Trust
+                                    </h3>
+                                </div>
+                                <p class="text-slate-500 text-base leading-relaxed">Security-first operational standards
+                                    aligned with regulatory requirements to strengthen transparency, trust and long-term
+                                    platform credibility.</p>
+                            </article>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+        </section>
+
+        <!--Footer section-->
+
+        <footer class="bg-slate-900 text-slate-400 relative overflow-hidden pt-16 pb-28 lg:pb-0">
+
+            <!-- Gradient top border — purple → yellow → deep purple -->
+            <div
+                class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
+            </div>
+
+            <!-- Subtle ambient glow -->
+            <div
+                class="absolute top-0 left-1/4 w-96 h-48 bg-brand-purple/5 rounded-full blur-[100px] pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 right-1/4 w-72 h-36 bg-brand-deep/5 rounded-full blur-[80px] pointer-events-none">
+            </div>
+
+            <!-- ── Main Footer Grid ────────────────────────────────────── -->
+            <div class="container-site pb-14">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+
+                    <!-- ── Column 1: Brand ──────────────────────────────── -->
+                    <div>
+                        <!-- Logo -->
+                        <a href="/" class="flex items-center gap-2.5 no-underline mb-6">
+                            <img src="./images//logo.png" alt="Hiderox" class="h-9 w-9 rounded-lg">
+                            <span class="font-heading text-xl font-bold tracking-wider text-white">RYBIX
+                        </a>
+
+                        <!-- Brand description -->
+                        <p class="font-body text-sm leading-relaxed mb-8 text-slate-500">
+                            RYBIX is an innovative real estate technology ecosystem that integrates PROPERTY
+                            TOKENIZATION, AUTOMATION SYSTEMS and ADVANCED DIGITAL MARKETING
+                        </p>
+
+                        <!-- Social links -->
+
+                    </div>
+
+                    <!-- ── Column 2: Navigation ─────────────────────────── -->
+                    <div>
+                        <h4 class="font-heading text-xs font-semibold tracking-[0.2em] text-white uppercase mb-6">
+                            Navigation
+                        </h4>
+                        <ul class="space-y-3.5 list-none">
+                            <li><a href="#" class="footer-link">Services</a></li>
+                            <li><a href="#" class="footer-link">Solutions</a></li>
+                            <li><a href="#" class="footer-link">About Us</a></li>
+                            <li><a href="#" class="footer-link">Invest</a></li>
+                            <li><a href="#" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Column 3: Legal ──────────────────────────────── -->
+                    <div>
+                        <h4 class="font-heading text-xs font-semibold tracking-[0.2em] text-white uppercase mb-6">Legal
+                        </h4>
+                        <ul class="space-y-3.5 list-none">
+                            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                            <li><a href="#" class="footer-link">Terms of Service</a></li>
+
+                        </ul>
+                    </div>
+
+                    <!-- ── Column 4: Secure Channels ────────────────────── -->
+                    <div>
+                        <h4 class="font-heading text-xs font-semibold tracking-[0.2em] text-white uppercase mb-6">Secure
+                            Channels</h4>
+                        <ul class="space-y-3.5 list-none">
+
+
+                            <li>
+                                <a href="#" class="footer-link inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-envelope text-brand-purple text-sm"></i> Email
+                                </a>
+                            </li>
+
+
+                        </ul>
+
+                        <!-- Trust badge -->
+                        <div class="mt-8 p-4 rounded-xl border border-slate-700/40 bg-slate-800/20">
+                            <p class="text-xs text-slate-500 leading-relaxed font-body">
+                                <i class="fa-solid fa-shield-halved text-brand-purple mr-1.5"></i>
+                                All communications are end-to-end encrypted. We never share client data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── Bottom Bar ─────────────────────────────────────────── -->
+            <div class="border-t border-slate-800/60">
+                <div class="container-site py-6">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p class="text-xs text-slate-600 text-center sm:text-left font-body">
+                            &copy; 2026 RYBIX. All rights reserved. Built with
+                            <i class="fa-solid fa-shield-halved text-brand-purple mx-0.5"></i>
+                            privacy in mind.
+                        </p>
+                        <div class="flex items-center gap-4 text-xs text-slate-600 font-body">
+                            <a href="#" class="hover:text-slate-400 transition-colors">Privacy</a>
+                            <a href="#" class="hover:text-slate-400 transition-colors">Terms</a>
+                            <a href="#" class="hover:text-slate-400 transition-colors">Canary</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
