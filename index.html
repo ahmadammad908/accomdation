@@ -11,8 +11,6 @@
     <!-- Title -->
     <title>RYBIX - The Future of Digital Assets | Home</title>
     <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
-    <link rel="stylesheet" href="styles.css">
-    <!-- CSS -->
 
     <!-- Font Awesome (Optional) -->
     <link
@@ -66,6 +64,590 @@
             },
         };
     </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body.video-playing main {
+            opacity: 0;
+            transform: translateY(80px);
+            pointer-events: none;
+        }
+
+        body.video-finished main {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        main {
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Video Container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border: 4px solid rgba(139, 92, 246, 0.2);
+            border-top: 4px solid #8b5cf6;
+            border-right: 4px solid #facc15;
+            border-radius: 50%;
+            animation: spinLoader 0.9s linear infinite;
+            z-index: 10002;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        @keyframes spinLoader {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(16px);
+            padding: 10px 18px;
+            border-radius: 60px;
+            z-index: 10001;
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+
+        .video-controls.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: white;
+            font-size: 18px;
+        }
+
+        .control-btn:hover {
+            background: #8b5cf6;
+            transform: scale(1.05);
+        }
+
+        .skip-btn {
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            border: none;
+            padding: 8px 24px;
+            border-radius: 40px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skip-btn:hover {
+            transform: scale(1.02);
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+        }
+
+        .time-text {
+            color: white;
+            font-size: 13px;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .mute-badge {
+            position: absolute;
+            bottom: 100px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 12px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10001;
+            pointer-events: none;
+            font-family: 'Inter', sans-serif;
+            border-left: 3px solid #8b5cf6;
+            transition: opacity 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .video-controls {
+                bottom: 16px;
+                padding: 8px 12px;
+                gap: 8px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                max-width: 95vw;
+                scrollbar-width: none;
+            }
+
+            .video-controls::-webkit-scrollbar {
+                display: none;
+            }
+
+            .control-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 13px;
+                flex-shrink: 0;
+            }
+
+            .skip-btn {
+                padding: 6px 12px;
+                font-size: 11px;
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+
+            .time-text {
+                font-size: 10px;
+                padding: 3px 6px;
+                flex-shrink: 0;
+            }
+        }
+
+        .video-loader.hidden {
+            display: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #0f172a;
+            line-height: 1.15;
+        }
+
+        ::selection {
+            background: rgba(139, 92, 246, 0.3);
+            color: #0f172a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container-site {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 0;
+            }
+        }
+
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradientMove 5s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .nav-dock {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-dock.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-color: rgba(226, 232, 240, 0.8);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-dock .nav-logo-text {
+            color: #ffffff;
+            transition: color 0.4s;
+        }
+
+        .nav-dock.scrolled .nav-logo-text {
+            color: #1e3a8a;
+        }
+
+        .nav-dock .nav-link-text {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.25s;
+            font-weight: 600;
+        }
+
+        .nav-dock.scrolled .nav-link-text {
+            color: #334155;
+        }
+
+        .nav-dock .nav-link-text:hover {
+            color: #8b5cf6;
+        }
+
+        .nav-dock .nav-cta-btn {
+            color: #ffffff;
+            border-color: rgba(139, 92, 246, 0.5);
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn:hover {
+            background: #8b5cf6;
+            color: #ffffff;
+        }
+
+        #mobile-toggle {
+            background: rgba(139, 92, 246, 0.85) !important;
+            border: 1px solid rgba(139, 92, 246, 0.5) !important;
+            backdrop-filter: blur(4px);
+        }
+
+        #mobile-toggle span {
+            background-color: #ffffff !important;
+        }
+
+        .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            min-width: 260px;
+        }
+
+        .dropdown-label {
+            display: block;
+            padding: 8px 16px 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #334155;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .dropdown-item:hover {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .dropdown-parent {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown-parent:hover .dropdown-menu,
+        .dropdown-parent.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            background: transparent;
+            color: #8b5cf6;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #facc15);
+            border-radius: 2px;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-link:hover {
+            color: #8b5cf6;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: linear-gradient(160deg, #0f172a, #1e1b4b);
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-overlay.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 0.75rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #8b5cf6;
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content.open {
+            max-height: 600px;
+        }
+
+        .mobile-dropdown-label {
+            display: block;
+            padding: 0.5rem 0 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .mobile-sub-link {
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-sub-link:hover {
+            color: #8b5cf6;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-reveal {
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .hero-reveal-1 {
+            animation-delay: 0s;
+        }
+
+        .hero-reveal-2 {
+            animation-delay: 0.08s;
+        }
+
+        .hero-reveal-3 {
+            animation-delay: 0.16s;
+        }
+
+        .hero-reveal-4 {
+            animation-delay: 0.24s;
+        }
+
+        .hero-reveal-5 {
+            animation-delay: 0.32s;
+        }
+
+        .hero-reveal-6 {
+            animation-delay: 0.4s;
+        }
+
+        .hero-reveal-7 {
+            animation-delay: 0.48s;
+        }
+
+        .hero-reveal-8 {
+            animation-delay: 0.56s;
+        }
+
+        .grid-custom-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 
 </head>
 
@@ -116,14 +698,15 @@
             <a href="#"
                 class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Home</a>
             <div class="dropdown-parent relative">
-                <a href="#"
+                <a href="./service.html"
                     class="nav-link-text flex items-center gap-1 px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Services
                     <i class="fa-solid fa-chevron-down text-[0.6rem] opacity-60"></i></a>
                 <div class="dropdown-menu">
                     <span class="dropdown-label">Secure & Reliable</span>
-                    <a href="#" class="dropdown-item"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                    <a href="./Products&Automations.html" class="dropdown-item"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
                         Automations</a>
-                    <a href="#" class="dropdown-item"><i
+                    <a href="./tokenization.html" class="dropdown-item"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
                     <a href="#" class="dropdown-item"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
                         Estate</a>
@@ -131,7 +714,7 @@
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
                 </div>
             </div>
-            <a href="#"
+            <a href="./about.html"
                 class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">About
                 Us</a>
             <a href="#"
@@ -162,9 +745,10 @@
                         class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i></button>
                 <div id="mobile-services" class="mobile-dropdown-content">
                     <span class="mobile-dropdown-label">RYBIX</span>
-                    <a href="#" class="mobile-sub-link"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                    <a href="./Products&Automations.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
                         & Automations</a>
-                    <a href="#" class="mobile-sub-link"><i
+                    <a href="./tokenization.html" class="mobile-sub-link"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
                     <a href="#" class="mobile-sub-link"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
                         Estate</a>
@@ -172,7 +756,7 @@
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
                 </div>
             </div>
-            <a href="#" class="mobile-nav-link">About Us</a>
+            <a href="./about.html" class="mobile-nav-link">About Us</a>
             <a href="#" class="mobile-nav-link">Invest</a>
             <a href="#" class="mobile-nav-link">Contact</a>
         </div>
@@ -180,39 +764,71 @@
 
 
     <main class="relative z-10">
-                <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center overflow-hidden" style="background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 25%, #2e1065 50%, #0a1628 75%, #0f172a 100%);">
-            <div class="absolute inset-0 opacity-[0.06]" style="background-size: 50px 50px; background-image: linear-gradient(to right, #8b5cf6 1px, transparent 1px), linear-gradient(to bottom, #8b5cf6 1px, transparent 1px);"></div>
-            <div class="absolute top-1/4 -left-32 w-[800px] h-[800px] rounded-full blur-[160px] pointer-events-none" style="background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);"></div>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center overflow-hidden"
+            style="background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 25%, #2e1065 50%, #0a1628 75%, #0f172a 100%);">
+            <div class="absolute inset-0 opacity-[0.06]"
+                style="background-size: 50px 50px; background-image: linear-gradient(to right, #8b5cf6 1px, transparent 1px), linear-gradient(to bottom, #8b5cf6 1px, transparent 1px);">
+            </div>
+            <div class="absolute top-1/4 -left-32 w-[800px] h-[800px] rounded-full blur-[160px] pointer-events-none"
+                style="background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);"></div>
             <div class="container-site relative z-10" style="padding-top: 120px; padding-bottom: 80px;">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7">
-                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
-                            <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-purple"></span></span>
-                            <span class="font-heading text-[0.65rem] font-bold tracking-[0.25em] text-brand-purple uppercase">Secure / Reliable</span>
+                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1"
+                            style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
+                            <span class="relative flex h-2.5 w-2.5"><span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span><span
+                                    class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-purple"></span></span>
+                            <span
+                                class="font-heading text-[0.65rem] font-bold tracking-[0.25em] text-brand-purple uppercase">Secure
+                                / Reliable</span>
                         </div>
-                        <h1 class="font-heading leading-[0.85] mb-8 text-white" style="font-size: clamp(4rem, 8vw, 8rem); font-weight: 900; letter-spacing: -0.04em;">
+                        <h1 class="font-heading leading-[0.85] mb-8 text-white"
+                            style="font-size: clamp(4rem, 8vw, 8rem); font-weight: 900; letter-spacing: -0.04em;">
                             <span class="block hero-reveal hero-reveal-1">The Future</span>
-                            <span class="block brand-gradient-text hero-reveal hero-reveal-2" style="margin-left: 0.15em;">of Digital</span>
-                            <span class="block brand-gradient-text hero-reveal hero-reveal-3" style="margin-left: 0.4em;">Assets</span>
+                            <span class="block brand-gradient-text hero-reveal hero-reveal-2"
+                                style="margin-left: 0.15em;">of Digital</span>
+                            <span class="block brand-gradient-text hero-reveal hero-reveal-3"
+                                style="margin-left: 0.4em;">Assets</span>
                         </h1>
-                        <p class="font-body text-slate-300 text-sm sm:text-xl leading-relaxed mb-6 max-w-2xl hero-reveal hero-reveal-5">RYBIX is an innovative real estate technology ecosystem that integrates <span class="text-white font-bold">PROPERTY TOKENIZATION</span>, <span class="text-white font-bold">AUTOMATION SYSTEMS</span> and <span class="text-white font-bold">ADVANCED DIGITAL MARKETING</span></p>
+                        <p
+                            class="font-body text-slate-300 text-sm sm:text-xl leading-relaxed mb-6 max-w-2xl hero-reveal hero-reveal-5">
+                            RYBIX is an innovative real estate technology ecosystem that integrates <span
+                                class="text-white font-bold">PROPERTY TOKENIZATION</span>, <span
+                                class="text-white font-bold">AUTOMATION SYSTEMS</span> and <span
+                                class="text-white font-bold">ADVANCED DIGITAL MARKETING</span></p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-12 hero-reveal hero-reveal-7">
-                            <a href="#" class="btn-primary text-center text-lg px-10 py-5"><i class="fa-solid fa-globe"></i> Explore Ecosystem</a>
-                            <a href="#" class="btn-secondary text-center text-lg px-10 py-5" style="border-color: rgba(255,255,255,0.3); color: #ffffff;"><i class="fa-solid fa-shield-halved"></i> Invest with Security</a>
+                            <a href="#" class="btn-primary text-center text-lg px-10 py-5"><i
+                                    class="fa-solid fa-globe"></i> Explore Ecosystem</a>
+                            <a href="#" class="btn-secondary text-center text-lg px-10 py-5"
+                                style="border-color: rgba(255,255,255,0.3); color: #ffffff;"><i
+                                    class="fa-solid fa-shield-halved"></i> Invest with Security</a>
                         </div>
                         <div class="flex flex-wrap items-center gap-5 sm:gap-8 hero-reveal hero-reveal-8">
-                            <div class="flex items-center gap-2.5"><i class="fa-solid fa-coins text-xl text-brand-purple"></i><span class="font-body text-sm font-bold text-slate-400 uppercase">Tokenization</span></div>
+                            <div class="flex items-center gap-2.5"><i
+                                    class="fa-solid fa-coins text-xl text-brand-purple"></i><span
+                                    class="font-body text-sm font-bold text-slate-400 uppercase">Tokenization</span>
+                            </div>
                             <div class="h-5 w-px bg-slate-700"></div>
-                            <div class="flex items-center gap-2.5"><i class="fa-solid fa-gears text-xl text-brand-yellow"></i><span class="font-body text-sm font-bold text-slate-400 uppercase">Products & automation</span></div>
+                            <div class="flex items-center gap-2.5"><i
+                                    class="fa-solid fa-gears text-xl text-brand-yellow"></i><span
+                                    class="font-body text-sm font-bold text-slate-400 uppercase">Products &
+                                    automation</span></div>
                             <div class="h-5 w-px bg-slate-700"></div>
-                            <div class="flex items-center gap-2.5"><i class="fa-solid fa-house text-xl text-brand-deep"></i><span class="font-body text-sm font-bold text-slate-400 uppercase">Real Estate</span></div>
+                            <div class="flex items-center gap-2.5"><i
+                                    class="fa-solid fa-house text-xl text-brand-deep"></i><span
+                                    class="font-body text-sm font-bold text-slate-400 uppercase">Real Estate</span>
+                            </div>
                             <div class="h-5 w-px bg-slate-700"></div>
-                            <div class="flex items-center gap-2.5"><i class="fa-solid fa-bullhorn text-xl text-green-500"></i><span class="font-body text-sm font-bold text-slate-400 uppercase">Marketing</span></div>
+                            <div class="flex items-center gap-2.5"><i
+                                    class="fa-solid fa-bullhorn text-xl text-green-500"></i><span
+                                    class="font-body text-sm font-bold text-slate-400 uppercase">Marketing</span></div>
                         </div>
                     </div>
-                    <div class="lg:col-span-5 relative flex items-center justify-center min-h-[300px] lg:min-h-[600px] mt-12 lg:mt-0">
-                     <div class="relative w-80 h-80 lg:w-[480px] lg:h-[480px]">
+                    <div
+                        class="lg:col-span-5 relative flex items-center justify-center min-h-[300px] lg:min-h-[600px] mt-12 lg:mt-0">
+                        <div class="relative w-80 h-80 lg:w-[480px] lg:h-[480px]">
 
                             <!-- Rings -->
                             <div
@@ -329,9 +945,11 @@
                         <p class="text-sm text-slate-500"> Leverage AI-driven automation and intelligent bots to
                             streamline operations, minimize
                             errors, reduce processing time, and gain real-time control over key performance metrics
-                            through custom dashboards for data-driven strategic decision-making.</p><span
+                            through custom dashboards for data-driven strategic decision-making.</p><a href="./Products&Automations.html">
+                                <span
                             class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
                             More →</span>
+                            </a>
                     </div>
                     <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
                         <div class="flex items-start gap-4 mb-3">
@@ -345,9 +963,9 @@
                         <p class="text-sm text-slate-500">A real estate tokenization platform enabling fractional
                             ownership of global properties
                             through secure digital assets, with full transparency and scalable investment opportunities
-                            for global investors.</p><span
+                            for global investors.</p><a href="./tokenization.html"><span
                             class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                            More →</span>
+                            More →</span></a>
                     </div>
                     <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
                         <div class="flex items-start gap-4 mb-3">
@@ -371,10 +989,11 @@
                                     class="fa-solid fa-bullhorn text-brand-purple"></i></div>
                             <div>
                                 <h4 class="font-heading font-bold">Marketing</h4><span
-                                    class="text-[10px] uppercase text-slate-400">  Investment Insights</span>
+                                    class="text-[10px] uppercase text-slate-400"> Investment Insights</span>
                             </div>
                         </div>
-                        <p class="text-sm text-slate-500">  Boost your brand with digital marketing, Use AI-powered automation and targeted placement
+                        <p class="text-sm text-slate-500"> Boost your brand with digital marketing, Use AI-powered
+                            automation and targeted placement
                             across TV, radio, print, and digital media to boost brand visibility, attract the right
                             audience, and generate high-quality leads efficiently.</p><span
                             class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
@@ -394,7 +1013,8 @@
                     </div>
                     <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-dark mb-4">Institutional-Grade
                         Protection</h2>
-                    <p class="text-slate-600 max-w-2xl mx-auto mb-12">Enterprise-level security architecture designed to safeguard investor assets, sensitive information and operational systems at every stage.</p>
+                    <p class="text-slate-600 max-w-2xl mx-auto mb-12">Enterprise-level security architecture designed to
+                        safeguard investor assets, sensitive information and operational systems at every stage.</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div
                             class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-brand-purple">
@@ -403,7 +1023,8 @@
                                         class="fa-solid fa-shield-halved text-brand-purple text-xl"></i></div>
                                 <h3 class="font-heading text-xl font-bold">RiskGuard</h3>
                             </div>
-                            <p class="text-slate-500">Compliance-focused cybersecurity frameworks ensuring secure digital operations, data privacy and trusted platform performance.</p>
+                            <p class="text-slate-500">Compliance-focused cybersecurity frameworks ensuring secure
+                                digital operations, data privacy and trusted platform performance.</p>
                         </div>
                         <div
                             class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-brand-deep">
@@ -412,7 +1033,8 @@
                                         class="fa-solid fa-lock text-brand-deep text-xl"></i></div>
                                 <h3 class="font-heading text-xl font-bold">Integrity</h3>
                             </div>
-                            <p class="text-slate-500">Multi-layer security systems built to protect transactions, minimize risk exposure and strengthen investor confidence.</p>
+                            <p class="text-slate-500">Multi-layer security systems built to protect transactions,
+                                minimize risk exposure and strengthen investor confidence.</p>
                         </div>
                         <div
                             class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-brand-yellow">
@@ -421,7 +1043,8 @@
                                         class="fa-solid fa-server text-brand-yellow text-xl"></i></div>
                                 <h3 class="font-heading text-xl font-bold">Reliability</h3>
                             </div>
-                            <p class="text-slate-500">Encrypted infrastructure with continuous monitoring and institutional-level access controls for maximum platform reliability and protection.</p>
+                            <p class="text-slate-500">Encrypted infrastructure with continuous monitoring and
+                                institutional-level access controls for maximum platform reliability and protection.</p>
                         </div>
                         <div
                             class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-green-500">
@@ -430,7 +1053,8 @@
                                         class="fa-solid fa-chart-line text-green-500 text-xl"></i></div>
                                 <h3 class="font-heading text-xl font-bold">Investor Trust</h3>
                             </div>
-                            <p class="text-slate-500">Security-first operational standards aligned with regulatory requirements to strengthen transparency, trust and long-term platform credibility.</p>
+                            <p class="text-slate-500">Security-first operational standards aligned with regulatory
+                                requirements to strengthen transparency, trust and long-term platform credibility.</p>
                         </div>
                     </div>
                 </div>
@@ -485,6 +1109,278 @@
         </footer>
     </main>
     <!-- JavaScript -->
-<script src="script.js"></script>
+    <script>
+        (function () {
+            const video = document.getElementById('introVideo');
+            const loader = document.getElementById('videoLoader');
+            const controlsBar = document.getElementById('controlsBar');
+            const muteBadge = document.getElementById('muteBadge');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const muteBtn = document.getElementById('muteBtn');
+            const timeDisplay = document.getElementById('timeDisplay');
+            const skipBtn = document.getElementById('skipBtn');
+            const container = document.getElementById('videoContainer');
+            let previousVolume = 0.5;
+            let controlsVisible = false;
+
+            // --- FIX: Start with muted to allow autoplay ---
+            video.muted = true;      // MUST be true for autoplay to work
+            video.volume = 0.5;      // Default volume will apply when unmuted
+
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return "00:00";
+                const m = Math.floor(seconds / 60);
+                const s = Math.floor(seconds % 60);
+                return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            }
+
+            function updateTime() {
+                if (video.duration) {
+                    timeDisplay.textContent =
+                        `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+                }
+            }
+
+            function hideLoader() {
+                loader.style.opacity = "0";
+                setTimeout(() => loader.style.display = "none", 400);
+                if (!controlsVisible) {
+                    controlsBar.classList.add('visible');
+                    controlsVisible = true;
+                }
+            }
+
+            video.addEventListener('canplaythrough', hideLoader);
+            video.addEventListener('playing', hideLoader);
+            setTimeout(() => { if (video.currentTime > 0) hideLoader(); }, 2000);
+            video.addEventListener('timeupdate', updateTime);
+            video.addEventListener('loadedmetadata', updateTime);
+
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    video.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+
+            // --- Mute button logic (video starts muted, so show badge) ---
+            muteBtn.addEventListener('click', () => {
+                if (video.muted) {
+                    // Unmute: restore previous volume
+                    video.muted = false;
+                    video.volume = previousVolume;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    muteBadge.style.display = "none";
+                } else {
+                    // Mute: save current volume, set to 0
+                    previousVolume = video.volume || 0.5;
+                    video.muted = true;
+                    video.volume = 0;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    muteBadge.style.display = "flex";
+                }
+            });
+
+            // --- Initial state: muted, show badge, mute button icon ---
+            muteBadge.style.display = "flex";      // Show because video starts muted
+            muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';  // Show mute icon
+
+            function endIntro() {
+                container.style.transition = "opacity 0.6s ease";
+                container.style.opacity = "0";
+                document.body.classList.remove("video-playing");
+                document.body.classList.add("video-finished");
+                setTimeout(() => {
+                    container.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }, 600);
+            }
+
+            skipBtn.addEventListener('click', endIntro);
+            video.addEventListener('ended', endIntro);
+
+            // Attempt to play - now it WILL work because video is muted
+            video.play().catch(e => console.log("Autoplay prevented:", e));
+        })();
+
+        // Carousel logic
+        const carousel = document.getElementById('carousel');
+        const dotsEl = document.getElementById('dots');
+        const cards = Array.from(carousel.querySelectorAll('.snap-start'));
+        let current = 0, autoTimer = null;
+
+        carousel.style.scrollSnapType = 'x mandatory';
+        carousel.style.scrollBehavior = 'smooth';
+
+        function buildDots() {
+            dotsEl.innerHTML = '';
+
+            const isMobile = window.innerWidth <= 768;
+            const maxDots = isMobile ? 4 : 2;
+            const step = Math.ceil(cards.length / maxDots);
+
+            const limitedCards = [];
+
+            for (let i = 0; i < cards.length; i += step) {
+                limitedCards.push(i);
+                if (limitedCards.length === maxDots) break;
+            }
+
+            limitedCards.forEach((cardIndex, i) => {
+                const btn = document.createElement('button');
+
+                btn.style.cssText = `
+                border:none;
+                cursor:pointer;
+                transition:all 0.3s;
+                background:${i === 0 ? '#8b5cf6' : '#cbd5e1'};
+                border-radius:${i === 0 ? '20px' : '50%'};
+                width:${i === 0 ? '26px' : '8px'};
+                height:8px;
+                opacity:${i === 0 ? '1' : '0.6'};
+            `;
+
+                btn.addEventListener('click', () => {
+                    goTo(cardIndex);
+                    resetAuto();
+                });
+
+                dotsEl.appendChild(btn);
+            });
+        }
+
+        function updateDots(idx) {
+            const btns = dotsEl.querySelectorAll('button');
+            btns.forEach((btn, i) => {
+                if (i === idx) {
+                    btn.style.background = '#8b5cf6';
+                    btn.style.width = '26px';
+                    btn.style.borderRadius = '20px';
+                    btn.style.opacity = '1';
+                } else {
+                    btn.style.background = '#cbd5e1';
+                    btn.style.width = '8px';
+                    btn.style.borderRadius = '50%';
+                    btn.style.opacity = '0.6';
+                }
+            });
+        }
+
+        function goTo(idx) {
+            current = idx;
+            const paddingLeft = parseInt(getComputedStyle(carousel).paddingLeft) || 0;
+            carousel.scrollTo({
+                left: cards[idx].offsetLeft - paddingLeft,
+                behavior: 'smooth'
+            });
+            updateDots(idx);
+        }
+
+        function next() {
+            goTo((current + 1) % cards.length);
+        }
+
+        function resetAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => next(), 3500);
+        }
+
+        buildDots();
+        resetAuto();
+
+        let scrollTimeout;
+
+        carousel.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                let closest = 0, minDist = Infinity;
+                const paddingLeft = parseInt(getComputedStyle(carousel).paddingLeft) || 0;
+
+                cards.forEach((card, idx) => {
+                    const dist = Math.abs((card.offsetLeft - paddingLeft) - carousel.scrollLeft);
+                    if (dist < minDist) {
+                        minDist = dist;
+                        closest = idx;
+                    }
+                });
+
+                if (closest !== current) {
+                    current = closest;
+                    updateDots(current);
+                }
+            }, 100);
+        });
+
+        carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        carousel.addEventListener('mouseleave', resetAuto);
+        window.addEventListener('resize', () => buildDots());
+
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+
+        mobileMenu.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', closeMenu)
+        );
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        // Accordion
+        document.querySelectorAll('.mobile-accordion > button').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = document.getElementById(this.getAttribute('data-target'));
+                const icon = this.querySelector('i');
+
+                if (target) {
+                    const isOpen = target.classList.contains('open');
+
+                    document.querySelectorAll('.mobile-dropdown-content')
+                        .forEach(el => el.classList.remove('open'));
+
+                    document.querySelectorAll('.mobile-accordion > button i')
+                        .forEach(ic => ic.style.transform = 'rotate(0deg)');
+
+                    if (!isOpen) {
+                        target.classList.add('open');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+            });
+        });
+
+        // Nav scroll effect
+        const mainNav = document.getElementById('main-nav');
+
+        function updateNav() {
+            if (window.pageYOffset > 60) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', updateNav);
+        updateNav();
+    </script>
 </body>
+
 </html>

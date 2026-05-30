@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Our Services | Hiderox</title>
+
+    <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS CDN + Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#8b5cf6',
+                        'brand-yellow': '#facc15',
+                        'brand-deep': '#6d28d9',
+                        'brand-dark': '#0f172a',
+                        'text-main': '#1a1a2e',
+                        'text-muted': '#64748b',
+                        'text-dim': '#475569',
+                        'bg': '#fafbfc',
+                        'surface': '#ffffff',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                        body: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 20s linear infinite',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        spinSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CUSTOM CSS — v3.0 COMPLETE REBUILD
+         Bold, aggressive, modern. ALL text visible by default.
+         ═══════════════════════════════════════════════════════════ -->
+    <style>
+        /* ═══ BASE ═══ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #fafbfc;
+            color: #1a1a2e;
+            font-size: 16px;
+            line-height: 1.75;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #0f172a;
+            line-height: 1.15;
+        }
+
+        ::selection {
+            background: rgba(6, 182, 212, 0.3);
+            color: #0f172a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container-site {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 0;
+            }
+        }
+
+        /* ═══ BRAND GRADIENT TEXT ═══ */
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            background-size: 200% auto;
+            animation: gradientMove 5s linear infinite;
+        }
+
+
+        /* ═══ PAGE HERO — Dark dramatic gradient ═══ */
+        .page-hero {
+            position: relative;
+            background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 25%, #2e1065 50%, #0a1628 75%, #0f172a 100%);
+            padding: 140px 0 80px;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-size: 50px 50px;
+            background-image:
+                linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #facc15, #1e3a8a);
+        }
+
+        .page-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .page-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: #06b6d4;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 9999px;
+        }
+
+        .nav-dock {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-dock.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-color: rgba(226, 232, 240, 0.8);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-dock .nav-logo-text {
+            color: #ffffff;
+            transition: color 0.4s;
+        }
+
+        .nav-dock.scrolled .nav-logo-text {
+            color: #1e3a8a;
+        }
+
+        .nav-dock .nav-link-text {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.25s;
+            font-weight: 600;
+        }
+
+        .nav-dock.scrolled .nav-link-text {
+            color: #334155;
+        }
+
+        .nav-dock .nav-link-text:hover {
+            color: #8b5cf6;
+        }
+
+        .nav-dock .nav-cta-btn {
+            color: #ffffff;
+            border-color: rgba(139, 92, 246, 0.5);
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn:hover {
+            background: #8b5cf6;
+            color: #ffffff;
+        }
+
+        #mobile-toggle {
+            background: rgba(139, 92, 246, 0.85) !important;
+            border: 1px solid rgba(139, 92, 246, 0.5) !important;
+            backdrop-filter: blur(4px);
+        }
+
+        #mobile-toggle span {
+            background-color: #ffffff !important;
+        }
+
+        .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            min-width: 260px;
+        }
+
+        .dropdown-label {
+            display: block;
+            padding: 8px 16px 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #334155;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .dropdown-item:hover {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .dropdown-parent {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown-parent:hover .dropdown-menu,
+        .dropdown-parent.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: linear-gradient(160deg, #0f172a, #1e1b4b);
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-overlay.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 0.75rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #8b5cf6;
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content.open {
+            max-height: 600px;
+        }
+
+        .mobile-dropdown-label {
+            display: block;
+            padding: 0.5rem 0 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .mobile-sub-link {
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-sub-link:hover {
+            color: #8b5cf6;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-link:hover {
+            color: #8b5cf6;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .page-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .page-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease-out;
+        }
+
+        /* .accent-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #facc15);
+            border-radius: 2px;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav id="main-nav"
+        class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
+        <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
+            <img src="./images/logo.png" alt="RYBIX" class="h-9 w-10 rounded-lg"
+                onerror="this.src='https://placehold.co/40x40/8b5cf6/white?text=R'">
+            <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Home</a>
+            <div class="dropdown-parent relative">
+                <a href="./service.html"
+                    class="nav-link-text flex items-center gap-1 px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Services
+                    <i class="fa-solid fa-chevron-down text-[0.6rem] opacity-60"></i></a>
+                <div class="dropdown-menu">
+                    <span class="dropdown-label">Secure & Reliable</span>
+                    <a href="./Products&Automations.html" class="dropdown-item"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                        Automations</a>
+                    <a href="./tokenization.html" class="dropdown-item"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
+                    <a href="#" class="dropdown-item"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="#" class="dropdown-item"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+                </div>
+            </div>
+            <a href="./about.html"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">About
+                Us</a>
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Invest</a>
+        </div>
+        <a href="#"
+            class="nav-cta-btn hidden lg:inline-flex items-center gap-2 px-5 py-2 text-xs font-bold rounded-xl transition-all shrink-0"><i
+                class="fa-solid fa-lock text-[0.65rem]"></i> Contact us</a>
+        <button id="mobile-toggle"
+            class="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl border transition-all cursor-pointer"
+            aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current transition-all duration-300"></span>
+            <span class="block w-5 h-0.5 bg-current mt-1.5 transition-all duration-300"></span>
+            <span class="block w-3.5 h-0.5 bg-current mt-1.5 ml-[3px] transition-all duration-300"></span>
+        </button>
+    </nav>
+
+    <!-- ═══ MOBILE OVERLAY MENU ═══ -->
+    <div id="mobile-menu" class="mobile-overlay">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 text-white/70 hover:text-white"><i
+                class="fa-solid fa-xmark text-lg"></i></button>
+        <div class="flex flex-col mt-16">
+            <a href="#" class="mobile-nav-link">Home</a>
+            <div class="mobile-accordion">
+                <button class="mobile-nav-link w-full flex items-center justify-between"
+                    data-target="mobile-services">Services <i
+                        class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i></button>
+                <div id="mobile-services" class="mobile-dropdown-content">
+                    <span class="mobile-dropdown-label">RYBIX</span>
+                    <a href="./Products&Automations.html" class="mobile-sub-link"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                        & Automations</a>
+                    <a href="./tokenization.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
+                    <a href="#" class="mobile-sub-link"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="#" class="mobile-sub-link"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+                </div>
+            </div>
+            <a href="#" class="mobile-nav-link">About Us</a>
+            <a href="#" class="mobile-nav-link">Invest</a>
+            <a href="#" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <main id="page" class="relative z-10 page-enter">
+
+        <!-- HERO -->
+        <section class="page-hero">
+            <div class="container-site relative z-10 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1"
+                        style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
+                        <span class="relative flex h-2.5 w-2.5 items-center justify-center">
+                            <i class="fa-solid fa-building text-xs text-brand-purple"></i>
+                        </span>
+                        <span
+                            class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase ">Who
+                            We Are</span>
+                    </div>
+                    <h1
+                        class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
+                        About<span class="brand-gradient-text"> RYBIX</span>
+                    </h1>
+                    <p class="font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
+                        style="color: rgba(255,255,255,0.65);">
+                        RYBIX is a modern digital solutions company specializing in automation, tokenization, marketing,
+                        and advanced web technologies. We help businesses build smart, secure, and scalable systems
+                        using AI-driven automation and innovative digital strategies to improve efficiency, performance,
+                        and growth.
+
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding scroll-reveal">
+            <div class="container-site">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div
+                        class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-9">
+                    </div>
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mx-auto mb-8">
+                        <i class="fa-solid fa-bullseye text-3xl text-brand-purple"></i>
+                    </div>
+
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-dark mb-6">Our Mission</h2>
+
+                    <p class="text-base text-slate-600 leading-relaxed mb-6">
+                        Our mission is to empower businesses with cutting-edge digital solutions that combine
+                        automation, tokenization, marketing, and modern web technologies. We aim to simplify complex
+                        processes, improve efficiency, and enable companies to operate smarter and faster in a highly
+                        competitive digital landscape.
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        We are committed to delivering secure, scalable, and innovative systems that not only solve
+                        today’s challenges but also prepare businesses for future growth. Through continuous innovation
+                        and a client-focused approach, we strive to create long-term value, sustainable success, and
+                        meaningful digital transformation for every organization we work with.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Protection Section -->
+        <section class="section-padding ">
+            <div class="container-site">
+                <div class="text-center">
+                    <div
+                        class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-dark mb-4">Our Values</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto mb-12">We design enterprise-level security architectures
+                        that protect investor assets, sensitive data, and critical operational systems at every stage.
+                        Our approach ensures continuous monitoring, risk mitigation, and resilient infrastructure built
+                        for modern digital threats.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div
+                            class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-brand-purple">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center"><i
+                                        class="fa-solid fa-shield-halved text-brand-purple text-xl"></i></div>
+                                <h3 class="font-heading text-xl font-bold">RiskGuard</h3>
+                            </div>
+                            <p class="text-slate-500">Compliance-focused cybersecurity frameworks ensuring secure
+                                digital operations, data privacy and trusted platform performance.</p>
+                        </div>
+                        <div
+                            class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-brand-deep">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-xl bg-brand-deep/10 flex items-center justify-center"><i
+                                        class="fa-solid fa-lock text-brand-deep text-xl"></i></div>
+                                <h3 class="font-heading text-xl font-bold">Integrity</h3>
+                            </div>
+                            <p class="text-slate-500">Multi-layer security systems built to protect transactions,
+                                minimize risk exposure and strengthen investor confidence.</p>
+                        </div>
+                        <div
+                            class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-brand-yellow">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center"><i
+                                        class="fa-solid fa-server text-brand-yellow text-xl"></i></div>
+                                <h3 class="font-heading text-xl font-bold">Reliability</h3>
+                            </div>
+                            <p class="text-slate-500">Encrypted infrastructure with continuous monitoring and
+                                institutional-level access controls for maximum platform reliability and protection.</p>
+                        </div>
+                        <div
+                            class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition border-l-4 border-l-green-500">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center"><i
+                                        class="fa-solid fa-chart-line text-green-500 text-xl"></i></div>
+                                <h3 class="font-heading text-xl font-bold">Investor Trust</h3>
+                            </div>
+                            <p class="text-slate-500">Security-first operational standards aligned with regulatory
+                                requirements to strengthen transparency, trust and long-term platform credibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Team -->
+        <!-- Our Team -->
+        <section class="section-padding scroll-reveal">
+            <div class="container-site">
+
+                <div class="max-w-3xl mx-auto text-center">
+                    <div
+                        class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                    </div>
+
+                    <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark mb-4">
+                        OUR TEAM
+                    </h2>
+
+                    <p class="text-slate-600 text-base max-w-xl mx-auto leading-relaxed mb-12">
+                        Meet the team behind RYBIX: experts in digital assets, automation, tokenization and modern web
+                        systems.
+                    </p>
+                </div>
+
+                <!-- Team Cards -->
+                <!-- Team Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Member 1 -->
+                    <div class="card p-6 text-center group">
+                        <div
+                            class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-purple/20 mb-4 group-hover:border-brand-purple transition">
+                            <img src="https://ribix.mexicologico.com/static/img/team/nidia_camara.png" alt="Team Member"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <h3 class="font-heading text-xl font-bold text-brand-dark">Nidia Cámara</h3>
+                        <p class="text-brand-deep text-sm font-semibold mb-3">Specialist in mortgage auctions</p>
+
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t1">
+                           Specialist in real estate investment through mortgage auctions and in public relations, Nidia Cámara stands out for transparency, rigorous analysis, and close client support. Her work focuses on clarity at every stage, helping investors make informed, confident decisions.
+                        </p>
+
+                        <button
+                            onclick="openModal('Nidia Cámara','Specialist in mortgage auctions','Specialist in real estate investment through mortgage auctions and in public relations, Nidia Cámara stands out for transparency, rigorous analysis, and close client support. Her work focuses on clarity at every stage, helping investors make informed, confident decisions. She has built a nationwide network of alliances to offer opportunities with legal backing and real viability. Her philosophy is straightforward: understand the process before investing—reducing risk and building trust in a demanding market. Today, her brand represents a clearer, more strategic, and more trustworthy way to invest in real estate.')"
+                            class="mt-4 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-brand-purple to-brand-deep rounded-lg hover:opacity-90 transition">
+                            Read More
+                        </button>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="card p-6 text-center group">
+                        <div
+                            class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-deep/20 mb-4 group-hover:border-brand-deep transition">
+                            <img src="https://ribix.mexicologico.com/static/img/team/didier_cetina.png"
+                                alt="Team Member" class="w-full h-full object-cover">
+                        </div>
+
+                        <h3 class="font-heading text-xl font-bold text-brand-dark">Didier Cetina</h3>
+                        <p class="text-brand-deep text-sm font-semibold mb-3">Operations and logistics support</p>
+
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t2">
+                           Didier Cetina is a professional focused on logistics operations and support in corporate environments, with experience coordinating day-to-day , 
+                        </p>
+                        <button
+                            onclick="openModal('Didier Cetina','Operations and logistics support','Didier Cetina is a professional focused on logistics operations and support in corporate environments, with experience coordinating day-to-day activities, administrative oversight, and tracking critical processes. His agile learning and ability to adapt to different work dynamics let him integrate efficiently into multidisciplinary teams, bringing order, structure, and operational continuity. He stands out for his service mindset, customer care, and command of digital tools—executing tasks with precision and keeping operations aligned with business objectives. His profile combines responsibility, execution, and reliability: essential to strengthening internal processes and ensuring sound day-to-day management.')"
+                            class="mt-4 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-brand-purple to-brand-deep rounded-lg hover:opacity-90 transition">
+                            Read More
+                        </button>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="card p-6 text-center group">
+                        <div
+                            class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-purple/30 mb-4 group-hover:border-brand-deep transition">
+                            <img src="https://ribix.mexicologico.com/static/img/team/fernando_luna.png"
+                                alt="Team Member" class="w-full h-full object-cover">
+                        </div>
+
+                        <h3 class="font-heading text-xl font-bold text-brand-dark">Fernando Luna</h3>
+                        <p class="text-brand-deep text-sm font-semibold mb-3">Technology development specialist</p>
+
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t3">
+                            Fernando Luna is an integrated technology development specialist with more than 30 years of experience designing, implementing, and optimizing software, hardware, and automation solutions. His profile combines a strong systems-engineering foundation with advanced mastery of multiple
+                        </p>
+
+                        <button
+                            onclick="openModal('Fernando Luna','Technology development specialist','Fernando Luna is an integrated technology development specialist with more than 30 years of experience designing, implementing, and optimizing software, hardware, and automation solutions. His profile combines a strong systems-engineering foundation with advanced mastery of multiple programming languages, database architectures, and infrastructure—including virtualization and servers. Over his career he has led critical systems such as point-of-sale platforms, automation platforms, real-time monitoring solutions, and integration projects for retail, pharmaceutical, energy, and government sectors.')"
+                            class="mt-4 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-brand-purple to-brand-deep rounded-lg hover:opacity-90 transition">
+                            Read More
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
+        </div>
+        <div class="container-site">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div><a href="/" class="flex items-center gap-2.5 mb-6"><img src="./images/logo.png" alt="RYBIX"
+                            class="h-9 w-9 rounded-lg"
+                            onerror="this.src='https://placehold.co/36x36/8b5cf6/white?text=R'"><span
+                            class="font-heading text-xl font-bold text-white">RYBIX</span></a>
+                    <p class="text-sm text-slate-500">Innovative real estate technology ecosystem integrating
+                        tokenization, automation and digital marketing.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link">Services</a></li>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Invest</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Secure Channels</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link inline-flex items-center gap-2"><i
+                                    class="fa-solid fa-envelope text-brand-purple"></i> Email</a></li>
+                    </ul>
+                    <div class="mt-8 p-4 rounded-xl border border-slate-700/40">
+                        <p class="text-xs"><i class="fa-solid fa-shield-halved text-brand-purple mr-1"></i>
+                            End-to-end encrypted. Never share client data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800/60 mt-12 pt-6 text-center text-xs text-slate-600">&copy; 2026
+                RYBIX. All rights reserved. Built with privacy in mind.</div>
+        </div>
+    </footer>
+    <!-- MODAL -->
+    <div id="teamModal" class="fixed inset-0 hidden items-center justify-center z-[999]">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <!-- Box -->
+        <div class="relative bg-white w-[90%] max-w-lg rounded-2xl p-6 shadow-2xl animate-[fadeIn_0.3s_ease]">
+
+            <div class="flex items-start justify-between mb-4">
+                <div>
+                    <h3 id="modalName" class="text-xl font-bold text-brand-dark"></h3>
+                    <p id="modalRole" class="text-sm text-brand-purple font-semibold"></p>
+                </div>
+
+                <button onclick="closeModal()" class="text-slate-400 hover:text-red-500 text-xl">
+                    ✕
+                </button>
+            </div>
+
+            <p id="modalText" class="text-slate-600 text-sm leading-relaxed"></p>
+
+        </div>
+    </div>
+    <script>
+        function openModal(name, role, text) {
+            document.getElementById('teamModal').classList.remove('hidden');
+            document.getElementById('teamModal').classList.add('flex');
+
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('modalText').innerText = text;
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('teamModal').classList.add('hidden');
+            document.getElementById('teamModal').classList.remove('flex');
+
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('page').classList.add('page-enter-active');
+        });
+
+
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+
+        mobileMenu.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', closeMenu)
+        );
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        // Accordion
+        document.querySelectorAll('.mobile-accordion > button').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = document.getElementById(this.getAttribute('data-target'));
+                const icon = this.querySelector('i');
+
+                if (target) {
+                    const isOpen = target.classList.contains('open');
+
+                    document.querySelectorAll('.mobile-dropdown-content')
+                        .forEach(el => el.classList.remove('open'));
+
+                    document.querySelectorAll('.mobile-accordion > button i')
+                        .forEach(ic => ic.style.transform = 'rotate(0deg)');
+
+                    if (!isOpen) {
+                        target.classList.add('open');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+            });
+        });
+
+        // Nav scroll effect
+        const mainNav = document.getElementById('main-nav');
+
+        function updateNav() {
+            if (window.pageYOffset > 60) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', updateNav);
+        updateNav();
+    </script>
+
+</body>
+
+</html>

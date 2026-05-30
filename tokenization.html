@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Our Services | Products&Automations</title>
+
+    <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS CDN + Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#8b5cf6',
+                        'brand-yellow': '#facc15',
+                        'brand-deep': '#6d28d9',
+                        'brand-dark': '#0f172a',
+                        'text-main': '#1a1a2e',
+                        'text-muted': '#64748b',
+                        'text-dim': '#475569',
+                        'bg': '#fafbfc',
+                        'surface': '#ffffff',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                        body: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 20s linear infinite',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        spinSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CUSTOM CSS — v3.0 COMPLETE REBUILD
+         Bold, aggressive, modern. ALL text visible by default.
+         ═══════════════════════════════════════════════════════════ -->
+    <style>
+        /* ═══ BASE ═══ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #fafbfc;
+            color: #1a1a2e;
+            font-size: 16px;
+            line-height: 1.75;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #0f172a;
+            line-height: 1.15;
+        }
+
+        ::selection {
+            background: rgba(6, 182, 212, 0.3);
+            color: #0f172a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container-site {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 0;
+            }
+        }
+
+        /* ═══ BRAND GRADIENT TEXT ═══ */
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            background-size: 200% auto;
+            animation: gradientMove 5s linear infinite;
+        }
+
+
+        /* ═══ PAGE HERO — Dark dramatic gradient ═══ */
+        .page-hero {
+            position: relative;
+            background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 25%, #2e1065 50%, #0a1628 75%, #0f172a 100%);
+            padding: 140px 0 80px;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-size: 50px 50px;
+            background-image:
+                linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #facc15, #1e3a8a);
+        }
+
+        .page-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .page-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: #06b6d4;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 9999px;
+        }
+
+        .nav-dock {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-dock.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-color: rgba(226, 232, 240, 0.8);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-dock .nav-logo-text {
+            color: #ffffff;
+            transition: color 0.4s;
+        }
+
+        .nav-dock.scrolled .nav-logo-text {
+            color: #1e3a8a;
+        }
+
+        .nav-dock .nav-link-text {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.25s;
+            font-weight: 600;
+        }
+
+        .nav-dock.scrolled .nav-link-text {
+            color: #334155;
+        }
+
+        .nav-dock .nav-link-text:hover {
+            color: #8b5cf6;
+        }
+
+        .nav-dock .nav-cta-btn {
+            color: #ffffff;
+            border-color: rgba(139, 92, 246, 0.5);
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn:hover {
+            background: #8b5cf6;
+            color: #ffffff;
+        }
+
+        #mobile-toggle {
+            background: rgba(139, 92, 246, 0.85) !important;
+            border: 1px solid rgba(139, 92, 246, 0.5) !important;
+            backdrop-filter: blur(4px);
+        }
+
+        #mobile-toggle span {
+            background-color: #ffffff !important;
+        }
+
+        .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            min-width: 260px;
+        }
+
+        .dropdown-label {
+            display: block;
+            padding: 8px 16px 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #334155;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .dropdown-item:hover {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .dropdown-parent {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown-parent:hover .dropdown-menu,
+        .dropdown-parent.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: linear-gradient(160deg, #0f172a, #1e1b4b);
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-overlay.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 0.75rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #8b5cf6;
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content.open {
+            max-height: 600px;
+        }
+
+        .mobile-dropdown-label {
+            display: block;
+            padding: 0.5rem 0 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .mobile-sub-link {
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-sub-link:hover {
+            color: #8b5cf6;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-link:hover {
+            color: #8b5cf6;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .page-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .page-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease-out;
+        }
+
+        /* ═══ BUTTON SYSTEM ═══ */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* hover glow effect */
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(139, 92, 246, 0.35);
+        }
+
+        /* animated shine */
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.25),
+                    transparent);
+            transition: 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 14px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(139, 92, 246, 0.15);
+            transform: translateY(-2px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav id="main-nav"
+        class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
+        <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
+            <img src="./images/logo.png" alt="RYBIX" class="h-9 w-10 rounded-lg"
+                onerror="this.src='https://placehold.co/40x40/8b5cf6/white?text=R'">
+            <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Home</a>
+            <div class="dropdown-parent relative">
+                <a href="#"
+                    class="nav-link-text flex items-center gap-1 px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Services
+                    <i class="fa-solid fa-chevron-down text-[0.6rem] opacity-60"></i></a>
+                <div class="dropdown-menu">
+                    <span class="dropdown-label">Secure & Reliable</span>
+                    <a href="./Products&Automations.html" class="dropdown-item"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                        Automations</a>
+                    <a href="./tokenization.html" class="dropdown-item"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
+                    <a href="#" class="dropdown-item"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="#" class="dropdown-item"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+                </div>
+            </div>
+            <a href="./about.html"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">About
+                Us</a>
+            <a href="#"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Invest</a>
+        </div>
+        <a href="#"
+            class="nav-cta-btn hidden lg:inline-flex items-center gap-2 px-5 py-2 text-xs font-bold rounded-xl transition-all shrink-0"><i
+                class="fa-solid fa-lock text-[0.65rem]"></i> Contact us</a>
+        <button id="mobile-toggle"
+            class="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl border transition-all cursor-pointer"
+            aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current transition-all duration-300"></span>
+            <span class="block w-5 h-0.5 bg-current mt-1.5 transition-all duration-300"></span>
+            <span class="block w-3.5 h-0.5 bg-current mt-1.5 ml-[3px] transition-all duration-300"></span>
+        </button>
+    </nav>
+
+    <!-- ═══ MOBILE OVERLAY MENU ═══ -->
+    <div id="mobile-menu" class="mobile-overlay">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 text-white/70 hover:text-white"><i
+                class="fa-solid fa-xmark text-lg"></i></button>
+        <div class="flex flex-col mt-16">
+            <a href="./index.html" class="mobile-nav-link">Home</a>
+            <div class="mobile-accordion">
+                <button class="mobile-nav-link w-full flex items-center justify-between"
+                    data-target="mobile-services">Services <i
+                        class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i></button>
+                <div id="mobile-services" class="mobile-dropdown-content">
+                    <span class="mobile-dropdown-label">RYBIX</span>
+                    <a href="./Products&Automations.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                        & Automations</a>
+                    <a href="./tokenization.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
+                    <a href="#" class="mobile-sub-link"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="#" class="mobile-sub-link"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+                </div>
+            </div>
+            <a href="./about.html" class="mobile-nav-link">About Us</a>
+            <a href="#" class="mobile-nav-link">Invest</a>
+            <a href="#" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <main id="page" class="relative z-10 page-enter">
+
+        <!-- HERO -->
+        <section class="page-hero">
+            <div class="container-site relative z-10">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+
+                    <!-- ═══ LEFT CONTENT ═══ -->
+                    <div class="text-left">
+
+                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8"
+                            style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
+                            <span class="relative flex h-2.5 w-2.5 items-center justify-center">
+                                <i class="fa-solid fa-coins text-xs text-brand-purple"></i>
+                            </span>
+                            <span
+                                class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase">
+                                Real Estate Tokenization
+                            </span>
+                        </div>
+
+                        <h1
+                            class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
+                            Tokenization <span class="brand-gradient-text"></span>
+                        </h1>
+
+                        <p class="font-body text-lg sm:text-xl leading-relaxed max-w-2xl"
+                            style="color: rgba(255,255,255,0.65);">
+                            A real estate tokenization platform enabling fractional ownership of global properties
+                            through secure digital assets, with full transparency and scalable investment opportunities
+                            for global investors.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                            <a href="#" class="btn-primary">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                                Request Information
+                            </a>
+                            <a href="./service.html" class="btn-secondary">
+                                <i class="fa-solid fa-grid-2 text-sm"></i>
+                                View All Services
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- ═══ RIGHT SCROLL INDICATOR ═══ -->
+                    <!-- RIGHT ANIMATED INDICATOR (BIG VERSION) -->
+                    <!-- RIGHT HERO VISUAL (EXTRA BIG + SCROLL HINT) -->
+                    <!-- RIGHT HERO VISUAL -->
+                    <div class="hidden lg:flex flex-col justify-center items-center">
+
+                        <div class="relative w-[420px] h-[420px] flex items-center justify-center">
+
+                            <!-- Glow -->
+                            <div
+                                class="absolute w-full h-full rounded-full bg-brand-purple/10 blur-[120px] animate-pulse">
+                            </div>
+
+                            <!-- Orbit Rings -->
+                            <div
+                                class="absolute w-[360px] h-[360px] rounded-full border border-white/10 animate-spin-slow">
+                            </div>
+
+                            <div class="absolute w-[280px] h-[280px] rounded-full border border-brand-purple/20 animate-spin"
+                                style="animation-duration:14s;">
+                            </div>
+
+                            <div class="absolute w-[200px] h-[200px] rounded-full border border-white/10 animate-spin"
+                                style="animation-duration:10s;">
+                            </div>
+
+                            <!-- MAIN COIN -->
+                            <div
+                                class="relative w-[180px] h-[180px] rounded-full bg-gradient-to-br from-brand-purple via-purple-500 to-indigo-600 flex items-center justify-center shadow-[0_0_80px_rgba(139,92,246,0.45)]">
+
+                                <i class="fa-solid fa-coins text-[90px] text-white"></i>
+
+                            </div>
+
+                            <!-- Floating Coins -->
+                            <div
+                                class="absolute top-14 right-16 w-14 h-14 rounded-full bg-brand-purple/20 backdrop-blur flex items-center justify-center animate-bounce">
+                                <i class="fa-solid fa-dollar-sign text-brand-purple"></i>
+                            </div>
+
+                            <div
+                                class="absolute bottom-16 left-12 w-12 h-12 rounded-full bg-white/10 backdrop-blur flex items-center justify-center animate-pulse">
+                                <i class="fa-solid fa-bitcoin-sign text-white"></i>
+                            </div>
+
+                            <div class="absolute top-1/2 left-4 w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center animate-bounce"
+                                style="animation-delay:1s;">
+                                <i class="fa-solid fa-coins text-brand-purple"></i>
+                            </div>
+
+                            <div
+                                class="absolute bottom-20 right-8 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center animate-pulse">
+                                <i class="fa-solid fa-building text-white"></i>
+                            </div>
+
+                            <!-- Center Pulse -->
+                            <span class="absolute w-6 h-6 bg-brand-purple rounded-full animate-ping">
+                            </span>
+
+                        </div>
+
+                        <!-- Scroll Indicator -->
+                        <div class="flex flex-col items-center mt-6">
+
+                            <span class="text-[11px] tracking-[0.35em] uppercase text-white/50">
+                                Scroll Down
+                            </span>
+
+                            <div class="w-px h-14 bg-gradient-to-b from-white/40 to-transparent mt-3">
+                            </div>
+
+                            <div class="w-2 h-2 bg-brand-purple rounded-full animate-bounce mt-2">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-padding scroll-reveal">
+            <div class="container-site px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="">
+                        <div
+                            class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                        </div>
+                        <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark">Summary</h2>
+                    </div>
+                    <div class="glass-panel p-4 sm:p-6 md:p-10 rounded-3xl">
+                        <p
+                            class="font-body text-slate-600 text-sm sm:text-base leading-7 sm:leading-[1.9] p-5 sm:p-6 md:p-8 rounded-2xl bg-white/80 border border-slate-200/50 shadow-[0_10px_30px_rgba(15,23,42,0.06),0_0_0_1px_rgba(139,92,246,0.08)]">
+                            We deploy and configure battle-tested open-source privacy
+                            applications on infrastructure you control. From encrypted
+                            messaging with Matrix/Element to self-hosted email with
+                            Mail-in-a-Box, private file sharing with Nextcloud, and VPN
+                            servers with WireGuard — every tool is configured for
+                            maximum security, automatic updates, and seamless
+                            integration with your existing workflow. You retain
+                            complete data sovereignty with zero third-party access.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--BENEFITS For the investor - no extra top margin/padding, directly adjacent -->
+        <section class="section-padding bg-slate-50/60 scroll-reveal" style="padding-top: 0;">
+            <div class="container-site flex justify-center px-4 sm:px-0">
+                <div class="max-w-4xl w-full">
+
+                    <div class="text-center mb-14">
+                        <div
+                            class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                        </div>
+
+                        <h2 class="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-brand-dark mb-3">
+                            Benefits for the Investor
+                        </h2>
+
+                        <p class="font-body text-slate-500 max-w-lg mx-auto leading-relaxed text-sm px-2 sm:px-0">
+                            Real estate tokenization enables fractional ownership, making property investment more
+                            affordable and accessible. It improves liquidity, enhances transparency through blockchain,
+                            and allows easy portfolio diversification with lower risk
+                        </p>
+                    </div>
+
+                    <!-- Vertical Timeline -->
+                    <div class="relative pl-6 sm:pl-10 md:pl-14">
+
+                        <!-- Vertical line -->
+                        <div
+                            class="absolute left-[10px] sm:left-[15px] md:left-[23px] top-2 bottom-2 w-px bg-gradient-to-b from-brand-deep via-brand-purple/30 to-brand-purple/5">
+                        </div>
+
+                        <!-- STEP 1 -->
+                        <div class="relative mb-10 scroll-reveal">
+                            <div
+                                class="absolute -left-6 sm:-left-10 md:-left-14 top-0 w-[30px] sm:w-[46px] flex justify-center">
+                                <div
+                                    class="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-deep flex items-center justify-center shadow-md shadow-brand-purple/20 z-10 ring-4 ring-white">
+                                    <span class="font-heading text-[10px] sm:text-xs font-bold text-white">1</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="ml-10 sm:ml-6 bg-white border border-slate-200 rounded-xl p-4 sm:p-6 hover:border-brand-deep/30 hover:shadow-lg hover:shadow-brand-purple/5 transition-all duration-300 group">
+                                <div class="flex items-start gap-3 sm:gap-4">
+                                    <div
+                                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-deep/8 flex items-center justify-center shrink-0 group-hover:bg-brand-purple/15 transition-colors">
+                                        <i
+                                            class="fa-solid fa-magnifying-glass text-brand-purple text-xs sm:text-sm"></i>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-heading text-sm sm:text-base font-bold text-brand-dark mb-1">
+                                            Fractional Investment
+                                        </h3>
+                                        <p class="font-body text-xs sm:text-sm text-slate-500 leading-relaxed">
+                                            Participate in high-value assets with low and accessible entry tickets,
+                                            making real estate investment easier for everyone.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <div class="relative mb-10 scroll-reveal">
+                            <div
+                                class="absolute -left-6 sm:-left-10 md:-left-14 top-0 w-[30px] sm:w-[46px] flex justify-center">
+                                <div
+                                    class="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-deep flex items-center justify-center shadow-md shadow-brand-purple/20 z-10 ring-4 ring-white">
+                                    <span class="font-heading text-[10px] sm:text-xs font-bold text-white">2</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="ml-10 sm:ml-6 bg-white border border-slate-200 rounded-xl p-4 sm:p-6 hover:border-brand-purple/30 hover:shadow-lg hover:shadow-brand-purple/5 transition-all duration-300 group">
+                                <div class="flex items-start gap-3 sm:gap-4">
+                                    <div
+                                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-purple/8 flex items-center justify-center shrink-0 group-hover:bg-brand-purple/15 transition-colors">
+                                        <i class="fa-solid fa-clipboard-list text-brand-purple text-xs sm:text-sm"></i>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-heading text-sm sm:text-base font-bold text-brand-dark mb-1">
+                                            Operational Transparency
+                                        </h3>
+                                        <p class="font-body text-xs sm:text-sm text-slate-500 leading-relaxed">
+                                            Every transaction is recorded on the blockchain, ensuring full transparency,
+                                            security, and verifiable ownership history.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3 -->
+                        <div class="relative mb-10 scroll-reveal">
+                            <div
+                                class="absolute -left-6 sm:-left-10 md:-left-14 top-0 w-[30px] sm:w-[46px] flex justify-center">
+                                <div
+                                    class="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-deep flex items-center justify-center shadow-md shadow-brand-purple/20 z-10 ring-4 ring-white">
+                                    <span class="font-heading text-[10px] sm:text-xs font-bold text-white">3</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="ml-10 sm:ml-6 bg-white border border-slate-200 rounded-xl p-4 sm:p-6 hover:border-brand-purple/30 hover:shadow-lg hover:shadow-brand-purple/5 transition-all duration-300 group">
+                                <div class="flex items-start gap-3 sm:gap-4">
+                                    <div
+                                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-purple/8 flex items-center justify-center shrink-0 group-hover:bg-brand-purple/15 transition-colors">
+                                        <i
+                                            class="fa-solid fa-compass-drafting text-brand-purple text-xs sm:text-sm"></i>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-heading text-sm sm:text-base font-bold text-brand-dark mb-1">
+                                            Profitability & Global Liquidity
+                                        </h3>
+                                        <p class="font-body text-xs sm:text-sm text-slate-500 leading-relaxed">
+                                            Unlock better returns with access to global investors and improved liquidity
+                                            through tokenized asset trading.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4 -->
+                        <div class="relative mb-10 scroll-reveal">
+                            <div
+                                class="absolute -left-6 sm:-left-10 md:-left-14 top-0 w-[30px] sm:w-[46px] flex justify-center">
+                                <div
+                                    class="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-deep flex items-center justify-center shadow-md shadow-brand-purple/20 z-10 ring-4 ring-white">
+                                    <span class="font-heading text-[10px] sm:text-xs font-bold text-white">4</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="ml-10 sm:ml-6 bg-white border border-slate-200 rounded-xl p-4 sm:p-6 hover:border-brand-purple/30 hover:shadow-lg hover:shadow-brand-purple/5 transition-all duration-300 group">
+                                <div class="flex items-start gap-3 sm:gap-4">
+                                    <div
+                                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-brand-purple/8 flex items-center justify-center shrink-0 group-hover:bg-brand-purple/15 transition-colors">
+                                        <i class="fa-solid fa-code text-brand-purple text-xs sm:text-sm"></i>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-heading text-sm sm:text-base font-bold text-brand-dark mb-1">
+                                            Regulatory Compliance & Security
+                                        </h3>
+                                        <p class="font-body text-xs sm:text-sm text-slate-500 leading-relaxed">
+                                            Built with compliance-first architecture and institutional-grade security to
+                                            ensure safe and legally aligned investments.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--how it works -->
+        <section class="section-padding scroll-reveal" style="padding-top: 0;">
+            <div class="container-site flex justify-center">
+                <div class="max-w-4xl w-full mx-auto">
+
+                    <div class="mb-10 text-center">
+                        <div
+                            class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
+                        </div>
+                        <h2 class="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-brand-dark mb-2">
+                            How it works
+
+                        </h2>
+
+                        <p class="font-body text-slate-500 text-base leading-relaxed text-sm">
+                            Our tokenization process transforms real estate assets into secure digital tokens on the blockchain, allowing investors to own fractional shares, trade easily, and benefit from transparent, traceable, and efficient asset management
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 place-items-center sm:place-items-stretch">
+
+                        <div
+                            class="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 hover:border-brand-purple/30 hover:shadow-md hover:shadow-brand-purple/5 transition-all duration-300 group w-full">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-brand-purple/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-purple transition-colors duration-300">
+                                <i
+                                    class="fa-solid fa-check text-brand-purple text-xs group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <p class="font-body text-base text-slate-600 leading-relaxed">
+                                Selection and due diligence of real estate assets.
+
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 hover:border-brand-purple/30 hover:shadow-md hover:shadow-brand-purple/5 transition-all duration-300 group w-full">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-brand-purple/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-purple transition-colors duration-300">
+                                <i
+                                    class="fa-solid fa-check text-brand-purple text-xs group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <p class="font-body text-base text-slate-600 leading-relaxed">
+                               Legal structuring and blockchain tokenization.
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 hover:border-brand-purple/30 hover:shadow-md hover:shadow-brand-purple/5 transition-all duration-300 group w-full">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-brand-purple/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-purple transition-colors duration-300">
+                                <i
+                                    class="fa-solid fa-check text-brand-purple text-xs group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <p class="font-body text-base text-slate-600 leading-relaxed">
+                                Token issuance, distribution and custody.
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 hover:border-brand-purple/30 hover:shadow-md hover:shadow-brand-purple/5 transition-all duration-300 group w-full">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-brand-purple/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-purple transition-colors duration-300">
+                                <i
+                                    class="fa-solid fa-check text-brand-purple text-xs group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <p class="font-body text-base text-slate-600 leading-relaxed">
+                                Reporting and distribution of income or capital gains.
+                            </p>
+                        </div>
+
+                       
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
+        </div>
+        <div class="container-site">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div><a href="/" class="flex items-center gap-2.5 mb-6"><img src="./images/logo.png" alt="RYBIX"
+                            class="h-9 w-9 rounded-lg"
+                            onerror="this.src='https://placehold.co/36x36/8b5cf6/white?text=R'"><span
+                            class="font-heading text-xl font-bold text-white">RYBIX</span></a>
+                    <p class="text-sm text-slate-500">Innovative real estate technology ecosystem integrating
+                        tokenization, automation and digital marketing.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link">Services</a></li>
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Invest</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Secure Channels</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link inline-flex items-center gap-2"><i
+                                    class="fa-solid fa-envelope text-brand-purple"></i> Email</a></li>
+                    </ul>
+                    <div class="mt-8 p-4 rounded-xl border border-slate-700/40">
+                        <p class="text-xs"><i class="fa-solid fa-shield-halved text-brand-purple mr-1"></i>
+                            End-to-end encrypted. Never share client data.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800/60 mt-12 pt-6 text-center text-xs text-slate-600">&copy; 2026
+                RYBIX. All rights reserved. Built with privacy in mind.</div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('page').classList.add('page-enter-active');
+        });
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+
+        mobileMenu.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', closeMenu)
+        );
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        // Accordion
+        document.querySelectorAll('.mobile-accordion > button').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = document.getElementById(this.getAttribute('data-target'));
+                const icon = this.querySelector('i');
+
+                if (target) {
+                    const isOpen = target.classList.contains('open');
+
+                    document.querySelectorAll('.mobile-dropdown-content')
+                        .forEach(el => el.classList.remove('open'));
+
+                    document.querySelectorAll('.mobile-accordion > button i')
+                        .forEach(ic => ic.style.transform = 'rotate(0deg)');
+
+                    if (!isOpen) {
+                        target.classList.add('open');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+            });
+        });
+
+        // Nav scroll effect
+        const mainNav = document.getElementById('main-nav');
+
+        function updateNav() {
+            if (window.pageYOffset > 60) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', updateNav);
+        updateNav();
+    </script>
+
+</body>
+
+</html>
