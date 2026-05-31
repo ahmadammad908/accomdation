@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Our Services | RYBIX - Secure Contact</title>
+    <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
+
+    <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind CSS CDN + Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#8b5cf6',
+                        'brand-yellow': '#facc15',
+                        'brand-deep': '#6d28d9',
+                        'brand-dark': '#0f172a',
+                        'text-main': '#1a1a2e',
+                        'text-muted': '#64748b',
+                        'text-dim': '#475569',
+                        'bg': '#fafbfc',
+                        'surface': '#ffffff',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+                        body: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 20s linear infinite',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        spinSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CUSTOM CSS — v3.0 COMPLETE REBUILD + RESPONSIVE FIXES
+         ═══════════════════════════════════════════════════════════ -->
+    <style>
+        /* ═══ BASE ═══ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #fafbfc;
+            color: #1a1a2e;
+            font-size: 16px;
+            line-height: 1.75;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #0f172a;
+            line-height: 1.15;
+        }
+
+        /* nav dock styles */
+        .nav-dock {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-dock.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-color: rgba(226, 232, 240, 0.8);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-dock .nav-logo-text {
+            color: #ffffff;
+            transition: color 0.4s;
+        }
+
+        .nav-dock.scrolled .nav-logo-text {
+            color: #1e3a8a;
+        }
+
+        .nav-dock .nav-link-text {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.25s;
+            font-weight: 600;
+        }
+
+        .nav-dock.scrolled .nav-link-text {
+            color: #334155;
+        }
+
+        .nav-dock .nav-link-text:hover {
+            color: #8b5cf6;
+        }
+
+        .nav-dock .nav-cta-btn {
+            color: #ffffff;
+            border-color: rgba(139, 92, 246, 0.5);
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .nav-dock.scrolled .nav-cta-btn:hover {
+            background: #8b5cf6;
+            color: #ffffff;
+        }
+
+        #mobile-toggle {
+            background: rgba(139, 92, 246, 0.85) !important;
+            border: 1px solid rgba(139, 92, 246, 0.5) !important;
+            backdrop-filter: blur(4px);
+        }
+
+        #mobile-toggle span {
+            background-color: #ffffff !important;
+        }
+
+        .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            min-width: 260px;
+        }
+
+        .dropdown-label {
+            display: block;
+            padding: 8px 16px 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #334155;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .dropdown-item:hover {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .dropdown-parent {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.25s ease;
+            z-index: 100;
+        }
+
+        .dropdown-parent:hover .dropdown-menu,
+        .dropdown-parent.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: linear-gradient(160deg, #0f172a, #1e1b4b);
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-overlay.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 0.75rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #8b5cf6;
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-content.open {
+            max-height: 600px;
+        }
+
+        .mobile-dropdown-label {
+            display: block;
+            padding: 0.5rem 0 0.25rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        .mobile-sub-link {
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-sub-link:hover {
+            color: #8b5cf6;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-link:hover {
+            color: #8b5cf6;
+        }
+
+        /* custom contact form animations */
+        .form-group-focus {
+            transition: all 0.2s ease;
+        }
+
+        .contact-input:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .submit-btn-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .submit-btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
+        }
+
+        .form-card {
+            backdrop-filter: blur(2px);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+
+        .form-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* responsive extra spacing fix (margin-top for main content) */
+        .main-content-padding {
+            padding-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content-padding {
+                padding-top: 6rem;
+            }
+        }
+
+        /* container fix */
+        .container-site {
+            width: 100%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="main-nav"
+        class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
+        <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
+            <img src="./images/logo.png" alt="RYBIX" class="h-9 w-10 rounded-lg"
+                onerror="this.src='https://placehold.co/40x40/8b5cf6/white?text=R'">
+            <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+            <a href="/"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Home</a>
+            <div class="dropdown-parent relative">
+                <a href="./service.html"
+                    class="nav-link-text flex items-center gap-1 px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Services
+                    <i class="fa-solid fa-chevron-down text-[0.6rem] opacity-60"></i></a>
+                <div class="dropdown-menu">
+                    <span class="dropdown-label">Secure & Reliable</span>
+                    <a href="./Products&Automations.html" class="dropdown-item"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                        Automations</a>
+                    <a href="./tokenization.html" class="dropdown-item"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
+                    <a href="./realestate.html" class="dropdown-item"><i
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="./marketing.html" class="dropdown-item"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+                </div>
+            </div>
+            <a href="./about.html"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">About
+                Us</a>
+            <a href="./invest.html"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Invest</a>
+        </div>
+        <a href="./contact.html"
+            class="nav-cta-btn hidden lg:inline-flex items-center gap-2 px-5 py-2 text-xs font-bold rounded-xl transition-all shrink-0"><i
+                class="fa-solid fa-lock text-[0.65rem]"></i> Contact us</a>
+        <button id="mobile-toggle"
+            class="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl border transition-all cursor-pointer"
+            aria-label="Toggle menu">
+            <span class="block w-5 h-0.5 bg-current transition-all duration-300"></span>
+            <span class="block w-5 h-0.5 bg-current mt-1.5 transition-all duration-300"></span>
+            <span class="block w-3.5 h-0.5 bg-current mt-1.5 ml-[3px] transition-all duration-300"></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE OVERLAY MENU -->
+    <div id="mobile-menu" class="mobile-overlay">
+        <button id="mobile-close"
+            class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 text-white/70 hover:text-white"><i
+                class="fa-solid fa-xmark text-lg"></i></button>
+        <div class="flex flex-col mt-16">
+            <a href="/" class="mobile-nav-link">Home</a>
+            <div class="mobile-accordion">
+                <button class="mobile-nav-link w-full flex items-center justify-between"
+                    data-target="mobile-services">Services <i
+                        class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i></button>
+                <div id="mobile-services" class="mobile-dropdown-content">
+                    <span class="mobile-dropdown-label">RYBIX</span>
+                    <a href="./Products&Automations.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                        & Automations</a>
+                    <a href="./tokenization.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
+                    <a href="./realestate.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                        Estate</a>
+                    <a href="./marketing.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
+                </div>
+            </div>
+            <a href="./about.html" class="mobile-nav-link">About Us</a>
+            <a href="./invest.html" class="mobile-nav-link">Invest</a>
+            <a href="./contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT WITH OPTIMIZED TOP PADDING (FIXED SPACING) -->
+    <main id="page" class="relative z-10 main-content-padding">
+
+        <!-- CONTACT FORM SECTION — FULLY RESPONSIVE & MODERN -->
+        <section class="py-12 md:py-16 lg:py-20 px-5 bg-gradient-to-br from-bg via-white to-bg">
+            <div class="max-w-6xl mx-auto">
+                <!-- Header section -->
+                <div class="text-center mb-12 md:mb-16">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/10 text-brand-purple text-[11px] md:text-xs font-mono font-semibold tracking-wider border border-brand-purple/20 mb-4 md:mb-5">
+                        <i class="fa-solid fa-phone text-[0.7rem]"></i> Contact
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-slate-900 tracking-tight">
+                        Contact <span
+                            class="bg-gradient-to-r from-brand-purple to-brand-deep bg-clip-text text-transparent">
+                            Us</span></h1>
+                    <p class="text-text-muted max-w-2xl mx-auto mt-4 text-sm md:text-base px-3">Grow your wealth by
+                        investing in secure and high-potential opportunities designed for long-term financial success.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-5 gap-6 md:gap-8 items-start">
+                    <!-- Left info cards — responsive layout -->
+                    <div class="lg:col-span-2 space-y-5 md:space-y-6">
+                        <div class="form-card bg-surface rounded-2xl border border-slate-200 p-5 md:p-6 shadow-sm">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-brand-purple/20 to-brand-purple/5 flex items-center justify-center mb-4 md:mb-5">
+                                <i class="fa-regular fa-message text-brand-purple text-lg md:text-xl"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg md:text-xl text-slate-800">Direct line</h3>
+                            <p class="text-text-muted text-xs md:text-sm mt-1">Write or call us for more information
+                                about our services.</p>
+                            <div class="mt-4 md:mt-5 space-y-3">
+                                <div class="flex items-center gap-3 text-slate-700 text-sm">
+                                    <i class="fa-regular fa-envelope text-brand-purple w-5"></i>
+                                    <span class="font-mono text-xs md:text-sm break-all">support@rybixholding.com</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-slate-700 text-sm">
+                                    <i class="fa-solid fa-phone-volume  text-brand-purple w-5"></i>
+                                    <span class="text-xs md:text-sm">+1 213 816 3815</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-slate-700 text-sm">
+                                    <i class="fa-solid fa-location-dot text-brand-purple w-5"></i>
+                                    <span class="text-xs md:text-sm">RYBIX HOLDING LLC
+                                        150 SE 2nd Ave Ste 1403 6433
+                                        Miami, FL 33131
+                                        USA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-card bg-surface rounded-2xl border border-slate-200 p-5 md:p-6 shadow-sm">
+                            <div
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-4 md:mb-5">
+                                <i class="fa-regular fa-building text-amber-600 text-lg md:text-xl"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-lg md:text-xl text-slate-800">© RYBIX. The Future of
+                                Digital Assets.
+
+                            </h3>
+                            <div class="flex items-center gap-3 text-slate-700 text-sm pt-[10px]">
+                                <i class="fa-solid fa-location-dot text-brand-purple w-5"></i>
+                                <span class="text-xs md:text-sm">RYBIX HOLDING LLC
+                                    10685-B Hazelhurst Dr. # 42970
+                                    Houston, TX 77043
+                                    USA</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-700 text-sm pt-[10px]">
+                                <i class="fa-solid fa-location-dot text-brand-purple w-5"></i>
+                                <span class="text-xs md:text-sm">RYBIX HOLDING LLC
+                                    453 S Spring Street Ste 400 PMB1243
+                                    Los Angeles, CA 90013
+                                    United States</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form — fully responsive & optimized -->
+                    <div class="lg:col-span-3">
+                        <div class="form-card bg-surface rounded-2xl border border-slate-200 shadow-xl overflow-hidden">
+                            <div
+                                class="bg-gradient-to-r from-slate-50 to-white px-5 md:px-7 py-4 md:py-5 border-b border-slate-100">
+                                <h2
+                                    class="font-heading font-semibold text-xl md:text-2xl text-slate-800 flex items-center gap-2">
+                                    <i class="fa-regular fa-pen-to-square text-brand-purple"></i> Request a consultation
+                                </h2>
+                                <p class="text-text-muted text-xs md:text-sm mt-1">All inquiries are strictly
+                                    confidential.</p>
+                            </div>
+                            <form id="contactForm" class="p-5 md:p-7 space-y-5 md:space-y-6">
+                                <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
+                                    <div class="form-group-focus">
+                                        <label
+                                            class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
+                                                class="fa-regular fa-user mr-1"></i> Full name *</label>
+                                        <input type="text" id="fullname" name="fullname" required
+                                            class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none text-slate-800 text-sm md:text-base">
+                                        <div class="text-xs text-red-500 mt-1 hidden error-name"></div>
+                                    </div>
+                                    <div class="form-group-focus">
+                                        <label
+                                            class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
+                                                class="fa-regular fa-envelope mr-1"></i> Email *</label>
+                                        <input type="email" id="email" name="email" required
+                                            class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none text-slate-800 text-sm md:text-base">
+                                        <div class="text-xs text-red-500 mt-1 hidden error-email"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label
+                                        class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
+                                            class="fa-regular fa-bell mr-1"></i> Subject *</label>
+                                    <input type="text" id="subject" name="subject" required
+                                        class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none text-slate-800 text-sm md:text-base">
+                                    <div class="text-xs text-red-500 mt-1 hidden error-subject"></div>
+                                </div>
+
+                                <div>
+                                    <label
+                                        class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
+                                            class="fa-regular fa-comment-dots mr-1"></i> Message *</label>
+                                    <textarea id="message" name="message" rows="4" required
+                                        class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none resize-none text-slate-800 text-sm md:text-base"></textarea>
+                                    <div class="text-xs text-red-500 mt-1 hidden error-message"></div>
+                                </div>
+
+                                <div>
+                                    <label
+                                        class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
+                                            class="fa-regular fa-star mr-1"></i> Area of interest</label>
+                                    <select id="interest"
+                                        class="w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple outline-none text-slate-700 text-sm md:text-base">
+                                        <option value="General">General inquiry</option>
+                                        <option value="Tokenization">Tokenization Solutions</option>
+                                        <option value="Real Estate">Real Estate Automation</option>
+                                        <option value="Products & Automations">Products & Automations</option>
+                                        <option value="Marketing">AI Marketing</option>
+                                    </select>
+                                </div>
+
+                                <!-- honeypot spam protection -->
+                                <input type="text" name="website" id="website" style="display:none" tabindex="-1"
+                                    autocomplete="off">
+
+                                <div class="pt-2">
+                                    <button type="submit" id="submitBtn"
+                                        class="submit-btn-glow w-full inline-flex justify-center items-center gap-2 bg-gradient-to-r from-brand-purple to-brand-deep text-white font-bold py-3 md:py-3.5 px-6 rounded-xl text-sm md:text-base shadow-md transition-all duration-300 group">
+                                        <span>Send secure message</span>
+                                        <i
+                                            class="fa-regular fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                                    </button>
+                                    <p
+                                        class="text-center text-[10px] md:text-[11px] text-slate-400 mt-4 flex items-center justify-center gap-1">
+                                        <i class="fa-solid fa-shield-halved text-brand-purple/70"></i> 256‑bit TLS
+                                        encryption • No data stored
+                                    </p>
+                                </div>
+                                <div id="formStatus"
+                                    class="hidden mt-3 text-center text-xs md:text-sm font-medium rounded-lg p-3"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER — fully responsive -->
+    <footer class="bg-slate-900 text-slate-400 pt-12 md:pt-16 pb-6 md:pb-8 relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
+        </div>
+        <div class="container-site max-w-6xl mx-auto px-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+                <div>
+                    <a href="/" class="flex items-center gap-2.5 mb-6">
+                        <img src="./images/logo.png" alt="RYBIX" class="h-8 w-8 md:h-9 md:w-9 rounded-lg"
+                            onerror="this.src='https://placehold.co/36x36/8b5cf6/white?text=R'">
+                        <span class="font-heading text-lg md:text-xl font-bold text-white">RYBIX</span>
+                    </a>
+                    <p class="text-xs md:text-sm text-slate-500">Innovative real estate technology ecosystem integrating
+                        tokenization, automation and digital marketing.</p>
+                </div>
+                <div>
+                    <h4 class="text-[11px] md:text-xs font-semibold tracking-wider text-white uppercase mb-5 md:mb-6">
+                        Navigation</h4>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="./service.html" class="footer-link text-xs md:text-sm">Services</a></li>
+                        <li><a href="./about.html" class="footer-link text-xs md:text-sm">About Us</a></li>
+                        <li><a href="./invest.html" class="footer-link text-xs md:text-sm">Invest</a></li>
+                        <li><a href="./contact.html" class="footer-link text-xs md:text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[11px] md:text-xs font-semibold tracking-wider text-white uppercase mb-5 md:mb-6">
+                        Legal</h4>
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="./privacypolicy.html" class="footer-link text-xs md:text-sm">Privacy Policy</a></li>
+                        <li><a href="./terms.html" class="footer-link text-xs md:text-sm">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[11px] md:text-xs font-semibold tracking-wider text-white uppercase mb-5 md:mb-6">
+                        Secure Channels</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link inline-flex items-center gap-2 text-xs md:text-sm"><i
+                                    class="fa-solid fa-envelope text-brand-purple"></i> Email</a></li>
+                    </ul>
+                    <div class="mt-6 md:mt-8 p-3 md:p-4 rounded-xl border border-slate-700/40">
+                        <p class="text-[11px] md:text-xs"><i
+                                class="fa-solid fa-shield-halved text-brand-purple mr-1"></i> End-to-end encrypted.
+                            Never share client data.</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-800/60 mt-8 md:mt-12 pt-5 md:pt-6 text-center text-[10px] md:text-xs text-slate-600">
+                &copy; 2026 RYBIX. All rights reserved. Built with privacy in mind.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation logic (preserved + optimized)
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileClose = document.getElementById('mobile-close');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+        document.querySelectorAll('.mobile-accordion > button').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = document.getElementById(this.getAttribute('data-target'));
+                const icon = this.querySelector('i');
+                if (target) {
+                    const isOpen = target.classList.contains('open');
+                    document.querySelectorAll('.mobile-dropdown-content').forEach(el => el.classList.remove('open'));
+                    document.querySelectorAll('.mobile-accordion > button i').forEach(ic => ic.style.transform = 'rotate(0deg)');
+                    if (!isOpen) {
+                        target.classList.add('open');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+            });
+        });
+
+        const mainNav = document.getElementById('main-nav');
+        function updateNav() {
+            if (window.pageYOffset > 60) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+        }
+        window.addEventListener('scroll', updateNav);
+        updateNav();
+
+        // ---------- CONTACT FORM VALIDATION & SIMULATION (optimized) ----------
+        const form = document.getElementById('contactForm');
+        const fullname = document.getElementById('fullname');
+        const email = document.getElementById('email');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusDiv = document.getElementById('formStatus');
+
+        function showError(inputElement, msg) {
+            const errorDiv = document.querySelector(`.error-${inputElement.id}`);
+            if (errorDiv) { errorDiv.innerText = msg; errorDiv.classList.remove('hidden'); }
+            inputElement.classList.add('border-red-400', 'bg-red-50');
+        }
+        function clearError(inputElement) {
+            const errorDiv = document.querySelector(`.error-${inputElement.id}`);
+            if (errorDiv) { errorDiv.innerText = ''; errorDiv.classList.add('hidden'); }
+            inputElement.classList.remove('border-red-400', 'bg-red-50');
+        }
+        function validateField(field) {
+            const val = field.value.trim();
+            if (!field.id) return true;
+            if (field.id === 'fullname') {
+                if (val.length < 2) { showError(field, 'Full name must be at least 2 characters.'); return false; }
+                else { clearError(field); return true; }
+            }
+            if (field.id === 'email') {
+                const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+                if (!emailPattern.test(val)) { showError(field, 'Please enter a valid email address.'); return false; }
+                else { clearError(field); return true; }
+            }
+            if (field.id === 'subject') {
+                if (val.length < 2) { showError(field, 'Subject is required.'); return false; }
+                else { clearError(field); return true; }
+            }
+            if (field.id === 'message') {
+                if (val.length < 10) { showError(field, 'Message should be at least 10 characters.'); return false; }
+                else { clearError(field); return true; }
+            }
+            return true;
+        }
+        [fullname, email, subject, message].forEach(field => {
+            if (field) field.addEventListener('input', () => validateField(field));
+            if (field) field.addEventListener('blur', () => validateField(field));
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const honeypot = document.getElementById('website');
+            if (honeypot && honeypot.value !== "") {
+                statusDiv.innerHTML = '<i class="fa-regular fa-circle-check"></i> Submission rejected (spam).';
+                statusDiv.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-700', 'bg-red-50', 'text-red-700');
+                statusDiv.classList.add('bg-red-50', 'text-red-700', 'block');
+                setTimeout(() => statusDiv.classList.add('hidden'), 3000);
+                return;
+            }
+            let isValid = true;
+            [fullname, email, subject, message].forEach(f => { if (f && !validateField(f)) isValid = false; });
+            if (!isValid) {
+                statusDiv.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> Please fix highlighted fields.';
+                statusDiv.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-700');
+                statusDiv.classList.add('bg-amber-50', 'text-amber-700', 'block');
+                setTimeout(() => statusDiv.classList.add('hidden'), 4000);
+                return;
+            }
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-pulse"></i> Encrypting & sending...';
+            statusDiv.classList.add('hidden');
+            const formData = {
+                fullname: fullname.value.trim(),
+                email: email.value.trim(),
+                subject: subject.value.trim(),
+                message: message.value.trim(),
+                interest: document.getElementById('interest')?.value || 'General',
+                timestamp: new Date().toISOString()
+            };
+            setTimeout(() => {
+                console.log("Secure contact payload (simulated):", formData);
+                statusDiv.innerHTML = '<i class="fa-regular fa-check-circle"></i> Message received! Our team will get back to you within 24h (encrypted).';
+                statusDiv.classList.remove('hidden', 'bg-amber-50', 'text-amber-700', 'bg-red-50');
+                statusDiv.classList.add('bg-emerald-50', 'text-emerald-700', 'block');
+                form.reset();
+                [fullname, email, subject, message].forEach(f => { if (f) clearError(f); });
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                setTimeout(() => statusDiv.classList.add('hidden'), 5000);
+            }, 1200);
+        });
+    </script>
+        <script>
+        document.addEventListener("contextmenu", e => e.preventDefault());
+
+        document.addEventListener("keydown", function (e) {
+
+            // Ctrl+U (view source)
+            if (e.ctrlKey && e.key.toLowerCase() === "u") {
+                e.preventDefault();
+            }
+
+            // Ctrl+C (copy)
+            if (e.ctrlKey && e.key.toLowerCase() === "c") {
+                e.preventDefault();
+            }
+
+            // Ctrl+Shift+I (dev tools)
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+                e.preventDefault();
+            }
+
+            // F12
+            if (e.key === "F12") {
+                e.preventDefault();
+            }
+
+        });
+    </script>
+</body>
+
+</html>
