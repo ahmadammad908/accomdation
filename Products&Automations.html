@@ -76,9 +76,24 @@
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            background: #0f172a;
+            
+            /* same as hero dark */
+        }
+
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-color: #fafbfc;
             color: #1a1a2e;
             font-size: 16px;
             line-height: 1.75;
@@ -483,11 +498,39 @@
             border-color: rgba(139, 92, 246, 0.6);
             box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
         }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .spinner {
+            width: 45px;
+            height: 45px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #8b5cf6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
 
 
     <nav id="main-nav"
@@ -510,7 +553,8 @@
                         Automations</a>
                     <a href="./tokenization.html" class="dropdown-item"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
-                    <a href="./realestate.html" class="dropdown-item"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                    <a href="./realestate.html" class="dropdown-item"><i
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
                         Estate</a>
                     <a href="./marketing.html" class="dropdown-item"><i
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
@@ -547,11 +591,13 @@
                         class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i></button>
                 <div id="mobile-services" class="mobile-dropdown-content">
                     <span class="mobile-dropdown-label">RYBIX</span>
-                    <a href="./Products&Automations.html" class="mobile-sub-link"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                    <a href="./Products&Automations.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
                         & Automations</a>
                     <a href="./tokenization.html" class="mobile-sub-link"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
-                    <a href="./realestate.html" class="mobile-sub-link"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                    <a href="./realestate.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
                         Estate</a>
                     <a href="./marketing.html" class="mobile-sub-link"><i
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
@@ -686,7 +732,7 @@
                 <div id="carousel"
                     class="flex flex-nowrap gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
                     style="scrollbar-width: none; -ms-overflow-style: none;">
-                    
+
                     <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
                         <div class="flex items-start gap-4 mb-3">
                             <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center">
@@ -794,8 +840,10 @@
                 <div>
                     <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Secure Channels</h4>
                     <ul>
-                        <li><a href="#" class="footer-link inline-flex items-center gap-2"><i
-                                    class="fa-solid fa-envelope text-brand-purple"></i> Email</a></li>
+                        <li><a href="mailto:support@rybixholding.com" class="footer-link inline-flex items-center gap-2">
+                                    <i class="fa-solid fa-envelope text-brand-purple"></i>
+                                    Email
+                                </a></li>
                     </ul>
                     <div class="mt-8 p-4 rounded-xl border border-slate-700/40">
                         <p class="text-xs"><i class="fa-solid fa-shield-halved text-brand-purple mr-1"></i>
@@ -811,6 +859,10 @@
     <script>
         window.addEventListener('load', () => {
             document.getElementById('page').classList.add('page-enter-active');
+        });
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+            document.getElementById("preloader").style.display = "none";
         });
 
         // Carousel logic

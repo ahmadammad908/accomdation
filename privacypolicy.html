@@ -404,16 +404,7 @@
             border-color: rgba(139, 92, 246, 0.3);
         }
 
-        .page-enter {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .page-enter-active {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease-out;
-        }
+        
     </style>
 
 </head>
@@ -528,34 +519,6 @@
             </div>
 
         </section>
-        <!-- Privacy Policy Progress Popup -->
-        <div id="privacyPopup"
-            class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm mt-[100px]">
-
-            <div
-                class="bg-white max-w-md mx-4 p-8 rounded-3xl border border-purple-200 shadow-2xl text-center relative">
-
-                <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-purple-100 flex items-center justify-center">
-                    <i class="fa-solid fa-person-digging text-3xl text-brand-purple"></i>
-                </div>
-
-                <h3 class="font-heading text-3xl font-bold text-slate-900 mb-3">
-                    Privacy Policy In Progress
-                </h3>
-
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    Our developer team is currently working on this page to provide
-                    complete and up-to-date privacy information. Please check back soon.
-                </p>
-
-                <a href="./index.html">
-                    <button id="closePrivacyPopup"
-                    class="px-6 py-3 bg-brand-purple hover:bg-brand-deep text-white font-semibold rounded-xl transition-all duration-300">
-                    Continue Browsing
-                </button>
-                </a>
-            </div>
-        </div>
 
     </main>
 
@@ -588,14 +551,14 @@
                 <div>
                     <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Legal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                        <li><a href="./privacypolicy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="./terms.html" class="footer-link">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Secure Channels</h4>
                     <ul>
-                        <li><a href="#" class="footer-link inline-flex items-center gap-2"><i
+                        <li><a href="mailto:support@rybixholding.com" class="footer-link inline-flex items-center gap-2"><i
                                     class="fa-solid fa-envelope text-brand-purple"></i> Email</a></li>
                     </ul>
                     <div class="mt-8 p-4 rounded-xl border border-slate-700/40">
@@ -611,19 +574,6 @@
 
 
     <script>
-        window.addEventListener("load", () => {
-            const popup = document.getElementById("privacyPopup");
-            const closeBtn = document.getElementById("closePrivacyPopup");
-
-            closeBtn.addEventListener("click", () => {
-                popup.style.display = "none";
-            });
-        });
-    </script>
-    <script>
-        window.addEventListener('load', () => {
-            document.getElementById('page').classList.add('page-enter-active');
-        });
 
 
         // Mobile menu
