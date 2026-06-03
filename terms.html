@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Our Services | Hiderox</title>
+    <title>Terms of Service | Hiderox</title>
     <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
 
     <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
@@ -65,8 +65,7 @@
     </script>
 
     <!-- ═══════════════════════════════════════════════════════════
-         CUSTOM CSS — v3.0 COMPLETE REBUILD
-         Bold, aggressive, modern. ALL text visible by default.
+         CUSTOM CSS — SAME AS PRIVACY POLICY PAGE
          ═══════════════════════════════════════════════════════════ -->
     <style>
         /* ═══ BASE ═══ */
@@ -134,6 +133,11 @@
             animation: gradientMove 5s linear infinite;
         }
 
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
         /* ═══ PAGE HERO — Dark dramatic gradient ═══ */
         .page-hero {
@@ -195,6 +199,7 @@
             border-radius: 9999px;
         }
 
+        /* ═══ NAVIGATION - SAME AS PRIVACY POLICY ═══ */
         .nav-dock {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(16px);
@@ -317,7 +322,6 @@
             transform: translateY(0);
         }
 
-
         .mobile-overlay {
             position: fixed;
             inset: 0;
@@ -380,6 +384,40 @@
             color: #8b5cf6;
         }
 
+        /* ═══ CONTENT STYLES - SAME AS PRIVACY POLICY ═══ */
+        .content-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.08);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .list-bullet {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-bullet li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .list-bullet li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #8b5cf6;
+            font-size: 0.9rem;
+        }
+
         .footer-link {
             color: #94a3b8;
             transition: color 0.3s ease;
@@ -389,32 +427,17 @@
         .footer-link:hover {
             color: #8b5cf6;
         }
-
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
     </style>
 
 </head>
 
 <body>
 
-
+    <!-- ═══ NAVIGATION - IDENTICAL TO PRIVACY POLICY ═══ -->
     <nav id="main-nav"
         class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
         <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
-            <img src="./images/logo.png" alt="RYBIX" class="h-9 w-10 rounded-lg"
+            <img src="./images/logo.webp" alt="RYBIX" class="h-9 w-10 rounded-lg"
                 onerror="this.src='https://placehold.co/40x40/8b5cf6/white?text=R'">
             <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
         </a>
@@ -488,44 +511,210 @@
         </div>
     </div>
 
-    <main id="page" class="relative z-10 page-enter">
+    <main id="page" class="relative z-10">
 
-        <!-- HERO -->
+        <!-- ═══ HERO SECTION - IDENTICAL STYLE ═══ -->
         <section class="page-hero">
             <div class="container-site relative z-10 text-center">
                 <div class="max-w-3xl mx-auto">
-                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1"
+                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8"
                         style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
                         <span class="relative flex h-2.5 w-2.5 items-center justify-center">
-                            <i class="fa-solid fa-file-shield text-xs text-brand-purple"></i>
+                            <i class="fa-solid fa-file-contract text-xs text-brand-purple"></i>
                         </span>
                         <span
-                            class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase ">Legal
-                            Document</span>
+                            class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase">Legal
+                            Agreement</span>
                     </div>
-                    <h1
-                        class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
+                    <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
                         Terms<span class="brand-gradient-text"> of Service</span>
                     </h1>
                     <p class="font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
                         style="color: rgba(255,255,255,0.65);">
-                        At RYBIX, we strive to provide secure and reliable services. These Terms of Service define the
-                        rights, obligations, and conditions that apply when accessing or using our website, solutions,
-                        and digital platforms
-
+                        These Terms of Service govern your access to and use of Rybix's platforms, products, and services.
+                        By using our services, you agree to be bound by these terms.
                     </p>
                 </div>
             </div>
-
         </section>
- 
+
+        <!-- ═══ TERMS CONTENT - SAME LAYOUT AS PRIVACY POLICY ═══ -->
+        <section class="section-padding pt-12">
+            <div class="container-site">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Last Updated -->
+                    <div class="text-center mb-12">
+                        <p class="text-text-muted font-mono text-sm">
+                            <i class="fa-regular fa-calendar-alt mr-2 text-brand-purple"></i>
+                            Effective Date: June 2, 2026 | Last Updated: June 2, 2026
+                        </p>
+                    </div>
+
+                    <!-- Introduction Card -->
+                    <div class="content-card p-6 md:p-8 mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-scale-balanced text-2xl text-brand-purple"></i>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Introduction</h2>
+                        </div>
+                        <p class="text-text-dim mb-4">Welcome to Rybix ("Company," "we," "our," "us"). These Terms of Service ("Terms") are a binding legal agreement between you and Rybix regarding your use of our website, applications, APIs, tokenization platforms, automation tools, real estate services, and any other products or services we offer (collectively, the "Services").</p>
+                        <p class="text-text-dim">By accessing or using any of our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, you may not access or use our Services.</p>
+                    </div>
+
+                    <!-- Section 1 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">1</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Acceptance of Terms</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">By registering for an account, accessing our platform, or using any of our Services, you confirm that you have the legal capacity to enter into these Terms. If you are using the Services on behalf of an organization, you represent and warrant that you have authority to bind that organization to these Terms.</p>
+                        <p class="text-text-dim">We may modify these Terms from time to time. When we make material changes, we will provide notice through the Services or by other means. Your continued use of the Services after the effective date of any changes constitutes your acceptance of the modified Terms.</p>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">2</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Our Services</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">Rybix provides a comprehensive ecosystem of technology solutions including:</p>
+                        <ul class="list-bullet space-y-2 text-text-dim">
+                            <li>Products & Automations — Workflow automation, AI agents, and smart contract deployment</li>
+                            <li>Tokenization — Asset tokenization services for real estate, commodities, and financial instruments</li>
+                            <li>Real Estate Solutions — Property management platforms, fractional ownership frameworks, and compliance tools</li>
+                            <li>Marketing Automation — Digital marketing infrastructure, analytics, and campaign management</li>
+                        </ul>
+                        <p class="text-text-dim mt-3">We reserve the right to modify, suspend, or discontinue any aspect of our Services at any time, with or without notice.</p>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">3</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">User Accounts & Responsibilities</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">To access certain features, you must create an account. You agree to:</p>
+                        <ul class="list-bullet space-y-2 text-text-dim">
+                            <li>Provide accurate, current, and complete information during registration</li>
+                            <li>Maintain the security and confidentiality of your login credentials</li>
+                            <li>Promptly notify us of any unauthorized access or security breach</li>
+                            <li>Accept responsibility for all activities that occur under your account</li>
+                            <li>Comply with all applicable laws, regulations, and these Terms</li>
+                        </ul>
+                        <p class="text-text-dim mt-3">You may not share your account credentials with any third party. We reserve the right to suspend or terminate accounts that violate these Terms.</p>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">4</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Prohibited Conduct</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">You agree not to engage in any of the following prohibited activities:</p>
+                        <ul class="list-bullet space-y-2 text-text-dim">
+                            <li>Violating any applicable law, regulation, or third-party rights</li>
+                            <li>Using the Services for fraudulent, deceptive, or illegal purposes</li>
+                            <li>Interfering with or disrupting the integrity or performance of our Services</li>
+                            <li>Attempting to gain unauthorized access to our systems or other users' accounts</li>
+                            <li>Reverse engineering, decompiling, or disassembling any part of our platform</li>
+                            <li>Using automated scripts or bots to scrape or extract data from our Services</li>
+                            <li>Transmitting malware, viruses, or other harmful code</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">5</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Intellectual Property Rights</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">All content, features, and functionality of our Services — including but not limited to software, source code, algorithms, trademarks, logos, designs, text, graphics, and APIs — are the exclusive property of Rybix or our licensors and are protected by copyright, trademark, patent, and other intellectual property laws.</p>
+                        <p class="text-text-dim">We grant you a limited, non-exclusive, non-transferable, revocable license to access and use our Services for your internal business or personal purposes, strictly in accordance with these Terms. You may not copy, modify, distribute, sell, or lease any part of our Services without our express written consent.</p>
+                    </div>
+
+                    <!-- Section 6 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">6</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Fees & Payments</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">Certain Services may require payment of fees. All fees are non-refundable except as expressly provided in these Terms or as required by law. We may modify our fee structure upon 30 days' notice. You are responsible for all taxes associated with your use of our Services.</p>
+                        <p class="text-text-dim">For tokenization and real estate services, additional fees including gas fees, minting costs, and third-party integration charges may apply. We will disclose such fees before you incur them.</p>
+                    </div>
+
+                    <!-- Section 7 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">7</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Termination</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">We may terminate or suspend your access to our Services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Upon termination, your right to use the Services will immediately cease
+                        <p class="text-text-dim">Sections that by their nature should survive termination  including Intellectual Property, Limitation of Liability, Indemnification, and Governing Law  shall survive any termination of these Terms.</p>
+                    </div>
+
+                    <!-- Section 8 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">8</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Disclaimer of Warranties</h2>
+                        </div>
+                        <p class="text-text-dim">Your use of the services is at your sole risk. The services are provided on an "as is" and "as available" basis. Rybix expressly disclaims all warranties of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement.</p>
+                        <p class="text-text-dim mt-3">We do not warrant that the Services will be uninterrupted, secure, error-free, or free of viruses or other harmful components. Blockchain networks involve inherent risks, including network congestion, forks, and smart contract vulnerabilities.</p>
+                    </div>
+
+                    <!-- Section 9 -->
+                    <div class="content-card p-6 md:p-8 mb-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-purple/10 flex items-center justify-center">
+                                <span class="text-brand-purple font-bold text-sm">9</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Limitation of Liability</h2>
+                        </div>
+                        <p class="text-text-dim">To the maximum extent permitted by law, in no event shall rybix, its affiliates, directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation loss of profits, data, use, goodwill, or other intangible losses, arising out of or in connection with your use of the services.</p>
+<p class="text-text-dim mt-3">Our total liability to you for any claims arising from these terms or your use of the services shall not exceed the amount you paid us, if any, during the twelve (12) months preceding the event giving rise to the liability, or one hundred dollars ($100) if you have not paid any amounts.</p>
+                    </div>
+
+               
+
+                    <!-- Contact Card -->
+                    <div class="content-card p-6 md:p-8 mt-8 bg-gradient-to-r from-purple-50/30 to-transparent">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-envelope text-2xl text-brand-purple"></i>
+                            <h2 class="text-xl md:text-2xl font-heading font-bold">Contact Us</h2>
+                        </div>
+                        <p class="text-text-dim mb-3">If you have any questions about these Terms of Service, please contact us:</p>
+                        <div class="space-y-2 text-text-dim">
+                            <p><i class="fa-regular fa-envelope mr-3 text-brand-purple w-5"></i> Email: support@rybixholding.com</p>
+                            <p><i class="fa-regular fa-building mr-3 text-brand-purple w-5"></i> Address: RYBIX HOLDING LLC — 150 SE 2nd Ave Ste 1403 6433 Miami, FL 33131 USA</p>
+                            <p><i class="fa-regular fa-clock mr-3 text-brand-purple w-5"></i> Response Time: 2-3 business days</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </main>
 
-
     <!-- ═══════════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════════ -->
+         FOOTER - IDENTICAL TO PRIVACY POLICY
+         ═══════════════════════════════════════════════════════════════ -->
     <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 relative overflow-hidden">
         <div
             class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
@@ -552,7 +741,7 @@
                     <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Legal</h4>
                     <ul class="space-y-3">
                         <li><a href="./privacypolicy.html" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="./terms.html" class="footer-link">Terms of Service</a></li>
+                        <li><a href="./terms.html" class="footer-link text-brand-purple font-medium">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
@@ -572,15 +761,11 @@
         </div>
     </footer>
 
-
     <script>
-
-    </script>
-    <script>
+        // Page load animation
         window.addEventListener('load', () => {
             document.getElementById('page').classList.add('page-enter-active');
         });
-
 
         // Mobile menu
         const mobileToggle = document.getElementById('mobile-toggle');
@@ -645,7 +830,7 @@
         window.addEventListener('scroll', updateNav);
         updateNav();
     </script>
-    <!-- 
+
     <script>
         document.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -672,8 +857,7 @@
             }
 
         });
-    </script> -->
-
+    </script>
 </body>
 
 </html>

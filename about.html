@@ -414,8 +414,6 @@
             transform: translateY(0);
             transition: all 0.8s ease-out;
         }
-
-   
     </style>
 
 </head>
@@ -426,7 +424,7 @@
     <nav id="main-nav"
         class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
         <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
-            <img src="./images/logo.png" alt="RYBIX" class="h-9 w-10 rounded-lg"
+            <img src="./images/logo.webp" alt="RYBIX" class="h-9 w-10 rounded-lg"
                 onerror="this.src='https://placehold.co/40x40/8b5cf6/white?text=R'">
             <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
         </a>
@@ -439,11 +437,13 @@
                     <i class="fa-solid fa-chevron-down text-[0.6rem] opacity-60"></i></a>
                 <div class="dropdown-menu">
                     <span class="dropdown-label">Secure & Reliable</span>
-                    <a href="./Products&Automations.html" class="dropdown-item"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                    <a href="./Products&Automations.html" class="dropdown-item"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
                         Automations</a>
                     <a href="./tokenization.html" class="dropdown-item"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
-                    <a href="./realestate.html" class="dropdown-item"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                    <a href="./realestate.html" class="dropdown-item"><i
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
                         Estate</a>
                     <a href="./marketing.html" class="dropdown-item"><i
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
@@ -480,11 +480,13 @@
                         class="fa-solid fa-chevron-down text-xs text-brand-purple transition-transform duration-300"></i></button>
                 <div id="mobile-services" class="mobile-dropdown-content">
                     <span class="mobile-dropdown-label">RYBIX</span>
-                    <a href="./Products&Automations.html" class="mobile-sub-link"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
+                    <a href="./Products&Automations.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
                         & Automations</a>
                     <a href="./tokenization.html" class="mobile-sub-link"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
-                    <a href="./realestate.html" class="mobile-sub-link"><i class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
+                    <a href="./realestate.html" class="mobile-sub-link"><i
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
                         Estate</a>
                     <a href="./marketing.html" class="mobile-sub-link"><i
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
@@ -640,15 +642,42 @@
                     <div class="card p-6 text-center group">
                         <div
                             class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-purple/20 mb-4 group-hover:border-brand-purple transition">
-                            <img src="https://ribix.mexicologico.com/static/img/team/nidia_camara.png" alt="Team Member"
-                                class="w-full h-full object-cover">
+                            <img src="./images/Marco.webp" alt="Team Member" class="w-full h-full object-cover">
+                        </div>
+
+                        <h3 class="font-heading text-xl font-bold text-brand-dark">Marco Antonio Sosa Marrufo</h3>
+                        <p class="text-brand-deep text-sm font-semibold mb-3">Founder & CEO, RYBIX Holding</p>
+
+                        <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t1">
+                            Founder of RYBIX Holding, Marco is a corporate attorney and entrepreneur specializing in AI,
+                            automation, digital transformation, and strategic.
+
+                        </p>
+
+                        <button onclick="openModal(
+        'Marco Antonio Sosa Marrufo',
+        'Founder & Chief Executive Officer, RYBIX Holding',
+        'Marco Antonio Sosa Marrufo is the Founder and Chief Executive Officer of RYBIX Holding, a technology and investment company focused on artificial intelligence, business automation, digital transformation, and strategic growth initiatives. Holding a Law Degree from Marista University of Mérida and postgraduate studies in Corporate Law from Anáhuac Mayab University, Marco has built a career at the intersection of law, entrepreneurship, technology, and investment. His expertise spans corporate structuring, international business development, investment strategy, and the implementation of innovative technologies that enable organizations to operate more efficiently and scale effectively. As a visionary leader, Marco is committed to helping businesses embrace the future through intelligent automation and emerging technologies. Under his leadership, RYBIX Holding continues to develop solutions that transform traditional business models into high-performance, technology-driven enterprises capable of competing in a rapidly evolving global marketplace.'
+        )" class="mt-4 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-brand-purple to-brand-deep rounded-lg hover:opacity-90 transition">
+                            Read More
+                        </button>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="card p-6 text-center group">
+                        <div
+                            class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-purple/20 mb-4 group-hover:border-brand-purple transition">
+                            <img src="./images/nidia_camara.webp" alt="Team Member" class="w-full h-full object-cover">
                         </div>
 
                         <h3 class="font-heading text-xl font-bold text-brand-dark">Nidia Cámara</h3>
                         <p class="text-brand-deep text-sm font-semibold mb-3">Specialist in mortgage auctions</p>
 
                         <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t1">
-                           Specialist in real estate investment through mortgage auctions and in public relations, Nidia Cámara stands out for transparency, rigorous analysis, and close client support. Her work focuses on clarity at every stage, helping investors make informed, confident decisions.
+                            Specialist in real estate investment through mortgage auctions and in public relations,
+                            Nidia Cámara stands out for transparency, rigorous analysis, and close client support. Her
+                            work focuses on clarity at every stage, helping investors make informed, confident
+                            decisions.
                         </p>
 
                         <button
@@ -658,19 +687,19 @@
                         </button>
                     </div>
 
-                    <!-- Member 2 -->
+                    <!-- Member 3 -->
                     <div class="card p-6 text-center group">
                         <div
                             class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-deep/20 mb-4 group-hover:border-brand-deep transition">
-                            <img src="https://ribix.mexicologico.com/static/img/team/didier_cetina.png"
-                                alt="Team Member" class="w-full h-full object-cover">
+                            <img src="./images/didier_cetina.webp" alt="Team Member" class="w-full h-full object-cover">
                         </div>
 
                         <h3 class="font-heading text-xl font-bold text-brand-dark">Didier Cetina</h3>
                         <p class="text-brand-deep text-sm font-semibold mb-3">Operations and logistics support</p>
 
                         <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t2">
-                           Didier Cetina is a professional focused on logistics operations and support in corporate environments, with experience coordinating day-to-day , 
+                            Didier Cetina is a professional focused on logistics operations and support in corporate
+                            environments, with experience coordinating day-to-day ,
                         </p>
                         <button
                             onclick="openModal('Didier Cetina','Operations and logistics support','Didier Cetina is a professional focused on logistics operations and support in corporate environments, with experience coordinating day-to-day activities, administrative oversight, and tracking critical processes. His agile learning and ability to adapt to different work dynamics let him integrate efficiently into multidisciplinary teams, bringing order, structure, and operational continuity. He stands out for his service mindset, customer care, and command of digital tools—executing tasks with precision and keeping operations aligned with business objectives. His profile combines responsibility, execution, and reliability: essential to strengthening internal processes and ensuring sound day-to-day management.')"
@@ -678,20 +707,21 @@
                             Read More
                         </button>
                     </div>
-
-                    <!-- Member 3 -->
-                    <div class="card p-6 text-center group">
+                    <!-- Member 4 -->
+                    <div class="card p-6 text-center group  group lg:col-start-2">
                         <div
                             class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-brand-purple/30 mb-4 group-hover:border-brand-deep transition">
-                            <img src="https://ribix.mexicologico.com/static/img/team/fernando_luna.png"
-                                alt="Team Member" class="w-full h-full object-cover">
+                            <img src="./images/fernando_luna.webp" alt="Team Member" class="w-full h-full object-cover">
                         </div>
 
                         <h3 class="font-heading text-xl font-bold text-brand-dark">Fernando Luna</h3>
                         <p class="text-brand-deep text-sm font-semibold mb-3">Technology development specialist</p>
 
                         <p class="text-slate-500 text-sm leading-relaxed line-clamp-3" id="t3">
-                            Fernando Luna is an integrated technology development specialist with more than 30 years of experience designing, implementing, and optimizing software, hardware, and automation solutions. His profile combines a strong systems-engineering foundation with advanced mastery of multiple
+                            Fernando Luna is an integrated technology development specialist with more than 30 years of
+                            experience designing, implementing, and optimizing software, hardware, and automation
+                            solutions. His profile combines a strong systems-engineering foundation with advanced
+                            mastery of multiple
                         </p>
 
                         <button
@@ -743,10 +773,11 @@
                 <div>
                     <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Secure Channels</h4>
                     <ul>
-                        <li><a href="mailto:support@rybixholding.com" class="footer-link inline-flex items-center gap-2">
-                                    <i class="fa-solid fa-envelope text-brand-purple"></i>
-                                    Email
-                                </a></li>
+                        <li><a href="mailto:support@rybixholding.com"
+                                class="footer-link inline-flex items-center gap-2">
+                                <i class="fa-solid fa-envelope text-brand-purple"></i>
+                                Email
+                            </a></li>
                     </ul>
                     <div class="mt-8 p-4 rounded-xl border border-slate-700/40">
                         <p class="text-xs"><i class="fa-solid fa-shield-halved text-brand-purple mr-1"></i>
@@ -872,7 +903,7 @@
         updateNav();
     </script>
 
-        <script>
+    <script>
         document.addEventListener("contextmenu", e => e.preventDefault());
 
         document.addEventListener("keydown", function (e) {

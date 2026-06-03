@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Our Services | Hiderox</title>
+    <title>Privacy Policy | RYBIX</title>
     <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
 
     <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
@@ -64,10 +64,6 @@
         };
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         CUSTOM CSS — v3.0 COMPLETE REBUILD
-         Bold, aggressive, modern. ALL text visible by default.
-         ═══════════════════════════════════════════════════════════ -->
     <style>
         /* ═══ BASE ═══ */
         * {
@@ -123,7 +119,6 @@
             }
         }
 
-        /* ═══ BRAND GRADIENT TEXT ═══ */
         .brand-gradient-text {
             background: linear-gradient(135deg, #6d28d9, #8b5cf6, #a855f7);
             -webkit-background-clip: text;
@@ -134,8 +129,17 @@
             animation: gradientMove 5s linear infinite;
         }
 
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
 
-        /* ═══ PAGE HERO — Dark dramatic gradient ═══ */
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        /* Page Hero */
         .page-hero {
             position: relative;
             background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 25%, #2e1065 50%, #0a1628 75%, #0f172a 100%);
@@ -164,37 +168,7 @@
             background: linear-gradient(90deg, #06b6d4, #facc15, #1e3a8a);
         }
 
-        .page-hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-        }
-
-        .page-hero p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-        }
-
-        .page-hero .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            color: #06b6d4;
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            border-radius: 9999px;
-        }
-
+        /* Nav dock */
         .nav-dock {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(16px);
@@ -251,16 +225,6 @@
             color: #ffffff;
         }
 
-        #mobile-toggle {
-            background: rgba(139, 92, 246, 0.85) !important;
-            border: 1px solid rgba(139, 92, 246, 0.5) !important;
-            backdrop-filter: blur(4px);
-        }
-
-        #mobile-toggle span {
-            background-color: #ffffff !important;
-        }
-
         .dropdown-menu {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -310,13 +274,11 @@
             z-index: 100;
         }
 
-        .dropdown-parent:hover .dropdown-menu,
-        .dropdown-parent.open .dropdown-menu {
+        .dropdown-parent:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-
 
         .mobile-overlay {
             position: fixed;
@@ -340,7 +302,6 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.85);
-            transition: color 0.3s ease;
         }
 
         .mobile-nav-link:hover {
@@ -358,28 +319,6 @@
             max-height: 600px;
         }
 
-        .mobile-dropdown-label {
-            display: block;
-            padding: 0.5rem 0 0.25rem;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #94a3b8;
-        }
-
-        .mobile-sub-link {
-            display: block;
-            padding: 0.5rem 0;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.65);
-            transition: color 0.3s ease;
-        }
-
-        .mobile-sub-link:hover {
-            color: #8b5cf6;
-        }
-
         .footer-link {
             color: #94a3b8;
             transition: color 0.3s ease;
@@ -390,32 +329,53 @@
             color: #8b5cf6;
         }
 
-        .card {
+        /* Table of Contents Cards */
+        .toc-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            transition: all 0.25s ease;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
+        .toc-card:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 12px 24px -12px rgba(139, 92, 246, 0.2);
         }
 
-        
+        .policy-section {
+            scroll-margin-top: 100px;
+        }
+
+        /* Mobile toggle (hamburger) button styling - Purple color as requested */
+        #mobile-toggle {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.5);
+            background: transparent;
+        }
+
+        #mobile-toggle span {
+            background-color: #8b5cf6;
+        }
+
+        /* When navbar is scrolled, maintain purple color for hamburger */
+        .nav-dock.scrolled #mobile-toggle {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-dock.scrolled #mobile-toggle span {
+            background-color: #8b5cf6;
+        }
     </style>
 
 </head>
 
 <body>
 
-
     <nav id="main-nav"
         class="nav-dock fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 lg:px-6 py-3 flex items-center justify-between gap-3 w-[94%] max-w-[1100px] rounded-2xl">
         <a href="/" class="flex items-center gap-2.5 shrink-0 no-underline">
-            <img src="./images/logo.png" alt="RYBIX" class="h-9 w-10 rounded-lg"
+            <img src="./images/logo.webp" alt="RYBIX" class="h-9 w-10 rounded-lg"
                 onerror="this.src='https://placehold.co/40x40/8b5cf6/white?text=R'">
             <span class="nav-logo-text font-heading text-lg font-bold tracking-wider">RYBIX</span>
         </a>
@@ -429,13 +389,11 @@
                 <div class="dropdown-menu">
                     <span class="dropdown-label">Secure & Reliable</span>
                     <a href="./Products&Automations.html" class="dropdown-item"><i
-                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
-                        Automations</a>
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products & Automations</a>
                     <a href="./tokenization.html" class="dropdown-item"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
                     <a href="./realestate.html" class="dropdown-item"><i
-                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
-                        Estate</a>
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real Estate</a>
                     <a href="./marketing.html" class="dropdown-item"><i
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
                 </div>
@@ -458,7 +416,6 @@
         </button>
     </nav>
 
-    <!-- ═══ MOBILE OVERLAY MENU ═══ -->
     <div id="mobile-menu" class="mobile-overlay">
         <button id="mobile-close"
             class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 text-white/70 hover:text-white"><i
@@ -472,13 +429,11 @@
                 <div id="mobile-services" class="mobile-dropdown-content">
                     <span class="mobile-dropdown-label">RYBIX</span>
                     <a href="./Products&Automations.html" class="mobile-sub-link"><i
-                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products
-                        & Automations</a>
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products & Automations</a>
                     <a href="./tokenization.html" class="mobile-sub-link"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenizations</a>
                     <a href="./realestate.html" class="mobile-sub-link"><i
-                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real
-                        Estate</a>
+                            class="fa-solid fa-house mr-2 text-brand-purple"></i>Real Estate</a>
                     <a href="./marketing.html" class="mobile-sub-link"><i
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
                 </div>
@@ -489,43 +444,339 @@
         </div>
     </div>
 
-    <main id="page" class="relative z-10 page-enter">
+    <main class="relative z-10">
 
-        <!-- HERO -->
+        <!-- Hero Section with smaller description text -->
         <section class="page-hero">
             <div class="container-site relative z-10 text-center">
                 <div class="max-w-3xl mx-auto">
-                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1"
+                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8"
                         style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
                         <span class="relative flex h-2.5 w-2.5 items-center justify-center">
                             <i class="fa-solid fa-file-shield text-xs text-brand-purple"></i>
                         </span>
                         <span
-                            class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase ">Legal
+                            class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase">Legal
                             Document</span>
                     </div>
                     <h1
                         class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
                         Privacy<span class="brand-gradient-text"> Policy</span>
                     </h1>
-                    <p class="font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
+                    <!-- Smaller description text (text-base instead of text-xl) -->
+                    <p class="font-body text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
                         style="color: rgba(255,255,255,0.65);">
                         At RYBIX, we are committed to protecting your privacy and ensuring the security of your personal
                         information. This Privacy Policy explains how we collect, use, store, and safeguard the data you
                         share with us when using our website and services
-
                     </p>
+                    <div
+                        class="flex flex-wrap items-center justify-center gap-4 text-sm font-body text-slate-500 mt-[30px]">
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-calendar text-brand-deep text-xs"></i>
+                            Effective: June 2, 2026
+                        </span>
+                        <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-arrows-rotate text-brand-deep text-xs"></i>
+                            Last Updated: June 2, 2026
+                        </span>
+                        <span class="w-1 h-1 rounded-full bg-slate-400"></span>
+                        <span class="flex items-center gap-1.5">
+                            <i class="fa-solid fa-file-shield text-brand-deep text-xs"></i>
+                            Version 2.0
+                        </span>
+                    </div>
                 </div>
             </div>
-
         </section>
 
+        <!-- START: TABLE OF CONTENTS + FULL PRIVACY POLICY (organized) -->
+        <div class="bg-white/60 backdrop-blur-sm py-12 md:py-16">
+            <div class="container-site max-w-4xl mx-auto">
+
+                <!-- ================= TABLE OF CONTENTS ================= -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-2 mb-8">
+                        <i class="fa-solid fa-list-ul text-brand-purple text-xl"></i>
+                        <h2 class="text-2xl md:text-3xl font-heading font-bold text-brand-dark">Table of Contents</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <a href="#intro" class="toc-card p-4 flex items-center gap-3 group transition-all"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">1</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Introduction</span></a>
+                        <a href="#data-collect" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">2</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Data We
+                                Collect</span></a>
+                        <a href="#data-use" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">3</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">How We Use Your
+                                Data</span></a>
+                        <a href="#cookies" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">4</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Cookies &
+                                Tracking</span></a>
+                        <a href="#thirdparty" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">5</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Third-Party
+                                Services</span></a>
+                        <a href="#security" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">6</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Data
+                                Security</span></a>
+                        <a href="#retention" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">7</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Data
+                                Retention</span></a>
+                        <a href="#gdpr" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">8</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">GDPR
+                                Compliance</span></a>
+                        <a href="#yourrights" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">9</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Your Rights</span></a>
+                        <a href="#children" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">10</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Children's
+                                Privacy</span></a>
+                        <a href="#international" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">11</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">International
+                                Transfers</span></a>
+                        <a href="#changes" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">12</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Changes to This
+                                Policy</span></a>
+                        <a href="#contact" class="toc-card p-4 flex items-center gap-3 group"><span
+                                class="w-7 h-7 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center font-mono text-sm font-bold">13</span><span
+                                class="font-medium text-text-main group-hover:text-brand-purple">Contact
+                                Information</span></a>
+                    </div>
+                </div>
+
+                <!-- ================= PRIVACY POLICY SECTIONS ================= -->
+                <div class="space-y-12">
+                    <!-- 1. Introduction -->
+                    <div id="intro" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">1</span>
+                            Introduction</h2>
+                        <p class="text-text-dim leading-relaxed">RYBIX provides real estate tokenization, automation
+                            solutions, digital marketing, and investment services. This Privacy Policy outlines how we
+                            collect, use, share, and protect your personal data when you interact with our website,
+                            platforms, and services. By using our services, you agree to the practices described in this
+                            policy.</p>
+                    </div>
+
+                    <!-- 2. Data We Collect -->
+                    <div id="data-collect" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">2</span>
+                            Data We Collect</h2>
+                        <ul class="list-disc pl-6 space-y-2 text-text-dim">
+                            <li><strong class="text-text-main">Identity & Contact Data:</strong> name, email address,
+                                phone number, postal address (for real estate transactions and investment updates).</li>
+                            <li><strong class="text-text-main">Transaction & Tokenization Data:</strong> wallet
+                                addresses, token holdings, investment amounts, property interests, and KYC/AML
+                                verification documents where required.</li>
+                            <li><strong class="text-text-main">Technical Data:</strong> IP address, browser type, device
+                                identifiers, and activity logs for security and fraud prevention.</li>
+                            <li><strong class="text-text-main">Marketing Preferences:</strong> opt-in/opt-out choices,
+                                campaign interactions, and analytics to improve our services.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. How We Use Your Data -->
+                    <div id="data-use" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">3</span>
+                            How We Use Your Data</h2>
+                        <ul class="list-disc pl-6 space-y-2 text-text-dim">
+                            <li>Provide, maintain, and improve real estate tokenization and automation services.</li>
+                            <li>Process investments, execute smart contracts, and comply with financial/legal
+                                obligations.</li>
+                            <li>Send marketing communications (only with explicit consent) about relevant opportunities.
+                            </li>
+                            <li>Enhance security, detect fraudulent activities, and ensure platform integrity.</li>
+                            <li>Personalize user experience and analyze trends to develop new features.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 4. Cookies & Tracking -->
+                    <div id="cookies" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">4</span>
+                            Cookies & Tracking</h2>
+                        <p class="text-text-dim">We use essential cookies for authentication and security. Analytics
+                            cookies help us measure campaign performance (you may opt out via browser settings). No
+                            third-party advertising cookies are placed without prior consent. You can manage cookie
+                            preferences through our cookie banner.</p>
+                    </div>
+
+                    <!-- 5. Third-Party Services -->
+                    <div id="thirdparty" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">5</span>
+                            Third-Party Services</h2>
+                        <p class="text-text-dim">We share data with blockchain validators, payment processors, and
+                            marketing platforms solely to deliver our services. Additionally, we may disclose
+                            information to regulatory bodies if required by applicable laws (GDPR, AML/KYC regulations).
+                            All third parties are bound by data protection agreements.</p>
+                    </div>
+
+                    <!-- 6. Data Security -->
+                    <div id="security" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">6</span>
+                            Data Security</h2>
+                        <p class="text-text-dim">RYBIX implements enterprise-grade security: end-to-end encryption,
+                            regular penetration testing, strict access controls, and real-time monitoring. We maintain
+                            compliance with cyber security frameworks to protect your data against unauthorized access,
+                            loss, or alteration.</p>
+                    </div>
+
+                    <!-- 7. Data Retention -->
+                    <div id="retention" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">7</span>
+                            Data Retention</h2>
+                        <p class="text-text-dim">Marketing data is kept until you unsubscribe or after 2 years of
+                            inactivity. Tokenization and investment records are retained for 7 years to comply with
+                            financial/legal obligations. Real estate inquiry data is stored for 3 years unless deletion
+                            is requested earlier.</p>
+                    </div>
+
+                    <!-- 8. GDPR Compliance -->
+                    <div id="gdpr" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">8</span>
+                            GDPR Compliance</h2>
+                        <p class="text-text-dim">For individuals in the European Economic Area (EEA), we process your
+                            data based on lawful grounds (contract, legal obligation, legitimate interests, or consent).
+                            You have the right to withdraw consent anytime. We appoint a GDPR representative where
+                            required.</p>
+                    </div>
+
+                    <!-- 9. Your Rights -->
+                    <div id="yourrights" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">9</span>
+                            Your Rights</h2>
+                        <ul class="list-disc pl-6 space-y-1 text-text-dim">
+                            <li>Access, rectify, or erase your personal data.</li>
+                            <li>Restrict or object to processing (e.g., stop marketing but retain investment data).</li>
+                            <li>Data portability for tokenized asset records.</li>
+                            <li>Lodge a complaint with your local Data Protection Authority.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 10. Children's Privacy -->
+                    <div id="children" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">10</span>
+                            Children's Privacy</h2>
+                        <p class="text-text-dim">Our services are strictly for individuals aged 18 and above (real
+                            estate, investments, tokenization). We do not knowingly collect data from minors. If we
+                            become aware of such data, it will be deleted immediately.</p>
+                    </div>
+
+                    <!-- 11. International Transfers -->
+                    <div id="international" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">11</span>
+                            International Transfers</h2>
+                        <p class="text-text-dim">Your data may be transferred to and processed in countries outside your
+                            residence (e.g., blockchain nodes, cloud infrastructure). We ensure appropriate safeguards
+                            such as Standard Contractual Clauses (SCCs) or equivalent protections.</p>
+                    </div>
+
+                    <!-- 12. Changes to This Policy -->
+                    <div id="changes" class="policy-section scroll-mt-28 border-b border-slate-200 pb-8">
+                        <h2 class="text-2xl font-heading font-bold text-brand-dark flex items-center gap-2 mb-5"><span
+                                class="w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">12</span>
+                            Changes to This Policy</h2>
+                        <p class="text-text-dim">We may update this Privacy Policy periodically. Material changes will
+                            be notified via email or a prominent notice on our website. The "Last Updated" date at the
+                            top reflects the latest revision.</p>
+                    </div>
+
+                    <!-- 13. Contact Information (updated with 3 addresses) -->
+                 <div id="contact" class="policy-section scroll-mt-28 pb-4">
+    <h2
+        class="text-xl sm:text-2xl font-heading font-bold text-brand-dark flex items-start sm:items-center gap-2 mb-5">
+        <span
+            class="w-8 h-8 flex-shrink-0 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-sm font-mono font-bold">
+            13
+        </span>
+        <span>Contact Information</span>
+    </h2>
+
+    <p class="text-text-dim text-sm sm:text-base">
+        For privacy-related inquiries, data requests, or security concerns:
+    </p>
+
+    <div class="mt-4 p-4 sm:p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4">
+
+        <p class="flex items-start gap-3 break-all sm:break-words">
+            <i class="fa-regular fa-envelope text-brand-purple w-5 mt-1 flex-shrink-0"></i>
+            <span>
+                <strong>Email:</strong>
+                support@rybixholding.com
+            </span>
+        </p>
+
+        <p class="flex items-start gap-3 break-all sm:break-words">
+            <i class="fa-solid fa-shield-halved text-brand-purple w-5 mt-1 flex-shrink-0"></i>
+            <span>
+                <strong>Cyber Security & DPO:</strong>
+                support@rybixholding.com
+            </span>
+        </p>
+
+        <div class="pt-3 border-t border-slate-200">
+            <p class="font-semibold text-text-main mb-3 flex items-start gap-2">
+                <i class="fa-solid fa-location-dot text-brand-purple mt-1 flex-shrink-0"></i>
+                <span>Office Addresses:</span>
+            </p>
+
+            <ul class="space-y-3 text-text-dim text-sm">
+                <li class="flex items-start gap-2">
+                    <span class="text-brand-purple flex-shrink-0">•</span>
+                    <span class="break-words">
+                        RYBIX HOLDING LLC — 150 SE 2nd Ave Ste 1403 6433 Miami, FL 33131 USA
+                    </span>
+                </li>
+
+                <li class="flex items-start gap-2">
+                    <span class="text-brand-purple flex-shrink-0">•</span>
+                    <span class="break-words">
+                        RYBIX HOLDING LLC — 10685-B Hazelhurst Dr. #42970 Houston, TX 77043 USA
+                    </span>
+                </li>
+
+                <li class="flex items-start gap-2">
+                    <span class="text-brand-purple flex-shrink-0">•</span>
+                    <span class="break-words">
+                        RYBIX HOLDING LLC — 453 S Spring Street Ste 400 PMB1243 Los Angeles, CA 90013 United States
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+                </div>
+
+                <div class="mt-12 pt-6 text-sm text-slate-500 border-t border-slate-200 text-center italic">
+                    <i class="fa-regular fa-clock"></i> Last updated: June 2026 — Compliance with GDPR / CCPA / global
+                    data protection frameworks.
+                </div>
+            </div>
+        </div>
+        <!-- END: PRIVACY CONTENT -->
     </main>
 
-
-    <!-- ═══════════════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════════════ -->
+    <!-- Footer unchanged -->
     <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 relative overflow-hidden">
         <div
             class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
@@ -558,88 +809,48 @@
                 <div>
                     <h4 class="text-xs font-semibold tracking-wider text-white uppercase mb-6">Secure Channels</h4>
                     <ul>
-                        <li><a href="mailto:support@rybixholding.com" class="footer-link inline-flex items-center gap-2"><i
-                                    class="fa-solid fa-envelope text-brand-purple"></i> Email</a></li>
+                        <li><a href="mailto:support@rybixholding.com"
+                                class="footer-link inline-flex items-center gap-2"><i
+                                    class="fa-solid fa-envelope text-brand-purple"></i>Email</a></li>
                     </ul>
                     <div class="mt-8 p-4 rounded-xl border border-slate-700/40">
-                        <p class="text-xs"><i class="fa-solid fa-shield-halved text-brand-purple mr-1"></i>
-                            End-to-end encrypted. Never share client data.</p>
+                        <p class="text-xs"><i class="fa-solid fa-shield-halved text-brand-purple mr-1"></i> End-to-end
+                            encrypted. Never share client data.</p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-slate-800/60 mt-12 pt-6 text-center text-xs text-slate-600">&copy; 2026
-                RYBIX. All rights reserved. Built with privacy in mind.</div>
+            <div class="border-t border-slate-800/60 mt-12 pt-6 text-center text-xs text-slate-600">&copy; 2026 RYBIX.
+                All rights reserved. Built with privacy in mind.</div>
         </div>
     </footer>
 
-
     <script>
-
-
-        // Mobile menu
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileClose = document.getElementById('mobile-close');
-
-        function openMenu() {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
+        function openMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
         if (mobileToggle) mobileToggle.addEventListener('click', openMenu);
         if (mobileClose) mobileClose.addEventListener('click', closeMenu);
-
-        mobileMenu.querySelectorAll('a').forEach(a =>
-            a.addEventListener('click', closeMenu)
-        );
-
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeMenu();
-        });
-
-        // Accordion
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
         document.querySelectorAll('.mobile-accordion > button').forEach(btn => {
             btn.addEventListener('click', function () {
                 const target = document.getElementById(this.getAttribute('data-target'));
                 const icon = this.querySelector('i');
-
                 if (target) {
                     const isOpen = target.classList.contains('open');
-
-                    document.querySelectorAll('.mobile-dropdown-content')
-                        .forEach(el => el.classList.remove('open'));
-
-                    document.querySelectorAll('.mobile-accordion > button i')
-                        .forEach(ic => ic.style.transform = 'rotate(0deg)');
-
-                    if (!isOpen) {
-                        target.classList.add('open');
-                        if (icon) icon.style.transform = 'rotate(180deg)';
-                    }
+                    document.querySelectorAll('.mobile-dropdown-content').forEach(el => el.classList.remove('open'));
+                    document.querySelectorAll('.mobile-accordion > button i').forEach(ic => ic.style.transform = 'rotate(0deg)');
+                    if (!isOpen) { target.classList.add('open'); if (icon) icon.style.transform = 'rotate(180deg)'; }
                 }
             });
         });
-
-        // Nav scroll effect
         const mainNav = document.getElementById('main-nav');
-
-        function updateNav() {
-            if (window.pageYOffset > 60) {
-                mainNav.classList.add('scrolled');
-            } else {
-                mainNav.classList.remove('scrolled');
-            }
-        }
-
-        window.addEventListener('scroll', updateNav);
-        updateNav();
+        function updateNav() { if (window.pageYOffset > 60) mainNav.classList.add('scrolled'); else mainNav.classList.remove('scrolled'); }
+        window.addEventListener('scroll', updateNav); updateNav();
     </script>
-    <!-- 
+
     <script>
         document.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -666,8 +877,7 @@
             }
 
         });
-    </script> -->
-
+    </script>
 </body>
 
 </html>
