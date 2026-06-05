@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <title>Our Services | Hiderox</title>
+    <title>About | Rybix</title>
     <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
 
     <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
@@ -76,9 +76,9 @@
             box-sizing: border-box;
         }
 
+
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-color: #fafbfc;
             color: #1a1a2e;
             font-size: 16px;
             line-height: 1.75;
@@ -449,6 +449,8 @@
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
                 </div>
             </div>
+            <a href="./projects.html"
+                class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">Projects</a>
             <a href="./about.html"
                 class="nav-link-text px-3 py-2 font-heading text-xs font-bold tracking-wider uppercase rounded-full">About
                 Us</a>
@@ -492,6 +494,8 @@
                             class="fa-solid fa-bullhorn mr-2 text-brand-purple"></i>Marketing</a>
                 </div>
             </div>
+            <a href="./projects.html" class="mobile-nav-link">Projects</a>
+
             <a href="./about.html" class="mobile-nav-link">About Us</a>
             <a href="./invest.html" class="mobile-nav-link">Invest</a>
             <a href="./contact.html" class="mobile-nav-link">Contact</a>
@@ -656,8 +660,9 @@
 
                         <button onclick="openModal(
         'Marco Antonio Sosa Marrufo',
-        'Founder & Chief Executive Officer, RYBIX Holding',
-        'Marco Antonio Sosa Marrufo is the Founder and Chief Executive Officer of RYBIX Holding, a technology and investment company focused on artificial intelligence, business automation, digital transformation, and strategic growth initiatives. Holding a Law Degree from Marista University of Mérida and postgraduate studies in Corporate Law from Anáhuac Mayab University, Marco has built a career at the intersection of law, entrepreneurship, technology, and investment. His expertise spans corporate structuring, international business development, investment strategy, and the implementation of innovative technologies that enable organizations to operate more efficiently and scale effectively. As a visionary leader, Marco is committed to helping businesses embrace the future through intelligent automation and emerging technologies. Under his leadership, RYBIX Holding continues to develop solutions that transform traditional business models into high-performance, technology-driven enterprises capable of competing in a rapidly evolving global marketplace.'
+        
+        'Founder & CEO, RYBIX Holding',
+        'Marco Antonio Sosa Marrufo is the Founder and CEO of RYBIX Holding, a technology and investment company focused on AI, automation, digital transformation, and strategic growth. He holds a Law Degree from Marista University of Mérida and postgraduate studies in Corporate Law from Anáhuac Mayab University. His expertise includes corporate structuring, international business development, investment strategy, and implementing innovative technologies to improve efficiency and scalability. As a visionary leader, he drives RYBIX Holding to transform traditional businesses into high-performance, technology-driven enterprises in the global market'
         )" class="mt-4 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-brand-purple to-brand-deep rounded-lg hover:opacity-90 transition">
                             Read More
                         </button>
@@ -747,7 +752,7 @@
         </div>
         <div class="container-site">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div><a href="/" class="flex items-center gap-2.5 mb-6"><img src="./images/logo.png" alt="RYBIX"
+                <div><a href="/" class="flex items-center gap-2.5 mb-6"><img src="./images/logo.webp" alt="RYBIX"
                             class="h-9 w-9 rounded-lg"
                             onerror="this.src='https://placehold.co/36x36/8b5cf6/white?text=R'"><span
                             class="font-heading text-xl font-bold text-white">RYBIX</span></a>
@@ -804,7 +809,7 @@
                     <p id="modalRole" class="text-sm text-brand-purple font-semibold"></p>
                 </div>
 
-                <button onclick="closeModal()" class="text-slate-400 hover:text-red-500 text-xl">
+                <button onclick="closeModal()" class="text-red-700 hover:text-red-500 text-xl font-bold">
                     ✕
                 </button>
             </div>
@@ -813,6 +818,9 @@
 
         </div>
     </div>
+    <elevenlabs-convai agent-id="agent_4301kjgj2fjme5xv9d4ncvcvkgqx"></elevenlabs-convai>
+    <script src="https://ribix.mexicologico.com/static/js/convai-widget-embed.js?v=2" async
+        type="text/javascript"></script>
     <script>
         function openModal(name, role, text) {
             document.getElementById('teamModal').classList.remove('hidden');
@@ -902,7 +910,7 @@
         window.addEventListener('scroll', updateNav);
         updateNav();
     </script>
-
+    <!-- 
     <script>
         document.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -929,7 +937,7 @@
             }
 
         });
-    </script>
+    </script> -->
 
 </body>
 

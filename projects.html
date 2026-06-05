@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-
-    <title>Our Services | Products&Automations</title>
+    <title>Projects | Rybix</title>
     <link rel="icon" type="image/png" href="https://ribix.mexicologico.com/static/img/favicon.png" />
 
     <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
@@ -405,77 +404,6 @@
             border-color: rgba(139, 92, 246, 0.3);
         }
 
-
-
-        /* ═══ BUTTON SYSTEM ═══ */
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 22px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #ffffff;
-            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-            border: 1px solid rgba(139, 92, 246, 0.4);
-            border-radius: 14px;
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* hover glow effect */
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 40px rgba(139, 92, 246, 0.35);
-        }
-
-        /* animated shine */
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.25),
-                    transparent);
-            transition: 0.6s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 22px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #8b5cf6;
-            background: rgba(139, 92, 246, 0.08);
-            border: 1px solid rgba(139, 92, 246, 0.35);
-            border-radius: 14px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(139, 92, 246, 0.15);
-            transform: translateY(-2px);
-            border-color: rgba(139, 92, 246, 0.6);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
-        }
-
         .page-enter {
             opacity: 0;
             transform: translateY(20px);
@@ -491,7 +419,6 @@
 </head>
 
 <body>
-
 
 
     <nav id="main-nav"
@@ -510,7 +437,8 @@
                     <i class="fa-solid fa-chevron-down text-[0.6rem] opacity-60"></i></a>
                 <div class="dropdown-menu">
                     <span class="dropdown-label">Secure & Reliable</span>
-                    <a href="#" class="dropdown-item"><i class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
+                    <a href="./Products&Automations.html" class="dropdown-item"><i
+                            class="fa-solid fa-cogs mr-2 text-brand-purple"></i>Products &
                         Automations</a>
                     <a href="./tokenization.html" class="dropdown-item"><i
                             class="fa-solid fa-coins mr-2 text-brand-purple"></i>Tokenization</a>
@@ -547,7 +475,7 @@
             class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-xl border border-white/10 text-white/70 hover:text-white"><i
                 class="fa-solid fa-xmark text-lg"></i></button>
         <div class="flex flex-col mt-16">
-            <a href="./index.html" class="mobile-nav-link">Home</a>
+            <a href="/" class="mobile-nav-link">Home</a>
             <div class="mobile-accordion">
                 <button class="mobile-nav-link w-full flex items-center justify-between"
                     data-target="mobile-services">Services <i
@@ -578,194 +506,287 @@
 
         <!-- HERO -->
         <section class="page-hero">
-            <div class="container-site relative z-10">
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-
-                    <!-- ═══ LEFT CONTENT ═══ -->
-                    <div class="text-left">
-
-                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8"
-                            style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
-                            <span class="relative flex h-2.5 w-2.5 items-center justify-center">
-                                <i class="fa-solid fa-cogs text-xs text-brand-purple"></i>
-                            </span>
-                            <span
-                                class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase">
-                                Automated Solutions
-                            </span>
-                        </div>
-
-                        <h1
-                            class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
-                            Products & <span class="brand-gradient-text">Automations</span>
-                        </h1>
-
-                        <p class="font-body text-lg sm:text-xl leading-relaxed max-w-2xl"
-                            style="color: rgba(255,255,255,0.65);">
-                            Leverage AI-powered automation and intelligent systems to streamline operations, reduce
-                            manual
-                            effort, and improve accuracy. Gain real-time insights through smart dashboards for faster,
-                            data-driven decision-making
-                        </p>
-
-                        <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                            <a href="./contact.html" class="btn-primary">
-                                <i class="fa-solid fa-arrow-right text-sm"></i>
-                                Request Information
-                            </a>
-                            <a href="./service.html" class="btn-secondary">
-                                <i class="fa-solid fa-grid-2 text-sm"></i>
-                                View All Services
-                            </a>
-                        </div>
-
+            <div class="container-site relative z-10 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-8 hero-reveal hero-reveal-1"
+                        style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3);">
+                        <span class="relative flex h-2.5 w-2.5 items-center justify-center">
+                            <i class="fa-solid fa-rocket text-xs text-brand-purple"></i>
+                        </span>
+                        <span
+                            class="font-heading text-[0.8rem] font-bold tracking-[0.25em] text-brand-purple uppercase ">Showcase</span>
                     </div>
+                    <h1
+                        class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
+                        Our<span class="brand-gradient-text"> Work</span>
+                    </h1>
+                    <p class="font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto"
+                        style="color: rgba(255,255,255,0.65);">
+                        Explore our portfolio of successful projects, showcasing innovative solutions, exceptional
+                        design, and measurable results. From custom websites and web applications to AI-powered
+                        solutions, each project reflects our commitment to quality, innovation, and helping businesses
+                        achieve sustainable growth
 
-                    <!-- ═══ RIGHT SCROLL INDICATOR ═══ -->
-                    <!-- RIGHT ANIMATED INDICATOR (BIG VERSION) -->
-                    <!-- RIGHT HERO VISUAL (EXTRA BIG + SCROLL HINT) -->
-                    <div class="hidden lg:flex flex-col justify-center items-center">
+                    </p>
+                    <div class="mt-6 flex justify-center flex-col">
+                        <i class="fa-solid fa-chevron-down text-brand-purple animate-bounce text-sm"></i>
 
-                        <!-- VISUAL -->
-                        <div class="relative w-[420px] h-[420px] flex items-center justify-center">
-
-                            <!-- Massive glow background -->
-                            <div
-                                class="absolute w-full h-full rounded-full bg-brand-purple/10 blur-[120px] animate-pulse">
-                            </div>
-
-                            <!-- Rings -->
-                            <div
-                                class="absolute w-[360px] h-[360px] rounded-full border border-white/10 animate-spin-slow">
-                            </div>
-                            <div class="absolute w-[280px] h-[280px] rounded-full border border-brand-purple/20 animate-spin"
-                                style="animation-duration: 14s;"></div>
-                            <div class="absolute w-[200px] h-[200px] rounded-full border border-white/10 animate-spin"
-                                style="animation-duration: 10s;"></div>
-
-                            <!-- MAIN COG -->
-                            <i class="fa-solid fa-cog text-[180px] text-brand-purple animate-spin-slow relative"></i>
-
-                            <!-- Floating cogs -->
-                            <i class="fa-solid fa-cog text-3xl text-white/40 absolute top-16 right-20 animate-spin"
-                                style="animation-duration: 6s;"></i>
-
-                            <i class="fa-solid fa-cog text-2xl text-brand-purple/60 absolute bottom-20 left-16 animate-spin"
-                                style="animation-duration: 5s;"></i>
-
-                            <i class="fa-solid fa-cog text-xl text-white/30 absolute top-1/2 left-10 animate-spin"
-                                style="animation-duration: 7s;"></i>
-
-                            <!-- Center pulse -->
-                            <span class="absolute w-6 h-6 bg-brand-purple rounded-full animate-ping"></span>
-
-                        </div>
-
-                        <!-- SCROLL DOWN INDICATOR -->
-                        <div class="flex flex-col items-center mt-6">
-
-                            <span class="text-[11px] tracking-[0.35em] uppercase text-white/50">
-                                Scroll Down
-                            </span>
-
-                            <div class="w-px h-14 bg-gradient-to-b from-white/40 to-transparent mt-3"></div>
-
-                            <div class="w-2 h-2 bg-brand-purple rounded-full animate-bounce mt-2"></div>
-
-                        </div>
 
                     </div>
 
                 </div>
-
             </div>
         </section>
+        <!-- PROJECTS SECTION -->
+        <!-- PROJECTS SECTION -->
+        <section class="py-20 bg-[#fafbfc] relative">
 
-        <section class="section-padding bg-white">
             <div class="container-site">
-                <div class="text-center mb-16">
-                    <div
-                        class="accent-line w-16 h-1 bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto mb-4">
-                    </div>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-brand-dark mb-4">Products and platforms
-                    </h2>
-                    <p class="text-slate-600 max-w-2xl mx-auto"> We build scalable digital products and robust platforms
-                        designed to support modern businesses. From concept to deployment, we create reliable,
-                        high-performance solutions that grow with your needs</p>
-                </div>
-                <div id="carousel"
-                    class="flex flex-nowrap gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
-                    style="scrollbar-width: none; -ms-overflow-style: none;">
 
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center">
-                                <img src="https://ribix.mexicologico.com/static/img/faircore.png">
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold">FAIRCORE</h4><span
-                                    class="text-[10px] uppercase text-slate-400">Smart Automation Suite</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-slate-500">A next-generation platform for premium digital products and
-                            intelligent automation, designed to transform complex workflows into seamless, scalable, and
-                            data-driven decision systems with real-time insights and smarter business control</p><span
-                            class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                            More →</span>
-                    </div>
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-deep/10 flex items-center justify-center"><img
-                                    src="https://ribix.mexicologico.com/static/img/restly.png"></div>
-                            <div>
-                                <h4 class="font-heading font-bold">RESTLY</h4><span
-                                    class="text-[10px] uppercase text-slate-400">Smart Automation Suite</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-slate-500">Elegant solutions that seamlessly combine advanced technology
-                            and real-world experience to automate, streamline, and optimize your operations. We design
-                            scalable, high-performance systems that simplify complex workflows, enhance efficiency, and
-                            improve overall productivity</p><span
-                            class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                            More →</span>
-                    </div>
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-deep/10 flex items-center justify-center"><i
-                                    class="fa-solid fa-cogs text-brand-deep"></i></div>
-                            <div>
-                                <h4 class="font-heading font-bold">RYBIX Automation</h4><span
-                                    class="text-[10px] uppercase text-slate-400">Smart Automation Suite</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-slate-500">Automation with AI-powered systems and intelligent bots to
-                            reduce human errors and significantly cut operational time.
-                            Real-time dashboards that provide clear visibility, faster insights, and smarter
-                            decision-making across your operations.</p><span
-                            class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                            More →</span>
-                    </div>
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center"><i
-                                    class="fa-solid fa-cogs text-brand-purple"></i></div>
-                            <div>
-                                <h4 class="font-heading font-bold">RYBIX Integrations</h4><span
-                                    class="text-[10px] uppercase text-slate-400">Smart Automation Suite</span>
-                            </div>
-                        </div>
-                        <p class="text-sm text-slate-500">Seamless integration with your existing systems and
-                            communication channels for smooth, uninterrupted operations, along with automated analysis
-                            and reporting that delivers accurate insights, reduces manual effort, and supports faster,
-                            data-driven decision-making</p><span
-                            class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                            More →</span>
-                    </div>
+                <!-- Heading -->
+                <div class="text-center mb-14">
+                    <h2 class="text-3xl md:text-5xl font-bold font-heading text-slate-900">
+                        Featured <span class="brand-gradient-text">Projects</span>
+                    </h2>
+                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
+                        A curated selection of our work combining design, technology, and innovation.
+                    </p>
                 </div>
-                <div id="dots" class="flex justify-center gap-2 mt-6"></div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"><a class="block group"
+                        href="https://primax-design.vercel.app/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/PRIMAX.jpg">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">Primax</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Primax Design & Construction</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Primax Design & Construction is a trusted
+                                    firm with 30+ years of experience in modern architecture and construction, focused
+                                    on quality, innovation, and client vision.</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Architecture</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Construction</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#RealEstate</span>
+                                </div>
+
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a class="block group" href="https://finixvault.com/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/FINIX.jpg">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">FINIX VAULT</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Smart Money Growth</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Smart Ways helps users grow their money
+                                    through smart, secure, and intelligent financial strategies designed to build
+                                    long-term wealth and achieve true financial freedom</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Finance</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Investment</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#WealthGrowth</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a class="block group" href="https://investerpoint.com/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/Investor.jpg">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">Investor Point</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Earn Daily Profits</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Invest Smart is a secure investment
+                                    platform designed to help users earn daily profits through transparent financial
+                                    strategies for long-term wealth and stability</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#InvestSmart</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#DailyProfit</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#FinancialGrowth</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="block group" href="https://www.storyblok.com/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/line.jpg">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">Storyblok</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        AI Powered System</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Your AI is only as powerful as your
+                                    content. This platform helps you structure and optimize content once, enabling your
+                                    team, agents, and workflows to operate efficiently and confidently at scale.
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#AIContent</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Automation</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#ContentStrategy</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="block group" href="https://logsnag.com/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images//logsnag.jpg">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">LogSnag</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Realtime monitoring</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Realtime monitoring for your business with
+                                    full visibility into processes and performance. It helps you track activity, detect
+                                    issues instantly, and make faster data-driven decisions for growth and efficiency.
+
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#RealtimeData</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#BusinessAnalytics</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Monitoring</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="block group" href="https://www.neueu.co/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/health.jpg">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">Neu Eu</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Wellness Programs
+                                    </span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Health Plans offers personalized programs
+                                    designed to fit different needs and lifestyles, helping you achieve better health
+                                    and long-term well-being with tailored care and wellness support.
+
+                                </p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#HealthPlans</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Wellness</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Healthcare</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+
+                </div>
             </div>
         </section>
+
 
     </main>
 
@@ -779,7 +800,7 @@
         </div>
         <div class="container-site">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div><a href="/" class="flex items-center gap-2.5 mb-6"><img src="./images//logo.webp" alt="RYBIX"
+                <div><a href="/" class="flex items-center gap-2.5 mb-6"><img src="./images/logo.webp" alt="RYBIX"
                             class="h-9 w-9 rounded-lg"
                             onerror="this.src='https://placehold.co/36x36/8b5cf6/white?text=R'"><span
                             class="font-heading text-xl font-bold text-white">RYBIX</span></a>
@@ -821,127 +842,17 @@
                 RYBIX. All rights reserved. Built with privacy in mind.</div>
         </div>
     </footer>
+
     <elevenlabs-convai agent-id="agent_4301kjgj2fjme5xv9d4ncvcvkgqx"></elevenlabs-convai>
     <script src="https://ribix.mexicologico.com/static/js/convai-widget-embed.js?v=2" async
         type="text/javascript"></script>
+
+
     <script>
         window.addEventListener('load', () => {
             document.getElementById('page').classList.add('page-enter-active');
         });
 
-
-
-        // Carousel logic
-        const carousel = document.getElementById('carousel');
-        const dotsEl = document.getElementById('dots');
-        const cards = Array.from(carousel.querySelectorAll('.snap-start'));
-        let current = 0, autoTimer = null;
-
-        carousel.style.scrollSnapType = 'x mandatory';
-        carousel.style.scrollBehavior = 'smooth';
-
-        function buildDots() {
-            dotsEl.innerHTML = '';
-
-            const isMobile = window.innerWidth <= 768;
-            const maxDots = isMobile ? 4 : 2;
-            const step = Math.ceil(cards.length / maxDots);
-
-            const limitedCards = [];
-
-            for (let i = 0; i < cards.length; i += step) {
-                limitedCards.push(i);
-                if (limitedCards.length === maxDots) break;
-            }
-
-            limitedCards.forEach((cardIndex, i) => {
-                const btn = document.createElement('button');
-
-                btn.style.cssText = `
-                border:none;
-                cursor:pointer;
-                transition:all 0.3s;
-                background:${i === 0 ? '#8b5cf6' : '#cbd5e1'};
-                border-radius:${i === 0 ? '20px' : '50%'};
-                width:${i === 0 ? '26px' : '8px'};
-                height:8px;
-                opacity:${i === 0 ? '1' : '0.6'};
-            `;
-
-                btn.addEventListener('click', () => {
-                    goTo(cardIndex);
-                    resetAuto();
-                });
-
-                dotsEl.appendChild(btn);
-            });
-        }
-
-        function updateDots(idx) {
-            const btns = dotsEl.querySelectorAll('button');
-            btns.forEach((btn, i) => {
-                if (i === idx) {
-                    btn.style.background = '#8b5cf6';
-                    btn.style.width = '26px';
-                    btn.style.borderRadius = '20px';
-                    btn.style.opacity = '1';
-                } else {
-                    btn.style.background = '#cbd5e1';
-                    btn.style.width = '8px';
-                    btn.style.borderRadius = '50%';
-                    btn.style.opacity = '0.6';
-                }
-            });
-        }
-
-        function goTo(idx) {
-            current = idx;
-            const paddingLeft = parseInt(getComputedStyle(carousel).paddingLeft) || 0;
-            carousel.scrollTo({
-                left: cards[idx].offsetLeft - paddingLeft,
-                behavior: 'smooth'
-            });
-            updateDots(idx);
-        }
-
-        function next() {
-            goTo((current + 1) % cards.length);
-        }
-
-        function resetAuto() {
-            clearInterval(autoTimer);
-            autoTimer = setInterval(() => next(), 3500);
-        }
-
-        buildDots();
-        resetAuto();
-
-        let scrollTimeout;
-
-        carousel.addEventListener('scroll', () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                let closest = 0, minDist = Infinity;
-                const paddingLeft = parseInt(getComputedStyle(carousel).paddingLeft) || 0;
-
-                cards.forEach((card, idx) => {
-                    const dist = Math.abs((card.offsetLeft - paddingLeft) - carousel.scrollLeft);
-                    if (dist < minDist) {
-                        minDist = dist;
-                        closest = idx;
-                    }
-                });
-
-                if (closest !== current) {
-                    current = closest;
-                    updateDots(current);
-                }
-            }, 100);
-        });
-
-        carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
-        carousel.addEventListener('mouseleave', resetAuto);
-        window.addEventListener('resize', () => buildDots());
 
         // Mobile menu
         const mobileToggle = document.getElementById('mobile-toggle');
@@ -1006,6 +917,7 @@
         window.addEventListener('scroll', updateNav);
         updateNav();
     </script>
+    <!-- 
     <script>
         document.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -1032,6 +944,45 @@
             }
 
         });
+    </script> -->
+
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
     </script>
 </body>
 
