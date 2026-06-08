@@ -502,19 +502,7 @@
             transform: translateY(-2px);
         }
 
-        .card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-        }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
 
         .accent-line {
             width: 60px;
@@ -645,6 +633,58 @@
 
         .grid-custom-scroll::-webkit-scrollbar {
             display: none;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+            overflow-y: visible;
+
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            animation: scrollLoop 25s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes scrollLoop {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .slider-wrapper:hover .slider-track {
+            animation-play-state: paused;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 24px;
+
+            flex-shrink: 0;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.03);
+            z-index: 999;
+            border-color: rgba(139, 92, 246, 0.5);
         }
     </style>
 
@@ -934,83 +974,103 @@
                         businesses scale securely, optimize digital
                         operations, and build future-ready infrastructure</p>
                 </div>
-                <div id="carousel"
-                    class="flex flex-nowrap gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
-                    style="scrollbar-width: none; -ms-overflow-style: none;">
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center"><i
-                                    class="fa-solid fa-cogs text-brand-purple"></i></div>
-                            <div>
-                                <h4 class="font-heading font-bold">Products & Automation</h4><span
-                                    class="text-[10px] uppercase text-slate-400">Smart Automation Suite</span>
+                <div class="slider-wrapper">
+                    <div class="slider-track" id="track">
+
+                        <!-- ORIGINAL CARDS -->
+                        <div class="card w-[280px] sm:w-[320px]">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center">
+                                    <i class="fa-solid fa-cogs text-brand-purple"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold whitespace-nowrap">
+                                        Products & Automation
+                                    </h4>
+                                    <span class="text-[10px] uppercase text-slate-400">Smart Automation Suite</span>
+                                </div>
                             </div>
+                            <p class="text-sm text-slate-500">Leverage AI-driven automation and intelligent bots to
+                                streamline operations, minimize errors, reduce processing time, and gain real-time
+                                control
+                                over key performance metrics through custom dashboards for data-driven strategic
+                                decision-making.</p>
+                            <a href='./Products&Automations.html'>
+                                <span
+                                    class="inline-flex items-center gap-1 text-brand-purple text-xs mt-3 group-hover:gap-2 transition-all">Learn
+                                    More →</span>
+                            </a>
                         </div>
-                        <p class="text-sm text-slate-500"> Leverage AI-driven automation and intelligent bots to
-                            streamline operations, minimize
-                            errors, reduce processing time, and gain real-time control over key performance metrics
-                            through custom dashboards for data-driven strategic decision-making.</p><a
-                            href="./Products&Automations.html">
-                            <span
-                                class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                                More →</span>
-                        </a>
-                    </div>
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-deep/10 flex items-center justify-center"><i
-                                    class="fa-solid fa-coins text-brand-deep"></i></div>
-                            <div>
-                                <h4 class="font-heading font-bold">Tokenization</h4><span
-                                    class="text-[10px] uppercase text-slate-400">Real Estate Tokenization</span>
+
+                        <div class="card w-[280px] sm:w-[320px]">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-11 h-11 rounded-lg bg-brand-deep/10 flex items-center justify-center">
+                                    <i class="fa-solid fa-coins text-brand-deep"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Tokenization</h4>
+                                    <span class="text-[10px] uppercase text-slate-400">Real Estate Tokenization</span>
+                                </div>
                             </div>
+                            <p class="text-sm text-slate-500">A real estate tokenization platform enabling fractional
+                                ownership of global properties through secure digital assets, with transparent, scalable
+                                investment opportunities for global investors worldwide seeking diversification and
+                                growth.
+                            </p>
+                            <a href='./tokenization.html'>
+                                <span
+                                    class="inline-flex items-center gap-1 text-brand-purple text-xs mt-3 group-hover:gap-2 transition-all">Learn
+                                    More →</span>
+                            </a>
                         </div>
-                        <p class="text-sm text-slate-500">A real estate tokenization platform enabling fractional
-                            ownership of global properties
-                            through secure digital assets, with full transparency and scalable investment opportunities
-                            for global investors.</p><a href="./tokenization.html"><span
-                                class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                                More →</span></a>
-                    </div>
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-deep/10 flex items-center justify-center"><i
-                                    class="fa-solid fa-house text-brand-deep"></i></div>
-                            <div>
-                                <h4 class="font-heading font-bold">Real Estate</h4><span
-                                    class="text-[10px] uppercase text-slate-400">US Market Opportunities</span>
+
+                        <div class="card w-[280px] sm:w-[320px]">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-11 h-11 rounded-lg bg-brand-deep/10 flex items-center justify-center">
+                                    <i class="fa-solid fa-house text-brand-deep"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Real Estate</h4>
+                                    <span class="text-[10px] uppercase text-slate-400">US Market Opportunities</span>
+                                </div>
                             </div>
+                            <p class="text-sm text-slate-500">Gain access to high-potential real estate opportunities
+                                across
+                                the United States with advanced market analysis, full legal compliance, and structured
+                                investment frameworks designed for long-term appreciation and sustainable portfolio
+                                growth.
+                            </p>
+                            <a href='./realestate.html'>
+                                <span
+                                    class="inline-flex items-center gap-1 text-brand-purple text-xs mt-3 group-hover:gap-2 transition-all">Learn
+                                    More →</span>
+                            </a>
                         </div>
-                        <p class="text-sm text-slate-500">Gain access to high-potential real estate opportunities across
-                            the United States with
-                            advanced market analysis, full legal compliance, and structured investment frameworks
-                            designed for long-term appreciation and sustainable portfolio growth.</p><a
-                            href="./realestate.html">
-                            <span
-                                class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                                More →</span>
-                        </a>
-                    </div>
-                    <div class="snap-start shrink-0 w-[280px] sm:w-[320px] card p-6 group">
-                        <div class="flex items-start gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center"><i
-                                    class="fa-solid fa-bullhorn text-brand-purple"></i></div>
-                            <div>
-                                <h4 class="font-heading font-bold">Marketing</h4><span
-                                    class="text-[10px] uppercase text-slate-400"> Investment Insights</span>
+
+                        <div class="card w-[280px] sm:w-[320px]">
+                            <div class="flex items-start gap-4 mb-3">
+                                <div class="w-11 h-11 rounded-lg bg-brand-purple/10 flex items-center justify-center">
+                                    <i class="fa-solid fa-bullhorn text-brand-purple"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Marketing</h4>
+                                    <span class="text-[10px] uppercase text-slate-400">Investment Insights</span>
+                                </div>
                             </div>
+                            <p class="text-sm text-slate-500">Boost your brand with digital marketing using AI-powered
+                                automation and targeted placement across TV, radio, print, and digital media to increase
+                                visibility, attract the right audience, and generate high-quality leads efficiently and
+                                effectively behaviour</p>
+                            <a href='/marketing'>
+                                <span
+                                    class="inline-flex items-center gap-1 text-brand-purple text-xs mt-3 group-hover:gap-2 transition-all">Learn
+                                    More →</span>
+                            </a>
                         </div>
-                        <p class="text-sm text-slate-500"> Boost your brand with digital marketing, Use AI-powered
-                            automation and targeted placement
-                            across TV, radio, print, and digital media to boost brand visibility, attract the right
-                            audience, and generate high-quality leads efficiently.</p><a href="./marketing.html">
-                            <span
-                                class="inline-flex items-center gap-1 text-brand-purple text-xs mt-4 group-hover:gap-2 transition-all">Learn
-                                More →</span>
-                        </a>
+
                     </div>
                 </div>
-                <div id="dots" class="flex justify-center gap-2 mt-6"></div>
+
             </div>
         </section>
 
@@ -1068,6 +1128,153 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- PROJECTS SECTION -->
+        <!-- PROJECTS SECTION -->
+        <section class="py-20  relative">
+
+            <div class="container-site">
+
+                <!-- Heading -->
+                <div class="text-center mb-14">
+                    <h2 class="text-3xl md:text-5xl font-bold font-heading text-slate-900">
+                        Featured <span class="brand-gradient-text">Projects</span>
+                    </h2>
+                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
+                        A curated selection of our work combining design, technology, and innovation.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"><a class="block group"
+                        href="https://primax-design.vercel.app/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" width="1536" height="1024" decoding="async" data-nimg="1"
+                                    class="w-full h-full transition-transform duration-300" style="color:transparent"
+                                    src="./images/PRIMAX.webp">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">Primax</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Primax Design & Construction</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Primax Design & Construction is a trusted
+                                    firm with 30+ years of experience in modern architecture and construction, focused
+                                    on quality, innovation, and client vision.</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Architecture</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Construction</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#RealEstate</span>
+                                </div>
+
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a class="block group" href="https://finixvault.com/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/FINIX.webp">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">FINIX VAULT</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Smart Money Growth</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Smart Ways helps users grow their money
+                                    through smart, secure, and intelligent financial strategies designed to build
+                                    long-term wealth and achieve true financial freedom</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Finance</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#Investment</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#WealthGrowth</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a class="block group" href="https://investerpoint.com/">
+                        <div
+                            class="bg-white rounded-xl shadow-sm border border-gray-100 hover:border-[#6d28d9] hover:shadow-md transition-all duration-200 cursor-pointer h-full flex flex-col">
+                            <div class="bg-white h-48 rounded-t-xl overflow-hidden flex items-center justify-center">
+                                <img alt="Scistuai" loading="lazy" width="1536" height="1024" decoding="async"
+                                    data-nimg="1" class="w-full h-full transition-transform duration-300"
+                                    style="color:transparent" src="./images/Investor.webp">
+                            </div>
+
+                            <!-- SINGLE flex column div instead of two separate ones -->
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-lg font-semibold text-gray-900">Investor Point</h3>
+                                    <span class="text-xs bg-green-100 text-green-700 font-medium px-2 py-0.5 rounded">
+                                        Earn Daily Profits</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-4 flex-1">Invest Smart is a secure investment
+                                    platform designed to help users earn daily profits through transparent financial
+                                    strategies for long-term wealth and stability</p>
+
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#InvestSmart</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#DailyProfit</span>
+                                    <span
+                                        class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded">#FinancialGrowth</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="inline-flex items-center gap-1 text-brand-purple text-xs group-hover:gap-2 transition-all cursor-pointer">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+                </div>
+
+                <!-- View All Projects Button -->
+                <div class="text-center mt-12">
+                    <a href="./projects.html"
+                        class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#6d28d9] to-[#4c1d95] text-white font-medium px-8 py-3 rounded-lg shadow-md hover:shadow-lg hover:from-[#5b21b6] hover:to-[#3b0764] transition-all duration-300">
+                        View All Projects
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
             </div>
         </section>
 
@@ -1223,117 +1430,13 @@
             video.play().catch(e => console.log("Autoplay prevented:", e));
         })();
 
-        // Carousel logic
-        const carousel = document.getElementById('carousel');
-        const dotsEl = document.getElementById('dots');
-        const cards = Array.from(carousel.querySelectorAll('.snap-start'));
-        let current = 0, autoTimer = null;
 
-        carousel.style.scrollSnapType = 'x mandatory';
-        carousel.style.scrollBehavior = 'smooth';
 
-        function buildDots() {
-            dotsEl.innerHTML = '';
+        ///Caoursel Login 
+        const track = document.getElementById("track");
 
-            const isMobile = window.innerWidth <= 768;
-            const maxDots = isMobile ? 4 : 2;
-            const step = Math.ceil(cards.length / maxDots);
-
-            const limitedCards = [];
-
-            for (let i = 0; i < cards.length; i += step) {
-                limitedCards.push(i);
-                if (limitedCards.length === maxDots) break;
-            }
-
-            limitedCards.forEach((cardIndex, i) => {
-                const btn = document.createElement('button');
-
-                btn.style.cssText = `
-                border:none;
-                cursor:pointer;
-                transition:all 0.3s;
-                background:${i === 0 ? '#8b5cf6' : '#cbd5e1'};
-                border-radius:${i === 0 ? '20px' : '50%'};
-                width:${i === 0 ? '26px' : '8px'};
-                height:8px;
-                opacity:${i === 0 ? '1' : '0.6'};
-            `;
-
-                btn.addEventListener('click', () => {
-                    goTo(cardIndex);
-                    resetAuto();
-                });
-
-                dotsEl.appendChild(btn);
-            });
-        }
-
-        function updateDots(idx) {
-            const btns = dotsEl.querySelectorAll('button');
-            btns.forEach((btn, i) => {
-                if (i === idx) {
-                    btn.style.background = '#8b5cf6';
-                    btn.style.width = '26px';
-                    btn.style.borderRadius = '20px';
-                    btn.style.opacity = '1';
-                } else {
-                    btn.style.background = '#cbd5e1';
-                    btn.style.width = '8px';
-                    btn.style.borderRadius = '50%';
-                    btn.style.opacity = '0.6';
-                }
-            });
-        }
-
-        function goTo(idx) {
-            current = idx;
-            const paddingLeft = parseInt(getComputedStyle(carousel).paddingLeft) || 0;
-            carousel.scrollTo({
-                left: cards[idx].offsetLeft - paddingLeft,
-                behavior: 'smooth'
-            });
-            updateDots(idx);
-        }
-
-        function next() {
-            goTo((current + 1) % cards.length);
-        }
-
-        function resetAuto() {
-            clearInterval(autoTimer);
-            autoTimer = setInterval(() => next(), 3500);
-        }
-
-        buildDots();
-        resetAuto();
-
-        let scrollTimeout;
-
-        carousel.addEventListener('scroll', () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                let closest = 0, minDist = Infinity;
-                const paddingLeft = parseInt(getComputedStyle(carousel).paddingLeft) || 0;
-
-                cards.forEach((card, idx) => {
-                    const dist = Math.abs((card.offsetLeft - paddingLeft) - carousel.scrollLeft);
-                    if (dist < minDist) {
-                        minDist = dist;
-                        closest = idx;
-                    }
-                });
-
-                if (closest !== current) {
-                    current = closest;
-                    updateDots(current);
-                }
-            }, 100);
-        });
-
-        carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
-        carousel.addEventListener('mouseleave', resetAuto);
-        window.addEventListener('resize', () => buildDots());
+        // clone items for seamless loop
+        track.innerHTML += track.innerHTML;
 
         // Mobile menu
         const mobileToggle = document.getElementById('mobile-toggle');

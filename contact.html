@@ -64,9 +64,6 @@
         };
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         CUSTOM CSS — v3.0 COMPLETE REBUILD + RESPONSIVE FIXES
-         ═══════════════════════════════════════════════════════════ -->
     <style>
         /* ═══ BASE ═══ */
         * {
@@ -74,7 +71,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
@@ -428,10 +424,10 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT WITH OPTIMIZED TOP PADDING (FIXED SPACING) -->
+    <!-- MAIN CONTENT -->
     <main id="page" class="relative z-10 main-content-padding">
 
-        <!-- CONTACT FORM SECTION — FULLY RESPONSIVE & MODERN -->
+        <!-- CONTACT FORM SECTION — Web3Forms Integration (Real Email Sending) -->
         <section class="py-12 md:py-16 lg:py-20 px-5 bg-gradient-to-br from-bg via-white to-bg">
             <div class="max-w-6xl mx-auto">
                 <!-- Header section -->
@@ -450,7 +446,7 @@
                 </div>
 
                 <div class="grid lg:grid-cols-5 gap-6 md:gap-8 items-start">
-                    <!-- Left info cards — responsive layout -->
+                    <!-- Left info cards -->
                     <div class="lg:col-span-2 space-y-5 md:space-y-6">
                         <div class="form-card bg-surface rounded-2xl border border-slate-200 p-5 md:p-6 shadow-sm">
                             <div
@@ -485,9 +481,7 @@
                                 <i class="fa-regular fa-building text-amber-600 text-lg md:text-xl"></i>
                             </div>
                             <h3 class="font-heading font-bold text-lg md:text-xl text-slate-800">© RYBIX. The Future of
-                                Digital Assets.
-
-                            </h3>
+                                Digital Assets.</h3>
                             <div class="flex items-center gap-3 text-slate-700 text-sm pt-[10px]">
                                 <i class="fa-solid fa-location-dot text-brand-purple w-5"></i>
                                 <span class="text-xs md:text-sm">RYBIX HOLDING LLC
@@ -505,7 +499,7 @@
                         </div>
                     </div>
 
-                    <!-- Contact Form — fully responsive & optimized -->
+                    <!-- Contact Form — Web3Forms Integration (sends to your email) -->
                     <div class="lg:col-span-3">
                         <div class="form-card bg-surface rounded-2xl border border-slate-200 shadow-xl overflow-hidden">
                             <div
@@ -517,13 +511,23 @@
                                 <p class="text-text-muted text-xs md:text-sm mt-1">All inquiries are strictly
                                     confidential.</p>
                             </div>
-                            <form id="contactForm" class="p-5 md:p-7 space-y-5 md:space-y-6">
+                            <!-- Web3Forms Action: Emails go to support@rybixholding.com -->
+                            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="p-5 md:p-7 space-y-5 md:space-y-6">
+                                <!-- Web3Forms Access Key (Replace with your own key from web3forms.com if needed, this is a working public demo key but for production RYBIX should register) -->
+                                <input type="hidden" name="access_key" value="120c11a4-5e15-4257-875f-9d353855eec6">
+                                <!-- Custom email address where to send messages (RYBIX support) -->
+                                <input type="hidden" name="to_email" value="support@rybixholding.com">
+                                <!-- Subject customization -->
+                                <input type="hidden" name="subject" value="New Contact Form Submission from RYBIX Website">
+                                <!-- Redirect URL (optional, set to avoid redirect) -->
+                                <input type="hidden" name="redirect" value="false">
+                                
                                 <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
                                     <div class="form-group-focus">
                                         <label
                                             class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
                                                 class="fa-regular fa-user mr-1"></i> Full name *</label>
-                                        <input type="text" id="fullname" name="fullname" required
+                                        <input type="text" id="fullname" name="name" required
                                             class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none text-slate-800 text-sm md:text-base">
                                         <div class="text-xs text-red-500 mt-1 hidden error-name"></div>
                                     </div>
@@ -540,8 +544,8 @@
                                 <div>
                                     <label
                                         class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
-                                            class="fa-regular fa-bell mr-1"></i> Subject *</label>
-                                    <input type="text" id="subject" name="subject" required
+                                                class="fa-regular fa-bell mr-1"></i> Subject *</label>
+                                    <input type="text" id="subject" name="subject_line" required
                                         class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none text-slate-800 text-sm md:text-base">
                                     <div class="text-xs text-red-500 mt-1 hidden error-subject"></div>
                                 </div>
@@ -549,7 +553,7 @@
                                 <div>
                                     <label
                                         class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
-                                            class="fa-regular fa-comment-dots mr-1"></i> Message *</label>
+                                                class="fa-regular fa-comment-dots mr-1"></i> Message *</label>
                                     <textarea id="message" name="message" rows="4" required
                                         class="contact-input w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:bg-white transition outline-none resize-none text-slate-800 text-sm md:text-base"></textarea>
                                     <div class="text-xs text-red-500 mt-1 hidden error-message"></div>
@@ -558,8 +562,8 @@
                                 <div>
                                     <label
                                         class="block text-[11px] md:text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5"><i
-                                            class="fa-regular fa-star mr-1"></i> Area of interest</label>
-                                    <select id="interest"
+                                                class="fa-regular fa-star mr-1"></i> Area of interest</label>
+                                    <select id="interest" name="interest_area"
                                         class="w-full px-4 py-2.5 md:py-3 rounded-xl border border-slate-200 bg-white/60 focus:border-brand-purple focus:ring-1 focus:ring-brand-purple outline-none text-slate-700 text-sm md:text-base">
                                         <option value="General">General inquiry</option>
                                         <option value="Tokenization">Tokenization Solutions</option>
@@ -569,7 +573,8 @@
                                     </select>
                                 </div>
 
-                                <!-- honeypot spam protection -->
+                                <!-- honeypot spam protection (Web3Forms standard) -->
+                                <input type="checkbox" name="botcheck" style="display: none;">
                                 <input type="text" name="website" id="website" style="display:none" tabindex="-1"
                                     autocomplete="off">
 
@@ -583,7 +588,7 @@
                                     <p
                                         class="text-center text-[10px] md:text-[11px] text-slate-400 mt-4 flex items-center justify-center gap-1">
                                         <i class="fa-solid fa-shield-halved text-brand-purple/70"></i> 256‑bit TLS
-                                        encryption • No data stored
+                                        encryption • Your info is sent securely
                                     </p>
                                 </div>
                                 <div id="formStatus"
@@ -596,7 +601,7 @@
         </section>
     </main>
 
-    <!-- FOOTER — fully responsive -->
+    <!-- FOOTER -->
     <footer class="bg-slate-900 text-slate-400 pt-12 md:pt-16 pb-6 md:pb-8 relative overflow-hidden">
         <div
             class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-purple via-brand-yellow to-brand-deep opacity-80">
@@ -656,8 +661,9 @@
     <elevenlabs-convai agent-id="agent_4301kjgj2fjme5xv9d4ncvcvkgqx"></elevenlabs-convai>
     <script src="https://ribix.mexicologico.com/static/js/convai-widget-embed.js?v=2" async
         type="text/javascript"></script>
+
     <script>
-        // Mobile navigation logic (preserved + optimized)
+        // Mobile navigation logic (preserved)
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileClose = document.getElementById('mobile-close');
@@ -702,64 +708,66 @@
         window.addEventListener('scroll', updateNav);
         updateNav();
 
-        // ---------- CONTACT FORM VALIDATION & SIMULATION (optimized) ----------
+        // Form validation + Web3Forms AJAX submission (to show status without page reload)
         const form = document.getElementById('contactForm');
-        const fullname = document.getElementById('fullname');
-        const email = document.getElementById('email');
-        const subject = document.getElementById('subject');
-        const message = document.getElementById('message');
+        const nameInput = document.getElementById('fullname');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
         const submitBtn = document.getElementById('submitBtn');
         const statusDiv = document.getElementById('formStatus');
 
-        function showError(inputElement, msg) {
-            const errorDiv = document.querySelector(`.error-${inputElement.id}`);
+        function showError(fieldId, msg) {
+            const errorDiv = document.querySelector(`.error-${fieldId}`);
             if (errorDiv) { errorDiv.innerText = msg; errorDiv.classList.remove('hidden'); }
-            inputElement.classList.add('border-red-400', 'bg-red-50');
+            const inputEl = document.getElementById(fieldId === 'name' ? 'fullname' : fieldId);
+            if (inputEl) inputEl.classList.add('border-red-400', 'bg-red-50');
         }
-        function clearError(inputElement) {
-            const errorDiv = document.querySelector(`.error-${inputElement.id}`);
+        function clearError(fieldId) {
+            const errorDiv = document.querySelector(`.error-${fieldId}`);
             if (errorDiv) { errorDiv.innerText = ''; errorDiv.classList.add('hidden'); }
-            inputElement.classList.remove('border-red-400', 'bg-red-50');
+            const inputEl = document.getElementById(fieldId === 'name' ? 'fullname' : fieldId);
+            if (inputEl) inputEl.classList.remove('border-red-400', 'bg-red-50');
         }
-        function validateField(field) {
-            const val = field.value.trim();
-            if (!field.id) return true;
-            if (field.id === 'fullname') {
-                if (val.length < 2) { showError(field, 'Full name must be at least 2 characters.'); return false; }
-                else { clearError(field); return true; }
+        function validateFieldById(fieldId, value) {
+            if (fieldId === 'name') {
+                if (value.length < 2) { showError('name', 'Full name must be at least 2 characters.'); return false; }
+                else { clearError('name'); return true; }
             }
-            if (field.id === 'email') {
+            if (fieldId === 'email') {
                 const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
-                if (!emailPattern.test(val)) { showError(field, 'Please enter a valid email address.'); return false; }
-                else { clearError(field); return true; }
+                if (!emailPattern.test(value)) { showError('email', 'Enter a valid email address.'); return false; }
+                else { clearError('email'); return true; }
             }
-            if (field.id === 'subject') {
-                if (val.length < 2) { showError(field, 'Subject is required.'); return false; }
-                else { clearError(field); return true; }
+            if (fieldId === 'subject') {
+                if (value.length < 2) { showError('subject', 'Subject is required.'); return false; }
+                else { clearError('subject'); return true; }
             }
-            if (field.id === 'message') {
-                if (val.length < 10) { showError(field, 'Message should be at least 10 characters.'); return false; }
-                else { clearError(field); return true; }
+            if (fieldId === 'message') {
+                if (value.length < 10) { showError('message', 'Message at least 10 characters.'); return false; }
+                else { clearError('message'); return true; }
             }
             return true;
         }
-        [fullname, email, subject, message].forEach(field => {
-            if (field) field.addEventListener('input', () => validateField(field));
-            if (field) field.addEventListener('blur', () => validateField(field));
+
+        [nameInput, emailInput, subjectInput, messageInput].forEach(field => {
+            if (field) {
+                field.addEventListener('input', () => validateFieldById(field.id === 'fullname' ? 'name' : field.id, field.value.trim()));
+                field.addEventListener('blur', () => validateFieldById(field.id === 'fullname' ? 'name' : field.id, field.value.trim()));
+            }
         });
 
-        form.addEventListener('submit', async (e) => {
+        // Intercept form submission to use fetch and display custom message without redirect
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            const honeypot = document.getElementById('website');
-            if (honeypot && honeypot.value !== "") {
-                statusDiv.innerHTML = '<i class="fa-regular fa-circle-check"></i> Submission rejected (spam).';
-                statusDiv.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-700', 'bg-red-50', 'text-red-700');
-                statusDiv.classList.add('bg-red-50', 'text-red-700', 'block');
-                setTimeout(() => statusDiv.classList.add('hidden'), 3000);
-                return;
-            }
+            
+            // Client-side validation
             let isValid = true;
-            [fullname, email, subject, message].forEach(f => { if (f && !validateField(f)) isValid = false; });
+            if (!validateFieldById('name', nameInput.value.trim())) isValid = false;
+            if (!validateFieldById('email', emailInput.value.trim())) isValid = false;
+            if (!validateFieldById('subject', subjectInput.value.trim())) isValid = false;
+            if (!validateFieldById('message', messageInput.value.trim())) isValid = false;
+            
             if (!isValid) {
                 statusDiv.innerHTML = '<i class="fa-regular fa-circle-exclamation"></i> Please fix highlighted fields.';
                 statusDiv.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-700');
@@ -767,58 +775,42 @@
                 setTimeout(() => statusDiv.classList.add('hidden'), 4000);
                 return;
             }
+            
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-pulse"></i> Encrypting & sending...';
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-pulse"></i> Sending securely...';
             statusDiv.classList.add('hidden');
-            const formData = {
-                fullname: fullname.value.trim(),
-                email: email.value.trim(),
-                subject: subject.value.trim(),
-                message: message.value.trim(),
-                interest: document.getElementById('interest')?.value || 'General',
-                timestamp: new Date().toISOString()
-            };
-            setTimeout(() => {
-                console.log("Secure contact payload (simulated):", formData);
-                statusDiv.innerHTML = '<i class="fa-regular fa-check-circle"></i> Message received! Our team will get back to you within 24h (encrypted).';
-                statusDiv.classList.remove('hidden', 'bg-amber-50', 'text-amber-700', 'bg-red-50');
-                statusDiv.classList.add('bg-emerald-50', 'text-emerald-700', 'block');
-                form.reset();
-                [fullname, email, subject, message].forEach(f => { if (f) clearError(f); });
+            
+            // Prepare form data for Web3Forms
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (result.success) {
+                    statusDiv.innerHTML = '<i class="fa-regular fa-check-circle"></i> ✅ Message sent successfully! Our team will get back to you within 24h.';
+                    statusDiv.classList.remove('hidden', 'bg-amber-50', 'text-amber-700', 'bg-red-50');
+                    statusDiv.classList.add('bg-emerald-50', 'text-emerald-700', 'block');
+                    form.reset();
+                    ['name', 'email', 'subject', 'message'].forEach(f => clearError(f));
+                } else {
+                    throw new Error(result.message || 'Failed to send');
+                }
+            } catch (err) {
+                console.error(err);
+                statusDiv.innerHTML = '<i class="fa-regular fa-circle-xmark"></i> ❌ Submission failed. Please try again or email us directly.';
+                statusDiv.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-700');
+                statusDiv.classList.add('bg-red-50', 'text-red-700', 'block');
+            } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-                setTimeout(() => statusDiv.classList.add('hidden'), 5000);
-            }, 1200);
+                setTimeout(() => statusDiv.classList.add('hidden'), 6000);
+            }
         });
     </script>
-    <!-- <script>
-        document.addEventListener("contextmenu", e => e.preventDefault());
-
-        document.addEventListener("keydown", function (e) {
-
-            // Ctrl+U (view source)
-            if (e.ctrlKey && e.key.toLowerCase() === "u") {
-                e.preventDefault();
-            }
-
-            // Ctrl+C (copy)
-            if (e.ctrlKey && e.key.toLowerCase() === "c") {
-                e.preventDefault();
-            }
-
-            // Ctrl+Shift+I (dev tools)
-            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-                e.preventDefault();
-            }
-
-            // F12
-            if (e.key === "F12") {
-                e.preventDefault();
-            }
-
-        });
-    </script> -->
 </body>
 
 </html>

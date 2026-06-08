@@ -1090,33 +1090,6 @@
         window.addEventListener('scroll', updateNav);
         updateNav();
     </script>
-    <script>
-        document.addEventListener("contextmenu", e => e.preventDefault());
-
-        document.addEventListener("keydown", function (e) {
-
-            // Ctrl+U (view source)
-            if (e.ctrlKey && e.key.toLowerCase() === "u") {
-                e.preventDefault();
-            }
-
-            // Ctrl+C (copy)
-            if (e.ctrlKey && e.key.toLowerCase() === "c") {
-                e.preventDefault();
-            }
-
-            // Ctrl+Shift+I (dev tools)
-            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-                e.preventDefault();
-            }
-
-            // F12
-            if (e.key === "F12") {
-                e.preventDefault();
-            }
-
-        });
-    </script>
 </body>
 
 </html>
